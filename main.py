@@ -16,6 +16,9 @@ import streamlit as st
 from utils import *
 # from streamlit.logger import get_logger
 
+if 'authed' not in st.session_state:
+    st.session_state['authed'] = False
+
 def findAutoDERefsandTargs(activities):
     actList = convertColumnToList(activities['Activities'])
     refs = []
@@ -41,95 +44,110 @@ def findAutoDERefsandTargs(activities):
 
 st.write("# SalseForce Lookup")
 
-queriesDF = pd.read_csv('./data/queries.csv', index_col=0)
-autosDF = pd.read_csv('./data/automations.csv', index_col=0)
-importsDF = pd.read_csv('./data/import.csv', index_col=0)
-scriptsDF = pd.read_csv('./data/scripts.csv', index_col=0)
-extractDF = pd.read_csv('./data/data_extract.csv', index_col=0)
+password = ''
+if not st.session_state["authed"]:
+    password = st.text_input("Enter Password", type='password')
+elif password == '':
+    st.write()
+else:
+    st.write('Invalid Password')
+if password == st.secrets["Access_Password"]:
+    st.session_state["authed"] = True
+    st.rerun()
 
-lookupSource = st.selectbox(
-    'What would you like to lookup?',
-    ['Automation', 'Data Extension', 'Query', 'Script', 'Import', 'Extract'])
 
-name = st.text_input(f'{lookupSource} name')
+if st.session_state["authed"]:
+    queriesDF = pd.read_csv('./data/queries.csv', index_col=0)
+    autosDF = pd.read_csv('./data/automations.csv', index_col=0)
+    importsDF = pd.read_csv('./data/import.csv', index_col=0)
+    scriptsDF = pd.read_csv('./data/scripts.csv', index_col=0)
+    extractDF = pd.read_csv('./data/data_extract.csv', index_col=0)
 
-if st.button('Search'):
+    lookupSource = st.selectbox(
+        'What would you like to lookup?',
+        ['Automation', 'Data Extension', 'Query', 'Script', 'Import', 'Extract'])
 
-    if lookupSource == 'Automation':
-        autoRow = autosDF[autosDF['Automation Name'] == name]
+    name = st.text_input(f'{lookupSource} name')
 
-        refList, targList = findAutoDERefsandTargs(autoRow)
+    if st.button('Search'):
 
-        autoInfoData = {"Automation Name": name,
-                        "Location": autoRow['Path'], "Status": autoRow['Status'], 'Activities': autoRow['Activities'],
-                        'Target Data Extensions': '\n'.join(targList), 'Reference Data Extensions': '\n'.join(refList)}
-        autoInfoDF = pd.DataFrame(autoInfoData)
+        if lookupSource == 'Automation':
+            autoRow = autosDF[autosDF['Automation Name'] == name]
 
-        autoInfoDF
+            refList, targList = findAutoDERefsandTargs(autoRow)
 
-    elif lookupSource == 'Query':
-        queryRow = queriesDF[queriesDF['Name'] == name]
+            autoInfoData = {"Automation Name": name,
+                            "Location": autoRow['Path'], "Status": autoRow['Status'], 'Activities': autoRow['Activities'],
+                            'Target Data Extensions': '\n'.join(targList), 'Reference Data Extensions': '\n'.join(refList)}
+            autoInfoDF = pd.DataFrame(autoInfoData)
 
-        autoList = findAutos(autosDF, name)
+            autoInfoDF
 
-        queryInfoData = {'Query Name': name, 'Type': queryRow['Update Type'], 'Target Data Extension': queryRow['Target Data Extension'],
-                         'Reference Data Extensions':  queryRow['Reference Data Extensions'], 'Automantions Used': '\n'.join(autoList)}
+        elif lookupSource == 'Query':
+            queryRow = queriesDF[queriesDF['Name'] == name]
 
-        queryInfoDF = pd.DataFrame(queryInfoData)
+            autoList = findAutos(autosDF, name)
 
-        queryInfoDF
+            queryInfoData = {'Query Name': name, 'Type': queryRow['Update Type'], 'Target Data Extension': queryRow['Target Data Extension'],
+                            'Reference Data Extensions':  queryRow['Reference Data Extensions'], 'Automantions Used': '\n'.join(autoList)}
 
-    elif lookupSource == 'Script':
-        scriptRow = scriptsDF[scriptsDF['Name'] == name]
+            queryInfoDF = pd.DataFrame(queryInfoData)
 
-        autoList = findAutos(autosDF, name)
+            queryInfoDF
 
-        scriptInfoData = {'Script Name': name, 'Reference Data Extensions':
-                          scriptRow['Reference Data Extensions'], 'Automantions Used': '\n'.join(autoList)}
+        elif lookupSource == 'Script':
+            scriptRow = scriptsDF[scriptsDF['Name'] == name]
 
-        scriptInfoDF = pd.DataFrame(scriptInfoData)
+            autoList = findAutos(autosDF, name)
 
-        scriptInfoDF
+            scriptInfoData = {'Script Name': name, 'Reference Data Extensions':
+                            scriptRow['Reference Data Extensions'], 'Automantions Used': '\n'.join(autoList)}
 
-    elif lookupSource == 'Extract':
-        extractRow = extractDF[extractDF['Name'] == name]
+            scriptInfoDF = pd.DataFrame(scriptInfoData)
 
-        autoList = findAutos(autosDF, name)
+            scriptInfoDF
 
-        extractInfoData = {'Extract Name': name, 'Reference Data Extension':
-                           extractRow['Reference Data Extensions'], 'Automantions Used': '\n'.join(autoList)}
+        elif lookupSource == 'Extract':
+            extractRow = extractDF[extractDF['Name'] == name]
 
-        extractInfoDF = pd.DataFrame(extractInfoData)
+            autoList = findAutos(autosDF, name)
 
-        extractInfoDF
+            extractInfoData = {'Extract Name': name, 'Reference Data Extension':
+                            extractRow['Reference Data Extensions'], 'Automantions Used': '\n'.join(autoList)}
 
-    elif lookupSource == 'Import':
-        importRow = importsDF[importsDF['Name'] == name]
+            extractInfoDF = pd.DataFrame(extractInfoData)
 
-        autoList = findAutos(autosDF, name)
+            extractInfoDF
 
-        importInfoData = {'Import Name': name, 'Target Data Extension':
-                          importRow['Target Data Extension'], 'Automantions Used': '\n'.join(autoList)}
+        elif lookupSource == 'Import':
+            importRow = importsDF[importsDF['Name'] == name]
 
-        importInfoDF = pd.DataFrame(importInfoData)
+            autoList = findAutos(autosDF, name)
 
-        importInfoDF
+            importInfoData = {'Import Name': name, 'Target Data Extension':
+                            importRow['Target Data Extension'], 'Automantions Used': '\n'.join(autoList)}
 
-    elif lookupSource == 'Data Extension':
-        importList, qtList, qrList, scriptList, extractList = findDERefsInActs(
-            name, importsDF, queriesDF, scriptsDF, extractDF)
+            importInfoDF = pd.DataFrame(importInfoData)
 
-        actList = importList + qtList + qrList + scriptList + extractList
+            importInfoDF
 
-        autoList = []
-        for act in actList:
-            autoList.extend(findAutos(autosDF, act))
+        elif lookupSource == 'Data Extension':
+            importList, qtList, qrList, scriptList, extractList = findDERefsInActs(
+                name, importsDF, queriesDF, scriptsDF, extractDF)
 
-        autoList = removeListDuplicates(autoList)
+            actList = importList + qtList + qrList + scriptList + extractList
 
-        deData = {'Data Extension Name': name, 'Automations Featured': '\n'.join(autoList), 'Reference Queries': '\n'.join(qrList),
-                  'Target Queries': '\n'.join(qtList), 'Imports': '\n'.join(importList), 'Scripts': '\n'.join(scriptList), 'Extract': '\n'.join(extractList)}
+            autoList = []
+            for act in actList:
+                autoList.extend(findAutos(autosDF, act))
 
-        deInfoDF = pd.DataFrame(deData,  index=[0])
+            autoList = removeListDuplicates(autoList)
 
-        deInfoDF
+            deData = {'Data Extension Name': name, 'Automations Featured': '\n'.join(autoList), 'Reference Queries': '\n'.join(qrList),
+                    'Target Queries': '\n'.join(qtList), 'Imports': '\n'.join(importList), 'Scripts': '\n'.join(scriptList), 'Extract': '\n'.join(extractList)}
+
+            deInfoDF = pd.DataFrame(deData,  index=[0])
+
+            deInfoDF
+
+    
