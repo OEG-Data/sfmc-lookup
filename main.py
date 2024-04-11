@@ -16,6 +16,29 @@ import streamlit as st
 from utils import *
 # from streamlit.logger import get_logger
 
+def findAutoDERefsandTargs(activities):
+    actList = convertColumnToList(activities['Activities'])
+    refs = []
+    targs = []
+
+    for act in actList:
+        if act.find('(Extract)') != -1:
+            refs = getReferenceDE(
+                extractDF, act.replace('(Extract)', ''), refs)
+        elif act.find('(Import)') != -1:
+            targs = getTargetDE(
+                importsDF, act.replace('(Import)', ''), targs)
+        elif act.find('(Transfer)') != -1:
+            st.write('None')
+        elif act.find('(Script)') != -1:
+            refs = getReferenceDE(
+                scriptsDF, act.replace('(Script)', ''), refs)
+        else:
+            refs = getReferenceDE(queriesDF, act, refs)
+            targs = getTargetDE(queriesDF, act, targs)
+
+    return removeListDuplicates(refs), removeListDuplicates(targs)
+
 st.write("# SalseForce Lookup")
 
 queriesDF = pd.read_csv('./data/queries.csv', index_col=0)
