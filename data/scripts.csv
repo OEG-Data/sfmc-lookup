@@ -1,0 +1,82 @@
+,Name,External Key,Reference Data Extensions,Description,Date Created,Date Modified
+0,Bad Email Addresses,809C6EC1-D744-4265-8AC0-EE6F02703916,AllContacts_Step1,,2021-04-29 08:19:00,2021-06-22 14:09:00
+1,Category 10 Welcome Journey Remove Users,5dc08de6-17d6-4f7c-838d-0bb821fcd66d,"Ole Red Orlando Welcome Journey Expired Decom
+Ole Red Orlando Welcome Journey - Decom","Source DE is the expired DE, destination shou...",2021-04-02 15:03:00,2023-12-20 08:18:00
+2,Check In Venue 1,e9265c0d-c45d-4988-9e81-c965774f9db9,"Automation
+In_Venue_Error_Restart",,2021-10-08 16:15:00,2021-10-08 16:18:00
+3,Contact_Us_Opry,832ba6a3-5ea8-40ef-a4d5-d52ae8243c17,"Automation
+Contact_Us_Opry",,2022-09-14 20:22:00,2022-09-16 18:38:00
+4,Create Acxiom Data Extension,74cbae20-3e2c-42df-b541-89055df32032,Acxiom,,2020-08-13 12:23:00,2020-08-13 12:23:00
+5,Create DE,54b72a5f-f6d0-450a-90c5-384881d7e4bd,OpryWelcomeJourneyOptOut,,2022-12-21 13:22:00,2024-02-27 13:45:00
+6,Create New DE,8d82bd40-9fae-499d-a4ec-b366e55aaab9,FullShellLayout,,2022-12-22 11:01:00,2022-12-22 12:00:00
+7,Create Ticket Alert Subscriber DE,4513adc7-1305-467c-9a2c-81ad20f46db6,TicketAlertSubscribers,,2024-01-24 09:42:00,2024-01-26 14:08:00
+8,Delete from FaS,53fb0c1b-08aa-4419-bef7-e1d5e8f41110,forms_and_sweeps,,2022-05-23 09:07:00,2022-12-07 16:55:00
+9,Delete from in venue,7fd96ca3-418d-41ef-b14a-c7b3dbc709b8,in_venue_sent,,2021-09-14 08:33:00,2021-12-23 10:32:00
+10,Delete from Opry Purchase,057f224b-b806-4678-bfb7-e01a8c9aa218,Opry Purchase Journey,,2021-08-23 08:54:00,2021-09-14 08:32:00
+11,Delete from Opry Welcome,7ec32b8a-0e5c-49c0-a138-9b68ccac8236,Opry Welcome Journey,,2021-08-23 08:54:00,2021-08-23 08:57:00
+12,Delete from RPJ,d7ba8d2c-23fb-4fef-96d9-0541de8fe550,Ryman Post Matrix,,2022-05-06 10:00:00,2022-05-12 09:48:00
+13,Delete from Ryman Welcome,d868adaf-f4c4-4dfb-a07e-78c2be5a0fef,Ryman Welcome Journey,,2021-06-18 13:09:00,2021-12-23 10:32:00
+14,delete photobooth from fas,0de15c64-ae95-4ecc-8301-b7f06008b424,Forms_and_Sweeps_Manual_Upload,delete must occur as forms_and_sweeps_manual_...,2022-10-24 14:56:00,2024-01-16 15:40:00
+15,Delete Test,98109f1c-be84-4b56-ad6b-864992ce7c37,Celebration_Contact_Us_Form,,2021-10-04 08:51:00,2022-08-11 08:42:00
+16,delete test1,c87cf2f9-ac59-46f6-bafa-3558595e5d1d,Opry Purchase Journey,,2022-01-14 10:01:00,2022-05-27 08:00:00
+17,Delete Testers From All Contacts,6c06bf62-628e-4702-91df-ec32e870ce1f,AllContacts_Step1,,2021-02-18 09:05:00,2024-02-29 10:11:00
+18,Delete Testers From Contact Us,c73a9eb9-82cb-468c-9fbb-9427276d2095,contact_us_forms,,2021-03-09 14:37:00,2024-02-12 08:44:00
+19,Delete Testers From Forms and Sweeps,85d5ef0a-0607-4207-8d0e-5eb528a2239e,forms_and_sweeps,,2021-02-18 09:03:00,2023-11-28 12:22:00
+20,Delete Testers from OR Welcome,729f2b58-f9a2-46b8-9006-488111803f48,Ole Red Welcome Journey,,2021-06-18 13:08:00,2021-12-23 10:32:00
+21,Delete Users,ad679f3c-5b84-46ca-bac3-ad8933d5ca45,Forms_and_Sweeps_Manual_Upload,,2020-12-10 13:05:00,2021-07-19 15:28:00
+22,Delete_From_In_Venue_Reset,37a91fc6-be4a-4000-9e90-96435e1e437f,In_Venue_Error_Restart,,2021-10-01 14:17:00,2021-10-01 14:17:00
+23,Ecomm Purchase Journey Remove,33d26211-9bf4-469c-92f8-05030bb708aa,"Ecomm Buyer Journey Exclusion
+Ecomm Buyer Journey",,2024-03-06 14:01:00,2024-03-06 14:01:00
+24,fix detail,ed8d71f3-b477-4a31-8ed8-3ad95a4d9909,AudienceView_Ticket_Admission_Detail,,2021-08-23 14:56:00,2021-08-23 14:56:00
+25,Kickoff Datorama - AudienceView,e57e3513-8b17-4543-8373-c93664484ac6,Automation,,2022-06-02 12:10:00,2022-06-06 09:45:00
+26,Kickoff In Venue Archive,b4377b7d-2972-43d9-9dd2-0ed21bdd9434,Automation,,2021-08-27 10:49:00,2021-10-11 11:49:00
+27,Kickoff In Venue Archive 2,3a576581-0f0c-48ec-8233-04c6cd523371,Automation,,2021-08-27 10:48:00,2021-10-11 11:48:00
+28,Ole Red Welcome Journey Remove Users,471c2211-d445-48bf-8792-5601e0db99cd,"Ole Red Welcome Journey Expired
+Ole Red Welcome Journey",,2021-02-09 15:17:00,2021-03-10 12:56:00
+29,Opry Post Journey Remove,195e1e8b-53e9-460e-941a-c68aa51db1e1,"Opry Post Expired
+Opry Post Journey","Source DE is the expired DE, destination shou...",2021-06-25 09:38:00,2021-09-03 11:05:00
+30,Opry Post Matrix Remove,aed7225c-c0b0-43a3-add8-cd102091ce85,"Opry Post Expired
+Opry Post Matrix","Source DE is the expired DE, destination shou...",2021-06-25 09:38:00,2022-08-01 10:51:00
+31,Opry Pre Arrival Journey Remove,3c407758-34c1-4074-9dd3-4386c77fa32f,"Opry Pre Arrival Expired
+Opry Arrival Journey","Source DE is the expired DE, destination shou...",2021-06-25 09:36:00,2021-09-30 09:06:00
+32,Opry Pre Arrival Matrix Remove,b75a771b-4e9b-4285-a5c0-4c31cdfa2fa4,"Opry Pre Arrival Expired
+Opry Arrival Matrix","Source DE is the expired DE, destination shou...",2021-06-25 09:36:00,2021-06-25 09:36:00
+33,Opry Purchase Journey Remove Users,df927b76-58d8-49c3-91cd-addb175baa64,"Opry Purchase Journey Expired
+Opry Purchase Journey","Source DE is the expired DE, destination shou...",2021-06-14 14:53:00,2021-08-18 14:56:00
+34,Opry Purchase Matrix Remove,d89d8b68-73b8-4a60-bfd0-7a3ddee710db,"Opry Purchase Journey Expired
+Opry Purchase Matrix","Source DE is the expired DE, destination shou...",2021-06-25 09:35:00,2021-08-18 15:00:00
+35,Opry Welcome Journey Remove Users,ebe7aebc-876d-4acf-8979-021808ffce73,"Opry Welcome Journey Expired
+Opry Welcome Journey","Source DE is the expired DE, destination shou...",2021-05-28 11:57:00,2021-08-18 15:05:00
+36,Populate show names from event code,4ee576ba-c466-4ab2-ad3c-230de94c5fb8,EventShowNames,,2024-02-15 15:24:00,2024-02-16 11:58:00
+37,remove arrival 1,94c08fcd-9053-4ba3-82ad-6c845aea38e2,Opry Arrival Journey,,2021-08-31 12:13:00,2021-09-01 10:40:00
+38,remove arrival 2,a299ea5f-9d08-4f34-921e-30a5f83576e3,Opry Arrival Matrix,,2021-08-31 12:13:00,2021-09-01 10:40:00
+39,remove from repeat journey,1C8F5C15-A577-4BC9-ABF3-0F6204CC73B6,"Remove From Opry Repeat Journey
+Repeat Visitor",,2022-08-01 10:14:00,2022-08-01 10:35:00
+40,Remove URl From Sweeps,d61c950f-d3ae-4fe1-a357-af1a5e5b16b8,Jav_Sweeps_Test,Sweepstakes names has the url before the name...,2023-12-29 16:54:00,2024-01-02 13:28:00
+41,remove users from all contacts,e92b0d74-3805-4b06-893b-bd6cea7c1287,"Users to Delete
+AllContacts_Step1",,2021-12-14 10:26:00,2021-12-14 10:59:00
+42,Remove Welcome Journey Expired,614d4b83-3501-4d95-946b-50f30a41c2b5,"Ryman Welcome Journey Expired
+Ryman Welcome Journey",,2020-11-05 11:58:00,2021-03-10 12:29:00
+43,Remove_Expired_From_ACL_Welcome_DE,89616ab3-4e57-46c6-899e-ae6f996c14d9,"ACL_Welcome_Expired
+ACL_Welcome_Journey",,2023-01-05 15:10:00,2023-01-05 15:10:00
+44,Restart In-Venue,85bf9025-68f0-4b12-a55e-520548828ed5,Automation,,2021-09-15 16:22:00,2021-10-04 13:58:00
+45,Restart In-Venue 2,1dc63fae-2d99-48ba-86ef-a2580f10ba07,Automation,,2021-09-15 16:23:00,2021-10-04 14:35:00
+46,Ryman Remove Arrival Journey,170d827e-0db1-4a42-859e-a9a28098a7bf,"Missing
+Ryman Arrival Journey 1 Day","Source DE is the expired DE, destination shou...",2021-12-22 14:01:00,2021-12-22 14:03:00
+47,Ryman Remove Arrival Matrix,e66c0b25-3320-4cb0-a3cc-24a7c7c30325,"Missing
+Ryman Arrival Matrix 1 Day","Source DE is the expired DE, destination shou...",2021-12-22 14:04:00,2021-12-22 14:04:00
+48,Ryman Remove Post Journey,A48096E2-9709-4E00-829E-3794F9F66BCB,"Ryman Post Journey Expired
+Ryman Post Journey","Source DE is the expired DE, destination shou...",2022-02-07 10:43:00,2022-08-12 14:00:00
+49,Ryman Remove Post Journey Records,829b9b06-84a5-44bf-bb55-be0470971f35,"Missing
+Ryman Post Journey",,2022-08-12 13:12:00,2022-08-12 13:24:00
+50,Ryman Remove Post Matrix,ab1e0b3e-0936-46a1-b052-314b4c960463,"Ryman Post Journey Expired
+Ryman Post Matrix","Source DE is the expired DE, destination shou...",2022-02-07 10:44:00,2022-08-12 14:01:00
+51,Ryman Remove Purchase Journey,c787ea7c-25a0-4da8-ad7c-781dbb99dda2,"Ryman Purchase Journey Expired
+Ryman Purchase Journey","Source DE is the expired DE, destination shou...",2021-11-26 09:28:00,2021-11-26 09:28:00
+52,Ryman Remove Purchase Matrix,1027a89c-e407-4eaa-9d76-8ddedcced8ec,"Ryman Purchase Journey Expired
+Ryman Purchase Matrix","Source DE is the expired DE, destination shou...",2021-11-26 09:30:00,2021-11-26 09:47:00
+53,SMS_Delete_Duplicate_Contacts,0271e294-2d50-45de-99bd-89bff8234b5b,"SMS_Delete_Duplicate_Contacts
+API_Token_Store
+API_Error_Log",,2022-11-04 20:03:00,2023-01-04 20:12:00
+54,SMS_Duplicate_Contacts_2of2,65063fac-b8ae-45ab-8369-9948bf64db3c,Automation,,2022-12-02 11:45:00,2023-01-04 20:43:00
+55,test kick off,51f410f9-53b8-4af0-be94-ddb68f131a2e,Automation,,2021-09-27 14:05:00,2021-09-27 14:07:00

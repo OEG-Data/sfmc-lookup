@@ -12,17 +12,112 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import inspect
-import textwrap
 
-import streamlit as st
+import pandas as pd
+
+def removeListDuplicates(myList):
+    return list(set(myList))
 
 
-def show_code(demo):
-    """Showing the code of the demo."""
-    show_code = st.sidebar.checkbox("Show code", True)
-    if show_code:
-        # Showing the code of the demo.
-        st.markdown("## Code")
-        sourcelines, _ = inspect.getsourcelines(demo)
-        st.code(textwrap.dedent("".join(sourcelines[1:])))
+def convertColumnToList(dfColumn):
+    rawList = dfColumn.tolist()
+    finalList = []
+    for i in rawList:
+        if i is not None and not isinstance(i, float):
+            t = i.splitlines()
+
+            finalList.extend(t)
+
+    return finalList
+
+
+def findAutos(autoDF, actName):
+    copyDF = autoDF.copy()
+    copyDF = copyDF.fillna('')
+
+    foundAutosDF = copyDF.query(f'Activities.str.contains("{actName}")')
+
+    return convertColumnToList(foundAutosDF['Automation Name'])
+
+
+def getTargetDE(sourceDE, name, targs):
+    filterRow = sourceDE[sourceDE['Name']
+                         == name.strip()].reset_index(drop=True)
+
+    for i in range(len(filterRow)):
+        targs.append(filterRow['Target Data Extension'].loc[i])
+
+    return targs
+
+
+def getReferenceDE(sourceDE, name, refs):
+    filterRow = sourceDE[sourceDE['Name']
+                         == name.strip()].reset_index(drop=True)
+
+    for i in range(len(filterRow)):
+        refs.extend(
+            filterRow['Reference Data Extensions'].loc[i].splitlines())
+
+    return refs
+
+
+def findAutoDERefsandTargs(activities):
+    actList = convertColumnToList(activities['Activities'])
+    refs = []
+    targs = []
+
+    for act in actList:
+        if act.find('(Extract)') != -1:
+            refs = getReferenceDE(
+                extractDF, act.replace('(Extract)', ''), refs)
+        elif act.find('(Import)') != -1:
+            targs = getTargetDE(
+                importsDF, act.replace('(Import)', ''), targs)
+        elif act.find('(Transfer)') != -1:
+            st.write('None')
+        elif act.find('(Script)') != -1:
+            refs = getReferenceDE(
+                scriptsDF, act.replace('(Script)', ''), refs)
+        else:
+            refs = getReferenceDE(queriesDF, act, refs)
+            targs = getTargetDE(queriesDF, act, targs)
+
+    return removeListDuplicates(refs), removeListDuplicates(targs)
+
+
+def getActListForDE(deName, actDE, searchColumn, nameCol):
+    copyDF = actDE.copy()
+    copyDF = copyDF.fillna('')
+    copyDF.columns = [c.replace(' ', '_') for c in copyDF.columns]
+
+    foundAutosDF = copyDF.query(
+        f'{searchColumn.replace(" ", "_")}.str.contains("{deName}")')
+
+    return convertColumnToList(foundAutosDF[nameCol.replace(' ', '_')])
+
+
+def addLabeltoListElement(myList, label):
+    newList = []
+    for i in myList:
+        newList.append(i + ' ' + label)
+
+    return newList
+
+
+def findDERefsInActs(deName, importDE, queryDE, scriptsDE, extractDF):
+    importList = getActListForDE(
+        deName, importDE, 'Target Data Extension', "Name")
+
+    qtList = getActListForDE(
+        deName, queryDE, 'Target Data Extension', 'Name')
+
+    qrList = getActListForDE(
+        deName, queryDE, 'Reference Data Extensions', 'Name')
+
+    scriptList = getActListForDE(
+        deName, scriptsDE, 'Reference Data Extensions', 'Name')
+
+    extractList = getActListForDE(
+        deName, extractDF, 'Reference Data Extensions', 'Name')
+
+    return importList, qtList, qrList, scriptList, extractList
