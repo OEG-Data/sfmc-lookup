@@ -41,11 +41,7 @@ ACL Show recommendation High Level 3 - Post Arrival
 ACL Show recommendation Fallback 1 - Post Arrival
 ACL show recommendation Fallback 2 -Post Arrival
 ACL Post Visit Audit",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:14:00,2024-02-22 06:14:00
-5,Testing/Perficient test,ACL Post-Purchase,"ACL_Post_Purchase_Step_1
-ACL_Post_Purchase_Step_2
-ACL_Post_Purchase_Step_3
-ACL_Post_Purchase_Step_4",Ready,--,Complete,2023-02-20 17:32:00,2023-07-06 01:36:00
-6,Journeys/ACL,ACL Pre Arrival - 7 days,"Pre Arrival 7 days Prior
+5,Journeys/ACL,ACL Pre Arrival - 7 days,"Pre Arrival 7 days Prior
 ACL Show Recommendation 1 - 7days Prior
 ACL Show recommendation 2 - 7 days Prior
 ACL Show Recommendation 3 - 7 days Prior
@@ -56,7 +52,7 @@ ACL show recommendation Fallback 1 - 7 days Prior
 ACL show recommendation Fallback 2 - 7days Prior
 ACL show recommendation Fallback 3 - 7 days Prior
 Pre Arrival 7 day Prior Audit",Ready,--,,--,2023-07-27 13:34:00
-7,Journeys/ACL,ACL Pre Arrival Journey,"ACL_PreArrival_DONOTOVERWRITE
+6,Journeys/ACL,ACL Pre Arrival Journey,"ACL_PreArrival_DONOTOVERWRITE
 Pre Arrival Journey
 ACL Show Recommendation 1
 ACL Show recommendation 2
@@ -68,26 +64,30 @@ ACL show recommendation Fallback 1
 ACL show recommendation Fallback 2
 ACL show recommendation Fallback 3
 ACL Arrival Audit",Scheduled,2024-02-23 05:30:00,Complete,2024-02-22 05:37:00,2024-02-22 05:37:00
-8,Journeys/ACL,ACL Upsell and Sold Out,"ACL_Upsell
+7,Journeys/ACL,ACL Upsell and Sold Out,"ACL_Upsell
 ACL_Event_SoldOut",Scheduled,2024-02-23 00:00:00,Complete,2024-02-22 00:03:00,2024-02-22 00:03:00
-9,Testing/Perficient test,acl_attributes_check,ACL_Journey_Attriubutes,Ready,--,,--,2023-05-23 23:18:00
-10,Marketing/Aspire_North,ACL_Preference_Data,ACL_Preference_Online,Ready,--,Complete,2023-01-25 13:22:00,2023-01-25 13:22:00
-11,ACL_PSL,ACL_PSL_Status_Sync_All_Subscribers,"ACL_PSL_Status_Sync_All_Subscribers
+8,ACL_PSL,ACL_PSL_Status_Sync_All_Subscribers,"ACL_PSL_Status_Sync_All_Subscribers
 ACL_PSL_Status_Sync_All_Subscribers (Extract)
 Updated White Glove List Shared to AllContacts_Step1",Ready,--,Complete,2024-02-28 02:20:00,2024-02-21 09:20:00
-12,Marketing/Recommendations,ACL_Recommendations,"Get_ACL_Subscribers_Step1
+9,Journeys/ACL,ACL_Recommendations,"Get_ACL_Subscribers_Step1
 ACL_Already_Bought_Reco_Step2
-ACL_Genre1_Step3
-ACL_Rec1
-ACL_Rec2",Ready,--,Complete,2023-02-07 17:21:00,2023-02-07 17:40:00
-13,Testing/Perficient test,acl_recommendtion_test,"step1 ACL_Recommendation
-step2_ACL_REC
-STEP3_ACL_REC
-STEP4_ACL_REC
-step5_ACL_REC",Ready,--,Complete,2023-05-17 04:10:00,2023-05-17 04:10:00
-14,Testing/RYMANSFMC-351,ACL_Upsell,"ACL_Upsell
-ACL_Event_SoldOut",Ready,--,,--,2023-05-24 06:45:00
-15,Marketing/Visitation,ACL_Visitation,"AV_ACL_Visits
+ACL_SubGenre_Rec1
+ACL_SubGenre_Rec2
+ACL_SubGenre_Rec3
+ACL_Genre_Rec1
+ACL_Genre_Rec2
+ACL_Genre_Rec3
+ACL_Genre_Rec2.2
+ACL_Genre_Rec3.2
+ACL_Genre_Rec2.3
+ACL_Genre_Rec3.3
+ACL_Genre_Rec2.4
+ACL_Genre_Rec3.4
+ACL Recommendation No Match
+ACL Recommendation Fall Back 1
+ACL Recommendation Fall Back 2
+ACL Recommendation Fall Back 3",Ready,--,Complete,2023-02-07 17:21:00,2023-02-07 17:40:00
+10,Marketing/Visitation,ACL_Visitation,"AV_ACL_Visits
 TM_ACL_Visits
 Add_TM_Visits
 Add_AV_Visits
@@ -95,7 +95,7 @@ ACL_Most_Recent_Visit_All_Contacts
 TM_ACL_Next_Visits
 AV_Ryman_Next_Visit
 Next_ACL_Visit_All_Contacts",Running,2024-02-22 12:00:00,,--,2024-02-22 11:01:00
-16,Ad Studio,Ad Studio,"Opry Show Next 14-30 Days
+11,Ad Studio,Ad Studio,"Opry Show Next 14-30 Days
 Opry Show Future No PLP
 Opry Show No Purchase last 90 Days
 AV_Purchasers_All_Time
@@ -126,162 +126,115 @@ ORT Visitation
 ORG Visitation
 ORN Visitation
 Any Ole Red Visitation",Scheduled,2024-02-23 10:00:00,Complete,2024-02-22 10:12:00,2024-02-22 10:12:00
-17,Marketing,Add Manual Forms and Sweeps to Customer Master and Datorama,"Add to Forms and Sweeps Manual Upload
+12,Marketing,Add Manual Forms and Sweeps to Customer Master and Datorama,"Add to Forms and Sweeps Manual Upload
 Standard Input Layout Forms and Sweeps Add to Customer Master",Ready,--,Complete,2024-02-09 14:14:00,2024-02-09 14:14:00
-18,Marketing,Add Manual Optins and Opt Outs to All Contacts,Manual_OEG_All_Contacts_Update,Ready,--,Complete,2023-08-03 07:26:00,2023-08-03 07:26:00
-19,Marketing,Add Standard Layout to Master,Standard Input Layout Add to Customer Master,Ready,--,Complete,2023-08-08 08:19:00,2023-08-08 08:19:00
-20,Genre,All Expressed Genre,All Expressed Genre,Scheduled,2024-02-26 00:30:00,Complete,2024-02-19 00:30:00,2024-02-19 00:30:00
-21,Marketing/Backups,All Subscribers Parent Hourly Backup,"All Subscribers Parent Backup
+13,Marketing,Add Manual Optins and Opt Outs to All Contacts,Manual_OEG_All_Contacts_Update,Ready,--,Complete,2023-08-03 07:26:00,2023-08-03 07:26:00
+14,Genre,All Expressed Genre,All Expressed Genre,Scheduled,2024-02-26 00:30:00,Complete,2024-02-19 00:30:00,2024-02-19 00:30:00
+15,Marketing/Backups,All Subscribers Parent Hourly Backup,"All Subscribers Parent Backup
 All Subs Parent (Extract)
 All Subs Parent (Transfer)",Scheduled,2024-02-22 12:00:00,Complete,2024-02-22 11:06:00,2024-02-22 11:06:00
-22,Marketing/Backups,AllContacts_Step1_Backup,"AllContacts_Step1_Backup(Extract)
+16,Marketing/Backups,AllContacts_Step1_Backup,"AllContacts_Step1_Backup(Extract)
 AllContacts_Step1_Backup(Transfer)",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:39:00,2024-02-22 10:39:00
-23,OESP,April OESP,"Nashville_Opry_April_LY
+17,OESP,April OESP,"Nashville_Opry_April_LY
 Nashville_ACLRyman_April_LY
 TNRegion_ACLRyman_April_LY
 TNRegion_Opry_April_LY
 National_Opry_April_LY
 National_ACLRyman_April_LY",Paused Schedule,--,,--,2024-01-16 14:55:00
-24,Testing,Artist Genre combining,"artist genre
+18,One Time Requests,Artist Genre combining,"artist genre
 Geo Artist Genre",Ready,--,Complete,2023-07-13 06:41:00,2023-07-13 06:41:00
-25,,Artist_Picklist,Artist_Picklist,Scheduled,2024-02-23 01:00:00,Complete,2024-02-22 01:00:00,2024-02-22 01:00:00
-26,AspireNorth,Aspire North Variables June 2023,"Model Variables
-opry Show Purchases June2023
-opry Tour Purchases June2023
-Ryman Self Tour June2023
-Ryman Guided Tour June2023
-Opry Email Subscribers June2023
-Ole Red Email Subscribers June2023
-ACL Email Subscribers June2023
-WSM Email Subscribers June2023
-Local to Nashville and made ACL Purchase
-Local to Austin who have made a Nashville purchase",Ready,--,Complete,2023-09-07 16:34:00,2023-09-07 16:34:00
-27,Marketing/Aspire_North,Aspire_North_Location,"AN_Nashville_Austin_Purchase
+19,,Artist_Picklist,Artist_Picklist,Scheduled,2024-02-23 01:00:00,Complete,2024-02-22 01:00:00,2024-02-22 01:00:00
+20,Marketing/Aspire_North,Aspire_North_Location,"AN_Nashville_Austin_Purchase
 AN_Austin_Nashville_Purchase",Scheduled,2024-03-01 02:00:00,Complete,2024-02-01 02:27:00,2024-02-01 02:27:00
-28,Marketing/Aspire_North,Aspire_North_Purchasers,"AN_Opry_Show_Purchasers
+21,Marketing/Aspire_North,Aspire_North_Purchasers,"AN_Opry_Show_Purchasers
 AN_Opry_Tour_Purchasers
 AN_Ryman_Guided_Tour_Purchasers
 AN_Ryman_Self_Guided_Tour_Purchasers",Scheduled,2024-03-01 01:00:00,Complete,2024-02-01 01:13:00,2024-02-01 01:13:00
-29,Marketing/Aspire_North,Aspire_North_Subscribers,"AN_Opry_Email_Subscribers
+22,Marketing/Aspire_North,Aspire_North_Subscribers,"AN_Opry_Email_Subscribers
 AN_Ryman_Email_Subscribers
 AN_OleRed_Email_Subscribers
 AN_ACL_Email_Subscribers
 AN_WSM_Email_Subscribers",Paused Schedule,--,,--,2023-01-25 12:16:00
-30,AspireNorth,AspireNorth1M,AspireNorth1M (Import),Ready,--,Complete,2023-07-07 10:02:00,2023-07-07 10:02:00
-31,AspireNorth,AspireNorth33k,AspireNorth33k (Import),Ready,--,Complete,2023-07-07 08:25:00,2023-07-07 08:25:00
-32,AspireNorth,AspireNorth789k,AspireNorth789k (Import),Ready,--,Complete,2023-07-07 09:08:00,2023-07-07 09:08:00
-33,AspireNorth,AspireNorth85k,AspireNorth85k (Import),Ready,--,Complete,2023-07-07 09:19:00,2023-07-07 09:19:00
-34,AudienceView,AudienceView Admission Detail Clean,"AudienceView Admission Detail Clean (Import)
+23,AudienceView,AudienceView Admission Detail Clean,"AudienceView Admission Detail Clean (Import)
 AudienceView Admission Detail Clean
 AudienceView Admission Detail Clean (Extract)
 AudienceView Admission Detail Clean (Transfer)
 AudienceView Admission Detail (Import)
 AudienceView Admission Detail",Active File Drop,--,,--,2021-10-01 03:57:00
-35,AudienceView,AudienceView Canceled Orders Clean,"AudienceView Cancelled Order Clean (Import)
+24,AudienceView,AudienceView Canceled Orders Clean,"AudienceView Cancelled Order Clean (Import)
 AudienceView Cancelled Orders Clean
 AudienceView Cancelled Order Clean (Extract)
 AudienceView Cancelled Order (Import)
 AudienceView Cancelled Orders",Active File Drop,--,,--,2021-10-01 03:37:00
-36,AudienceView,AudienceView Customer Type Clean,"AudienceView Customer Type Clean (Import)
+25,AudienceView,AudienceView Customer Type Clean,"AudienceView Customer Type Clean (Import)
 AudienceView Customer Type Clean
 AudienceView Customer Type Clean (Extract)
 AudienceView Customer Type Clean (Transfer)
 AudienceView Customer Type (Import)
 AudienceView_Customer_Type_Staging_TO_ALL",Active File Drop,--,,--,2021-10-01 03:09:00
-37,AudienceView,AudienceView Events Clean,"AudienceView Events Clean (Import)
+26,AudienceView,AudienceView Events Clean,"AudienceView Events Clean (Import)
 AudienceView Events Clean
 AudienceView Events Clean (Extract)
 AudienceView Events Clean (Transfer)
 AudienceView Events Clean (Import)
 AudienceView_Events_Staging_TO_ALL",Active File Drop,--,,--,2021-10-01 03:13:00
-38,AudienceView,AudienceView Misc Item Charges Clean,"AudienceView Misc Item Charges Clean (Import)
+27,AudienceView,AudienceView Misc Item Charges Clean,"AudienceView Misc Item Charges Clean (Import)
 AudienceView Misc Item Charges Clean Clean
 AudienceView Misc Item Charges Clean Clean (Extract)
 AudienceView Misc Item Charges Clean Clean (Transfer)
 AudienceView Misc Item Charges (Import)
 AudienceView_Misc_Item_Charges_TO_ALL",Active File Drop,--,,--,2021-10-01 03:17:00
-39,AudienceView,AudienceView Misc Items Sales Clean,"AudienceView Misc Item Sales Clean (Import)
+28,Legacy Systems,AudienceView Misc Items Sales Clean,"AudienceView Misc Item Sales Clean (Import)
 AudienceView Misc Item Sales Clean Clean
 AudienceView Misc Item Sales Clean Clean (Extract)
 AudienceView Misc Item Sales Clean Clean (Transfer)
 AudienceView Misc Item Sales (Import)
 AudienceView_Misc_Item_Sales_TO_ALL",Inactive File Drop,--,,--,2021-03-15 03:22:00
-40,AudienceView,AudienceView Order Adminssions Clean,"AudienceView Order Adminssions Clean (Import)
+29,AudienceView,AudienceView Order Adminssions Clean,"AudienceView Order Adminssions Clean (Import)
 AudienceView Order Adminssions Clean 
 AudienceView Order Adminssions Clean (Extract)
 AudienceView Order Adminssions Clean (Transfer)
 AudienceView Order Adminssions (Import)
 AudienceView_Order_Admission_TO_ALL
 AudienceView_Order_Admission_All_Orders",Active File Drop,--,,--,2021-10-01 03:34:00
-41,AudienceView,AudienceView Order Admission Charges Clean,"AudienceView Order Admission Charges Clean (Import)
+30,Legacy Systems,AudienceView Order Admission Charges Clean,"AudienceView Order Admission Charges Clean (Import)
 AudienceView Order Admission Charges Clean
 AudienceView Order Admission Charges Clean (Extract)
 AudienceView Order Admission Charges Clean (Transfer)
 AudienceView Order Admission Charges (Import)
 AudienceView_Order_Admission_Charges_TO_ALL",Inactive File Drop,--,,--,2021-03-08 04:27:00
-42,AudienceView,AudienceView Order Charges Clean,"AudienceView Order Charges Clean (Import)
+31,AudienceView,AudienceView Order Charges Clean,"AudienceView Order Charges Clean (Import)
 AudienceView Order Charges Clean
 AudienceView Order Charges Clean (Extract)
 AudienceView Order Charges Clean (Transfer)
 AudienceView Order Charges (Import)
 AudienceView_Order_Charges_TO_ALL",Active File Drop,--,,--,2021-10-01 03:37:00
-43,AudienceView,AudienceView Order Contact Total,"AudienceView Order Contact Total - Ongoing
+32,AudienceView,AudienceView Order Contact Total,"AudienceView Order Contact Total - Ongoing
 AudienceView Order Type Total - Ongoing",Ready,--,,--,2022-12-15 14:26:00
-44,AudienceView,AudienceView Order Contacts Clean,"AudienceView Order Contacts Clean (Import)
+33,AudienceView,AudienceView Order Contacts Clean,"AudienceView Order Contacts Clean (Import)
 AudienceView Order Contacts Clean
 AudienceView Order Contacts Clean (Extract)
 AudienceView Order Contacts Clean (Transfer)
 AudienceView Order Contacts (Import)
 AudienceView_Order_Contact_Staging_TO_ALL",Active File Drop,--,,--,2021-10-01 03:42:00
-45,AudienceView,AudienceView Update Customer Master,"AudienceView_Order_Contact Insert Customer Master
+34,AudienceView,AudienceView Update Customer Master,"AudienceView_Order_Contact Insert Customer Master
 AudienceView_Order_Contact Update Customer Master
 AudienceView_Customer_Type Update Customer Master",Ready,--,,--,2022-12-15 14:26:00
-46,OESP,August OESP,"Nashville_Opry_August_LY
+35,OESP,August OESP,"Nashville_Opry_August_LY
 ACLRyman_August_LY
 TNRegion_ACLRyman_August_LY
 TNRegion_Opry_August_LY
 National_Opry_August_LY
 National_ACLRyman_August_LY",Paused Schedule,--,,--,2023-04-25 13:50:00
-47,Marketing/Backups,AV Backup,"AV_Detail_Backup
+36,Marketing/Backups,AV Backup,"AV_Detail_Backup
 AV Contact Backup Daily",Scheduled,2024-02-23 07:30:00,Complete,2024-02-22 07:43:00,2024-02-22 07:43:00
-48,AudienceView,AV Historical Customer,"AV_Historical_Order_Contact
+37,Legacy Systems,AV Historical Customer,"AV_Historical_Order_Contact
 AV_Historical_Order_Contact_Update
 AV_Historical_Customer_Type_Update
 AV Historical Load to CM",Ready,--,,--,2020-10-09 12:14:00
-49,AXS,AXS Artist,"AXS Artist Import (Import)
+38,AXS,AXS Artist,"AXS Artist Import (Import)
 AXS Historical Artist",Active File Drop,--,Complete,2024-02-22 04:57:00,2024-02-22 04:57:00
-50,Testing,AXS Customer Import Test,"AXS Customer File Import (Import)
-AXS Historical Customer Transactions
-AXS_Order_Contact_Insert_Customer_Master
-AXS_Order_Contact_Update_Customer_Master
-AXS Admission Detail
-AXS Admission Detail Set Status
-AXS Order Contact Total - Ongoing - Insert
-AXS Order Contact Total - Ongoing - Update
-AudienceView Customer Type - Ongoing
-AudienceView Order Contact Total - Ongoing
-Two Show Nights
-Add Early Show to Tickets",Ready,--,,--,2022-09-15 09:08:00
-51,AXS,AXS Customer Transaction,"AXS Customer File Import (Import)
-AXS Historical Customer Transactions
-NewContactsToAppend
-AXS_Order_Contact_Append_Customer_Master
-AXS_Order_Contact_Update_Customer_Master
-AXS Pre Admission Detail
-AXS Admission Detail
-AXS Admission Detail Set Status
-AXS Order Contact Total - Ongoing - Insert
-AXS Order Contact Total - Ongoing - Update
-AudienceView Customer Type - Ongoing
-Two Show Nights
-Add Early Show to Tickets
-Order_Event_Prefix
-Datorama - Non DG-OG
-Datorama - AudienceView DG-OG
-Datorama - AudienceView (Extract)
-Datorama - AudienceView (Transfer)
-",Inactive File Drop,--,Complete,2023-07-13 07:04:00,2023-07-13 07:04:00
-52,AXS,AXS Customer Transaction - V2,"AXS Customer File Import (Import)
+39,AXS,AXS Customer Transaction - V2,"AXS Customer File Import (Import)
 AXS Historical Customer Transactions
 NewContactsToAppend
 AXS_Order_Contact_Append_Customer_Master
@@ -298,60 +251,33 @@ Order_Event_Prefix
 Datorama - Non DG-OG
 Datorama - AudienceView DG-OG
 Datorama - AudienceView Automatic (Extract)
-Datorama - AudienceView Automatic (Transfer)",Active File Drop,--,Complete,2024-02-22 07:06:00,2024-02-22 07:06:00
-53,AXS Customer Transaction Backup 06.13.2023,"AXS Customer Transaction Backup 
-06.13.2023","AXS Customer File Import (Import)
-AXS Historical Customer Transactions
-NewContactsToAppend
-AXS_Order_Contact_Append_Customer_Master
-AXS_Order_Contact_Update_Customer_Master
-AXS Admission Detail
-AXS Admission Detail Set Status
-AXS Order Contact Total - Ongoing - Insert
-AXS Order Contact Total - Ongoing - Update
-AudienceView Customer Type - Ongoing
-AudienceView Order Contact Total - Ongoing
-Two Show Nights
-Add Early Show to Tickets
-Datorama - Non DG-OG
-Datorama - AudienceView DG-OG
-Datorama - AudienceView (Extract)
-Datorama - AudienceView (Transfer)",Building,--,,--,2023-06-13 15:36:00
-54,Testing,AXS DE Backup,"Backup AXS_Customer_Transaction_Data
-Backup AXS_Customer_Transaction
-Backup NewContactsToAppend
-Backup AllContacts_Step1
-Backup AudienceView_Ticket_Admission_Detail
-Backup AudienceView_Order_Contact_2016_to_date
-Backup AudienceView_Customer_Type_2016_to_date
-Backup Two_Show_Night
-Backup Order_Event_Prefix
-Backup Datorama - AudienceView",Ready,--,Complete,2023-06-14 13:49:00,2023-06-14 13:58:00
-55,Marketing/Backups,Backup of Customer Master Daily,"Create Master Customer Backup - Full Overwrite - Daily
+Datorama - AudienceView Automatic (Transfer)
+Run Purchaser Consolidation Automation (Script)",Active File Drop,--,Complete,2024-02-22 07:06:00,2024-02-22 07:06:00
+40,Marketing/Backups,Backup of Customer Master Daily,"Create Master Customer Backup - Full Overwrite - Daily
 OEG_Customer_Master_Backup (Extract)
 OEG_Customer_Master_Backup (Transfer)",Scheduled,2024-02-23 04:00:00,Complete,2024-02-22 04:07:00,2024-02-22 04:07:00
-56,Marketing/Backups,Backup of Customer Master Hourly,Create Master Customer Backup - Full Overwrite - Hourly,Paused Schedule,--,Complete,2023-01-23 18:06:00,2023-01-23 18:50:00
-57,Marketing/Backups,Backup of Customer Master Monthly,Create Master Customer Backup - Full Overwrite - Monthly,Scheduled,2024-03-01 00:02:00,Complete,2024-02-01 00:07:00,2024-02-01 00:07:00
-58,Marketing/Backups,Backup of Customer Master Weekly,Create Master Customer Backup - Full Overwrite - Weekly,Scheduled,2024-02-25 22:00:00,Complete,2024-02-18 22:02:00,2024-02-18 22:02:00
-59,Marketing/Backups,Backup of Forms and Sweeps Weekly,"Backup Forms Weekly
-Manual_Forms_and_Sweeps_Backup_Weekly
-Backup_Contact_Us_Weekly",Scheduled,--,Complete,2024-02-01 09:59:00,2024-02-01 09:59:00
-60,Marketing/Backups,Backup of Forms and Sweeps,"Forms_And_Sweeps_Backup
+41,Marketing/Backups,Backup of Customer Master Hourly,Create Master Customer Backup - Full Overwrite - Hourly,Paused Schedule,--,Complete,2023-01-23 18:06:00,2023-01-23 18:50:00
+42,Marketing/Backups,Backup of Customer Master Monthly,Create Master Customer Backup - Full Overwrite - Monthly,Scheduled,2024-03-01 00:02:00,Complete,2024-02-01 00:07:00,2024-02-01 00:07:00
+43,Marketing/Backups,Backup of Customer Master Weekly,Create Master Customer Backup - Full Overwrite - Weekly,Scheduled,2024-02-25 22:00:00,Complete,2024-02-18 22:02:00,2024-02-18 22:02:00
+44,Marketing/Backups,Backup of Forms and Sweeps,"Forms_And_Sweeps_Backup
 Manual_Forms_and_Sweeps_Backup
 Backup_Contact_Us",Scheduled,2024-02-23 00:00:00,Complete,2024-02-22 00:07:00,2024-02-22 00:07:00
-61,Marketing/Backups,Backup of Rex Direct,Backup Rex Direct,Scheduled,2024-02-23 00:00:00,Complete,2024-02-22 00:01:00,2024-02-22 00:01:00
-62,MC_Activity,Bad Domains,Bounces_Bad_Domain,Scheduled,2024-02-28 03:00:00,Complete,2024-02-21 03:00:00,2024-02-21 03:00:00
-63,,BlueCore,"BlueCore Optin OptOut
+45,Marketing/Backups,Backup of Forms and Sweeps Weekly,"Backup Forms Weekly
+Manual_Forms_and_Sweeps_Backup_Weekly
+Backup_Contact_Us_Weekly",Scheduled,--,Complete,2024-02-01 09:59:00,2024-02-01 09:59:00
+46,Marketing/Backups,Backup of Rex Direct,Backup Rex Direct,Scheduled,2024-02-23 00:00:00,Complete,2024-02-22 00:01:00,2024-02-22 00:01:00
+47,MC_Activity,Bad Domains,Bounces_Bad_Domain,Scheduled,2024-02-28 03:00:00,Complete,2024-02-21 03:00:00,2024-02-21 03:00:00
+48,,BlueCore,"BlueCore Optin OptOut
 BlueCore Data Extract (Extract)
 BlueCore OptIn Out File Transfer (Tranfer)",Ready,--,,--,2020-12-31 08:28:00
-64,Brokers,Brokers Email Domain,"Broker Designation
+49,Brokers,Brokers Email Domain,"Broker Designation
 Broker Designation 2
 Broker Designation 3
 Broker Designation 4
 Broker Designation 5
 Broker Designation 6",Scheduled,--,Complete,2024-02-16 17:26:00,2024-02-16 17:26:00
-65,One Time Requests,Category 10 Newsletter Subscribers,Category_10_Subs_Pull,Paused Schedule,--,Complete,2024-02-02 11:49:00,2024-02-02 12:49:00
-66,Journeys/Category 10,Category 10 Welcome Journey,"Category 10 Welcome Journey - Sync to Master
+50,One Time Requests,Category 10 Newsletter Subscribers,Category_10_Subs_Pull,Paused Schedule,--,Complete,2024-02-02 11:49:00,2024-02-02 12:49:00
+51,Journeys/Category 10,Category 10 Welcome Journey,"Category 10 Welcome Journey - Sync to Master
 Category 10 Welcome Journey Expired
 Category 10 Welcome Journey Remove Users (Script)
 Category 10 Welcome Journey - Forms
@@ -360,25 +286,29 @@ Category 10 Welcome Journey - Manual Uploads and Uncategorized
 Category 10 Photobooth Welcome
 Category 10 Welcome Journey - Retail POS
 Category 10 Welcome Journey - Shows",Running,2024-02-22 12:00:00,,--,2024-02-22 11:01:00
-67,Marketing,Celebration Package Journey,"delete all celebration
+52,Marketing,Celebration Package Journey,"delete all celebration
 Celebration_Package_Journey
 Celebrate_Future
 celebrate.csv (Extract)
 celebrate.csv (Transfer)",Scheduled,2024-02-23 09:30:00,Complete,2024-02-22 09:34:00,2024-02-22 09:34:00
-68,Journeys/Ryman,Clear Ryman Arrival DEs,"Clear Ryman Arrival Journey DE 1 Day
+53,Journeys/Ryman,Clear Ryman Arrival DEs,"Clear Ryman Arrival Journey DE 1 Day
 Clear Ryman Arrival Journey DE 7 Day",Scheduled,2024-02-22 23:30:00,Complete,2024-02-21 23:31:00,2024-02-21 23:31:00
-69,Domain Generation/Artist,Combine Artist Info,combine_artist_info,Scheduled,,,,
-70,Domain Generation/Lead Gen,Consolidate Lead Gen DE's,"combine_info_walled_data
+54,Domain Generation/Artist,Combine Artist Info,combine_artist_info,Scheduled,,,,
+55,Domain Generation/Lead Gen,Consolidate Lead Gen DE's,"combine_info_walled_data
 combine_lead_gen_data",Scheduled,2024-02-25 04:00:00,Complete,2024-02-21 10:56:00,2024-02-21 11:00:00
-71,Marketing,Contact and Forms Existing Customer Fix,"Contact Existing Customer Fix
+56,Marketing,Contact and Forms Existing Customer Fix,"Contact Existing Customer Fix
 Forms Existing Customer Fix",Scheduled,2024-02-23 07:30:00,Complete,2024-02-22 07:31:00,2024-02-22 07:31:00
-72,Contact Form Notifications,Contact_Us_Opry,"Contact_Us_Opry
-PARENT_Contact_Us_Opry_Notification_Email",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:35:00,2024-02-22 10:35:00
-73,PowerBI Reporting,copy ecommerce_purchasers,"ecommerce_purchasers_pbi
+57,Contact Form Notifications,Contact_Us_Opry,"Contact_Us_Opry
+PARENT_Contact_Us_Opry_Notification_Email
+Contact_Us_Opry (Script)",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:35:00,2024-02-22 10:35:00
+58,Contact Form Notifications,Contact_Us_Ryman,"Contact_Us_Ryman
+PARENT_Contact_Us_Ryman_Notification_Email
+Contact_Us_Ryman (Script)",Scheduled,,,,
+59,PowerBI Reporting,copy ecommerce_purchasers,"ecommerce_purchasers_pbi
 ecommerce_purchasers_pbi (Extract)
 ecommerce_purchasers_pbi (Transfer)",Ready,--,Complete,2024-01-18 09:20:00,2024-01-18 09:20:00
-74,One Time Requests,Create Acxiom DE,Create Acxiom Data Extension (Script),Ready,--,,--,2020-10-02 21:51:00
-75,Datorama,Cross Sell Analysis - AXS,"Opry Show Upsell - Step 1
+60,One Time Requests,Create Acxiom DE,Create Acxiom Data Extension (Script),Ready,--,,--,2020-10-02 21:51:00
+61,Datorama,Cross Sell Analysis - AXS,"Opry Show Upsell - Step 1
 Opry Tour Cross - Step 2
 Opry show upsell and Tour Cross - Step 3
 Distinct Cross Tours - Step 4
@@ -407,7 +337,7 @@ Complete Reset - Step 24
 crosssell to dato
 Cross Sell to Dato (Extract)
 Cross Sell to Dato (Tranfer)",Scheduled,--,Complete,2024-02-22 01:23:00,2024-02-22 10:00:00
-76,Marketing,Customer Spend,"Lifetime Retail Spend
+62,Marketing,Customer Spend,"Lifetime Retail Spend
 Parking_Purchasers_2016_To_Date
 OHBS_Purchasers_2016_To_Date
 POST_Purchasers_2016_To_Date
@@ -445,7 +375,7 @@ Ryman_Product_breakout_to_dato
 or_visitor_breakout_to_dato
 Product_Breakout_to_Dato (Extract)
 product_breakouts_to_dato (Transfer)",Scheduled,2024-02-23 04:30:00,Complete,2024-02-22 04:52:00,2024-02-22 04:52:00
-77,Marketing,Database Cleanup,"	USA Country Code Cleanse
+63,Marketing,Database Cleanup,"	USA Country Code Cleanse
 	Country Cleanse
 	Country_Lookup
 State_Lookup
@@ -461,26 +391,23 @@ Remove Preferences for Opt-Outs
 Fix Null Preferences
 Fix Missing Unsub Dates
 Pop Up Form Name Fix",Scheduled,2024-02-23 05:30:00,Complete,2024-02-22 05:42:00,2024-02-22 05:42:00
-78,Testing,DateTesting,"DateTesting
-opry click move
-opry no click move",Ready,--,,--,2022-12-22 15:27:00
-79,Datorama,Datorama - AudienceView,"Datorama - Non DG-OG
+64,Datorama,Datorama - AudienceView,"Datorama - Non DG-OG
 Datorama - AudienceView DG-OG
 Datorama - AudienceView (Extract)
 Datorama - AudienceView (Transfer)
 Forwards and Resale
 Datorama - Forwards and Resale (Extract)
 Datorama - Forwards and Resale (Transfer)",Running,2024-02-22 12:00:00,,--,2024-02-22 11:01:00
-80,Datorama,Datorama - Email Activity,"Datorama - Email Activity (Extract)
+65,Datorama,Datorama - Email Activity,"Datorama - Email Activity (Extract)
 Datorama - Email Activity (Transfer)",Scheduled,2024-02-23 03:00:00,Complete,2024-02-22 03:01:00,2024-02-22 03:01:00
-81,Datorama,Datorama - Forms and Sweepstakes,"Forms and Sweeps Combined
+66,Datorama,Datorama - Forms and Sweepstakes,"Forms and Sweeps Combined
 Forms and Sweeps Combined Second Step
 Forms and Sweeps Reporting Share Unique Entries
 Forms and Sweeps Reporting Share All Entries
 Forms and Sweeps Reporting Share
 Forms_And_Sweeps_Reporting (Extract)
 Forms_And_Sweeps_Reporting (Transfer)",Running,2024-02-22 12:00:00,,--,2024-02-22 11:00:00
-82,Datorama,Datorama - Subscriber Reporting,"Datorama Reporting
+67,Datorama,Datorama - Subscriber Reporting,"Datorama Reporting
 OEG Consolidated Reporting (Extract)
 OEG Consolidated Reporting (Transfer)
 Datorama - Retail Rep
@@ -498,24 +425,13 @@ Datorama - Subscriber Reporting - Unsubscribed (Extract)
 Datorama - Subscriber Reporting - Unsubscribed (Transfer)
 Datorama - Subscriber Reporting - Last Visit (Extract)
 Datorama - Subscriber Reporting - Last Visit (Transfer)",Scheduled,2024-02-23 04:00:00,Complete,2024-02-22 04:25:00,2024-02-22 04:25:00
-83,OESP,December OESP,"Nashville_ACLRyman_December_LY
+68,OESP,December OESP,"Nashville_ACLRyman_December_LY
 Nashville_Opry_December_LY
 TNRegion_ACLRyman_December_LY
 ACLRyman_December_LY
 TNRegion_Opry_December_LY
 National_Opry_December_LY",Paused Schedule,--,,--,2023-04-25 13:57:00
-84,AspireNorth,Deduping Aspire North 2023,"Deduped Aspire North Opry Show Purchasers June 2023
-Deduped Aspire North Opry Tour Purchase June 2023
-Dedupin Aspire North Ryman self-guided tour purchasers June 2023
-Deduping Aspire North Ryman Guided tour purchasers June 2023
-Deduping Local to Nashville and ACL Purchase June 2023
-Deduping Local to Austin and Nashville purchase June 2023
-Deduping Aspire North WSM email subscribers June 2023
-Deduping Aspire North Ryman email subscribers June 2023
-Deduped Aspire North Opry email subscribers June 2023
-Deduping Aspire North Ole Red email subscribers June 2023
-Deduping Aspire North ACL Live email subscribers June 2023",Ready,--,Complete,2023-08-11 08:19:00,2023-08-11 09:09:00
-85,Delete From All Contacts,Delete Testers,"Delete Testers From Forms and Sweeps (Script)
+69,Delete From All Contacts,Delete Testers,"Delete Testers From Forms and Sweeps (Script)
 Delete Testers From All Contacts (Script)
 Delete Testers From Contact Us (Script)
 Delete Testers from OR Welcome (Script)
@@ -524,25 +440,24 @@ Delete from Opry Welcome (Script)
 Delete from Opry Purchase (Script)
 Delete from RPJ (Script)
 Find Users to Delete",Scheduled,2024-02-22 23:00:00,Complete,2024-02-21 23:05:00,2024-02-21 23:05:00
-86,Journeys,Ecomm Buyer Journey,"Ecomm Purchase Journey Remove (Script)
+70,Journeys,Ecomm Buyer Journey,"Ecomm Purchase Journey Remove (Script)
 ecomm_buyer_journey
 ecomm_buyer_journey_exclusion",Scheduled,,,,
-87,One Time Requests,Ecomm Purchaser Pull,ecomm_purchaser_profile_pull,Paused Schedule,--,Complete,2024-01-23 15:11:00,2024-01-23 15:32:00
-88,PowerBI Reporting,ecommerce_purchasers,"ecommerce_purchasers_pbi
+71,PowerBI Reporting,ecommerce_purchasers,"ecommerce_purchasers_pbi
 ecommerce_purchasers_pbi (Extract)
 ecommerce_purchasers_pbi (Transfer)",Paused Schedule,--,Complete,2024-01-17 17:36:00,2024-01-18 09:08:00
-89,PowerBI Reporting,Email Clicks Export for PBI,"Email Clicks (Extract)
+72,PowerBI Reporting,Email Clicks Export for PBI,"Email Clicks (Extract)
 Email Clicks (Transfer)",Scheduled,2024-02-23 00:00:00,Complete,2024-02-22 00:02:00,2024-02-22 00:02:00
-90,Exclusions,Email Sends to Monthly,create_email_freq_monthly_de,Scheduled,,,,
-91,,February OESP,"Nashville_Opry_February_LY
+73,Exclusions,Email Sends to Monthly,create_email_freq_monthly_de,Scheduled,,,,
+74,,February OESP,"Nashville_Opry_February_LY
 Nashville_ACLRyman_February_LY
 TNRegion_ACLRyman_February_LY
 TNRegion_Opry_February_LY
 National_Opry_February_LY
 National_ACLRyman_February_LY",Paused Schedule,--,,--,2023-04-25 13:40:00
-92,One Time Requests,Fix First OEG Source Typos,Fix_First_Source_Typos_AllContacts,Ready,--,Complete,2024-01-29 11:36:00,2024-01-29 11:36:00
-93,One Time Requests,Generate Email List for Alert Date,interested_email_list_for_ticket_alerts,Ready,--,Complete,2024-02-01 15:48:00,2024-02-01 15:48:00
-94,Marketing/Recommendations,Genre_Affinity_All_Purchasers,"Order_All_Purchases_Fror_Recommendations
+75,One Time Requests,Fix First OEG Source Typos,Fix_First_Source_Typos_AllContacts,Ready,--,Complete,2024-01-29 11:36:00,2024-01-29 11:36:00
+76,One Time Requests,Generate Email List for Alert Date,interested_email_list_for_ticket_alerts,Ready,--,Complete,2024-02-01 15:48:00,2024-02-01 15:48:00
+77,Marketing/Recommendations,Genre_Affinity_All_Purchasers,"Order_All_Purchases_Fror_Recommendations
 Latest_Purchase
 Purchase_Event_Genre
 Group_Events_Genre_Contact
@@ -558,33 +473,32 @@ List_SubGenres
 SubGenre_Affinity_All_Purchasers
 Purchaser_Genre_Affinity_Reorder
 add_expressed_genre_to_affinity_all_purchasers",Scheduled,2024-02-23 04:30:00,Complete,2024-02-22 04:53:00,2024-02-22 04:53:00
-95,Marketing,Get Details of 3TEN and ACL Customers without Brokers,3Ten_ACL_Customer_Details_Fetch_No_Brokers_Update,Paused Schedule,--,Complete,2023-11-02 13:56:00,2023-11-06 16:41:00
-96,Testing,Get_Aspired_Record,GetOneRecord,Ready,--,Complete,2023-01-25 13:09:00,2023-01-25 13:09:00
-97,Marketing,Identify Country Duos,Country Duo Order Numbers,Scheduled,2024-02-23 04:30:00,Complete,2024-02-22 04:30:00,2024-02-22 04:30:00
-98,All Contacts Cleanup,Invalid_Country_Code,Invalid_Country_Code,Ready,--,Complete,2023-01-23 20:26:00,2023-01-23 20:38:00
-99,All Contacts Cleanup,Invalid_Mobile_Phone,"Invalid_Mobile_Phone_1
+78,Marketing,Get Details of 3TEN and ACL Customers without Brokers,3Ten_ACL_Customer_Details_Fetch_No_Brokers_Update,Paused Schedule,--,Complete,2023-11-02 13:56:00,2023-11-06 16:41:00
+79,Marketing,Identify Country Duos,Country Duo Order Numbers,Scheduled,2024-02-23 04:30:00,Complete,2024-02-22 04:30:00,2024-02-22 04:30:00
+80,All Contacts Cleanup,Invalid_Country_Code,Invalid_Country_Code,Ready,--,Complete,2023-01-23 20:26:00,2023-01-23 20:38:00
+81,All Contacts Cleanup,Invalid_Mobile_Phone,"Invalid_Mobile_Phone_1
 Invalid_Mobile_Phone_2
 Invalid_Mobile_Phone_3",Scheduled,2024-02-22 11:15:00,Complete,2024-02-22 10:17:00,2024-02-22 10:17:00
-100,OESP,January OESP,"Nashville_Opry_January_LY
+82,OESP,January OESP,"Nashville_Opry_January_LY
 Nashville_ACLRyman_January_LY
 TNRegion_ACLRyman_January_LY
 TNRegion_Opry_January_LY
 National_Opry_January_LY
 National_ACLRyman_January_LY",Paused Schedule,--,Complete,2024-01-16 15:07:00,2024-01-16 15:07:00
-101,OESP,July OESP,"Nashville_Opry_July_LY
+83,OESP,July OESP,"Nashville_Opry_July_LY
 Nashville_ACLRyman_July_LY
 TNRegion_ACLRyman_July_LY
 TNRegion_Opry_July_LY
 National_Opry_July_LY
 National_ACLRyman_July_LY",Paused Schedule,--,,--,2023-04-25 13:49:00
-102,OESP,June OESP,"Nashville_Opry_June_LY
+84,OESP,June OESP,"Nashville_Opry_June_LY
 Nashville_ACLRyman_June_LY
 TNRegion_ACLRyman_June_LY
 TNRegion_Opry_June_LY
 National_Opry_June_LY
 National_ACLRyman_June_LY",Paused Schedule,--,,--,2023-04-25 13:47:00
-103,,LastFM Automation,LastFM Data Import,Inactive File Drop,--,Error,2024-01-09 10:51:00,2024-01-09 10:51:00
-104,,LiveRamp VML,"LiveRamp_WSM Email
+85,,LastFM Automation,LastFM Data Import,Inactive File Drop,--,Error,2024-01-09 10:51:00,2024-01-09 10:51:00
+86,,LiveRamp VML,"LiveRamp_WSM Email
 LiveRamp_Ole Red Email
 LiveRamp_Ryman Email
 LiveRamp_Opry Email
@@ -592,20 +506,21 @@ LiveRamp_Ryman Self Tour
 LiveRamp_Ryman Guided Tour
 LiveRamp_Opry Tour Purchasers
 LiveRamp_Opry Show Purchasers",Scheduled,2024-03-04 00:00:00,Complete,2024-02-05 00:05:00,2024-02-05 00:05:00
-105,Marketing,Local to (All Users),Local to All Users,Scheduled,2024-02-25 00:00:00,Complete,2024-02-18 00:01:00,2024-02-18 00:01:00
-106,Marketing,Local To (New Users),Local To New Users,Scheduled,2024-02-23 01:30:00,Complete,2024-02-21 01:30:00,2024-02-21 01:30:00
-107,Magento,Magento Customer Import,"Magento Customer Data for Staging (Import)
+87,Marketing,Local to (All Users),Local to All Users,Scheduled,2024-02-25 00:00:00,Complete,2024-02-18 00:01:00,2024-02-18 00:01:00
+88,Marketing,Local To (New Users),Local To New Users,Scheduled,2024-02-23 01:30:00,Complete,2024-02-21 01:30:00,2024-02-21 01:30:00
+89,Magento,Magento Customer Import,"Magento Customer Data for Staging (Import)
 Magento Customer Update Customer Master
 Magento Customer TO ALL",Active File Drop,--,,--,2022-09-12 14:20:00
-108,Magento,Magento Transaction,"Magento Transaction Data for Staging (Import)
+90,Magento,Magento Transaction,"Magento Transaction Data for Staging (Import)
 Magento Transaction
 Magento Transaction Update Customer Master",Active File Drop,--,,--,2022-12-14 16:46:00
-109,,Mandolin,,Building,--,,--,2021-03-08 09:25:00
-110,Mandolin,Mandolin Processing,"Process All Mandolin Transactions
+91,Legacy Systems,Mandolin Processing,"Process All Mandolin Transactions
 Mandolin Process New
 Mandolin Process New Records to customer master
 Mandolin Process Prior",Ready,--,,--,2021-12-22 15:11:00
-111,AXS,Manual Load - AXS Customer Transaction,"Manual AXS Customer File Import (Import)
+92,One Time Requests,Manual Forms and Sweeps Backfill,"backfill_manual_f&s_from_allContacts
+Photobooth staging to forms and sweeps",Ready,,,,
+93,AXS,Manual Load - AXS Customer Transaction,"Manual AXS Customer File Import (Import)
 AXS Historical Customer Transactions
 NewContactsToAppend
 AXS_Order_Contact_Append_Customer_Master
@@ -623,23 +538,23 @@ Datorama - Non DG-OG
 Datorama - AudienceView DG-OG
 Datorama - AudienceView (Extract)
 Datorama - AudienceView (Transfer)",Ready,--,Complete,2023-12-27 09:45:00,2024-01-09 10:48:00
-112,OESP,March OESP,"Nashville_Opry_March_LY
+94,OESP,March OESP,"Nashville_Opry_March_LY
 Nashville_ACLRyman_March_LY
 TNRegion_ACLRyman_March_LY
 TNRegion_Opry_March_LY
 National_Opry_March_LY
 National_ACLRyman_March_LY",Paused Schedule,--,,--,2023-04-25 13:42:00
-113,,Master Artist Data,"Master_Artist_1
+95,,Master Artist Data,"Master_Artist_1
 Master_Artist_2
 Master Artist List (Extract)
 Master Artist List (Transfer)",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:06:00,2024-02-22 06:06:00
-114,OESP,May OESP,"Nashville_Opry_May_LY
+96,OESP,May OESP,"Nashville_Opry_May_LY
 Nashville_ACLRyman_May_LY
 TNRegion_ACLRyman_May_LY
 TNRegion_Opry_May_LY
 National_Opry_May_LY
 National_ACLRyman_May_LY",Paused Schedule,--,,--,2023-04-25 13:45:00
-115,MC_Activity,MC Activity,"Sent
+97,MC_Activity,MC Activity,"Sent
 Open
 Click
 Status
@@ -650,25 +565,7 @@ Click 2_0 to Master
 Status 2_0 to Master
 Unsubscribe Sync to Customer Master
 Fix Status",Scheduled,2024-02-23 04:00:00,Error,2024-02-22 04:22:00,2024-02-22 04:22:00
-116,MC_Activity,MC Activity Update,"Sent
-Open
-Click
-Status
-Import Send from 1_0 (Import)
-Import Click from 1_0 (Import)
-Import Open from 1_0 (Import)
-Import Status from 1_0 (Import)
-Send Historical 1_0 To Master
-Send 1_0 To Master
-Send 2_0 To Master
-Open 1_0 to Master
-Open 2_0 To Master
-Click 1_0 to Master
-Click 2_0 to Master
-Status 1_0 to Master
-Status 2_0 to Master",Inactive File Drop,--,,--,2021-01-13 10:59:00
-117,AXS,Missing Or New Events Codes Test,Unclassified Products,Ready,--,Complete,2023-02-10 00:43:00,2023-02-10 00:43:00
-118,Marketing/Visitation,Most Recent Visit,"Sweeps_ORN
+98,Marketing/Visitation,Most Recent Visit,"Sweeps_ORN
 Sweeps_ORG
 Sweeps_ORT
 Sweeps_ORO
@@ -726,50 +623,34 @@ ORN_Visit_Append
 ORG Visit Append
 ORT Visit Append
 ORO Visit Append",Running,2024-02-22 12:00:00,,--,2024-02-22 11:01:00
-119,,Move Shopify Data to Shared Location,"ShopifyCustomerData
+99,,Move Shopify Data to Shared Location,"ShopifyCustomerData
 ShopifyOrderData",Paused Schedule,--,Complete,2023-12-22 12:06:00,2023-12-22 12:20:00
-120,MyPlace Connect,MyPlaceConnect Opry,"MyPlaceConnect - Grand OLE Opry (Import)
+100,MyPlace Connect,MyPlaceConnect Opry,"MyPlaceConnect - Grand OLE Opry (Import)
 MyPlaceConnect Update Customer Master Opry
 MyPlaceConnect Update Master Opry",Active File Drop,--,,--,2022-11-09 00:19:00
-121,MyPlace Connect,MyPlaceConnect ORG,"MyPlaceConnect - Ole Red Gatlinburg (Import)
+101,MyPlace Connect,MyPlaceConnect ORG,"MyPlaceConnect - Ole Red Gatlinburg (Import)
 MyPlaceConnect Update Customer Master ORG
 MyPlace Connect Update Master ORG",Active File Drop,--,,--,2022-11-09 00:10:00
-122,MyPlace Connect,MyPlaceConnect ORN,"MyPlaceConnect - Ole Red Nashville (Import)
+102,MyPlace Connect,MyPlaceConnect ORN,"MyPlaceConnect - Ole Red Nashville (Import)
 MyPlaceConnect Update Customer Master ORN
 MyPlace Connect Update Master ORN",Active File Drop,--,,--,2022-11-09 00:10:00
-123,MyPlace Connect,MyPlaceConnect ORO,"MyPlaceConnect - Ole Red Orlando (Import)
+103,MyPlace Connect,MyPlaceConnect ORO,"MyPlaceConnect - Ole Red Orlando (Import)
 MyPlaceConnect Update Customer Master ORO
 MyPlace Connect Update Master ORO",Active File Drop,--,,--,2022-11-09 00:11:00
-124,MyPlace Connect,MyPlaceConnect ORT,"MyPlaceConnect - Ole Red Tishomingo (Import)
+104,MyPlace Connect,MyPlaceConnect ORT,"MyPlaceConnect - Ole Red Tishomingo (Import)
 MyPlaceConnect Update Customer Maseter ORT
 MyPlace Connect Update Master ORT",Active File Drop,--,,--,2022-11-09 00:13:00
-125,MyPlace Connect,MyPlaceConnect Ryman,"MyPlaceConnect - Ryman Auditorium (Import)
+105,MyPlace Connect,MyPlaceConnect Ryman,"MyPlaceConnect - Ryman Auditorium (Import)
 MyPlaceConnect Update Customer Master Ryman
 MyPlace Connect Update Master Ryman",Active File Drop,--,,--,2022-11-09 00:16:00
-126,NetSuite,NetSuite,"NetSuite Staging Import (Import)
+106,NetSuite,NetSuite,"NetSuite Staging Import (Import)
 NetSuite_POS
 NetSuite Update Customer Master",Active File Drop,--,Complete,2023-10-02 02:32:00,2023-10-02 02:32:00
-127,NetSuite,NetSuite 2016 to date,"Import All records from POS (Import)
+107,NetSuite,NetSuite 2016 to date,"Import All records from POS (Import)
 Netsuite Historical
 Netsuite Ongoing",Scheduled,2024-02-23 08:00:00,Complete,2024-02-22 08:06:00,2024-02-22 08:06:00
-128,NetSuite,NetsuitePOS_AllRecords,Update NetSuite_POS_AllRecords,Active File Drop,--,Complete,2024-02-22 03:32:00,2024-02-22 03:32:00
-129,MC_Activity,New Subscribers from 1_0,"New Subscribers from 1_0 (Import)
-New Subscribers from 1_0",Inactive File Drop,--,,--,2020-10-27 13:35:00
-130,Testing/Perficient test,newsletter verification,"Newsletter Ryman Verification
-Recommendation 1 Ryman v
-verf recomm 2
-verf recomm 3
-ver high level 1
-high level 2 verf
-high level 3 verfication
-2.2 high level ver
-3.2 high level ver
-2.3 high level ver
-3.3
-2.4
-3.4
-",Ready,--,Complete,2023-08-10 07:21:00,2023-08-10 07:21:00
-131,Marketing/Visitation,Next Visit,"TM Ryman Next Visit
+108,NetSuite,NetsuitePOS_AllRecords,Update NetSuite_POS_AllRecords,Active File Drop,--,Complete,2024-02-22 03:32:00,2024-02-22 03:32:00
+109,Marketing/Visitation,Next Visit,"TM Ryman Next Visit
 	TM Opry Next Visit
 AV Ryman Next Visit
 AV Opry Next Visit
@@ -780,24 +661,19 @@ AV ORO Next Visit
 Clear Next Opry Visit
 Next_Opry_Visit
 Next_Ryman_Visit_Date",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:36:00,2024-02-22 10:36:00
-132,OESP,November OESP,"Nashville_Opry_November_LY
+110,OESP,November OESP,"Nashville_Opry_November_LY
 Nashville_ACLRyman_November_LY
 TNRegion_ACLRyman_November_LY
 TNRegion_Opry_November_LY
 National_Opry_November_LY
 National_ACLRyman_November_LY",Paused Schedule,--,,--,2023-04-25 13:56:00
-133,OESP,October OESP,"Nashville_Opry_October_LY
+111,OESP,October OESP,"Nashville_Opry_October_LY
 Nashvillle_ACLRyman_October_LY
 TNRegion_ACLRyman_October_LY
 TNRegion_Opry_October_LY
 National_Opry_October_LY
 National_ACLRyman_October_LY",Paused Schedule,--,,--,2023-04-25 13:54:00
-134,Marketing,Ole Red BOTB - Add to Customer Master and Aggregate,"BOTB Add to Customer Master
-Add weekly BOTB to aggregate
-OR_BOTB_Share
-OR_BOTB_New_This_Week_Share
-Update Customer Shared",Ready,--,,--,2020-12-10 09:03:00
-135,Journeys/Ole Red,Ole Red Welcome Journey,"Ole Red Welcome Journey - Sync to Master
+112,Journeys/Ole Red,Ole Red Welcome Journey,"Ole Red Welcome Journey - Sync to Master
 Ole Red Welcome Journey Expired
 Ole Red Welcome Journey - Manual Uploads and Uncategorized
 Ole Red Welcome Journey - Forms
@@ -805,7 +681,7 @@ Ole Red Welcome Journey - WiFi
 Photobooth Welcome
 Ole Red Welcome Journey - Retail POS
 Ole Red Welcome Journey - Shows",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:38:00,2024-02-22 10:38:00
-136,One Time Requests,One time 3CTC Update,"3CTC7
+113,One Time Requests,One time 3CTC Update,"3CTC7
 3CTC8
 3CTC9
 3CTC10
@@ -835,66 +711,19 @@ Ole Red Welcome Journey - Shows",Scheduled,2024-02-22 11:30:00,Complete,2024-02-
 3CTC34
 3CTC35
 3CTC36",Ready,--,Complete,2023-11-03 16:42:00,2023-11-03 16:42:00
-137,One Time Requests,One Time Manual Forms_and_Sweeps Correction,Forms_and_Sweeps_Manual_Upload_05052023Correction (Import),Ready,--,Complete,2023-05-05 16:16:00,2023-05-05 16:16:00
-138,One Time Requests,One Time Manual Photobooth,"Photobooth Import (Import)
+114,One Time Requests,One Time Manual Forms_and_Sweeps Correction,Forms_and_Sweeps_Manual_Upload_05052023Correction (Import),Ready,--,Complete,2023-05-05 16:16:00,2023-05-05 16:16:00
+115,One Time Requests,One Time Manual Photobooth,"Photobooth Import (Import)
 Photobooth Staging
 Photobooth Update Allcontacts
 Photobooth Archive
 delete photobooth from fas
 Photobooth staging to forms and sweeps",Ready,--,Complete,2023-09-18 13:43:00,2023-09-18 13:43:00
-139,AudienceView,Opry & Ryman Tours (No PII),opry_ryman_tours_no_pii,Scheduled,,,,
-140,Journeys/Opry,Opry 10 Day Prior Email,Opry 10 Day Prior Email,Scheduled,2024-02-23 11:00:00,Error,2024-02-22 11:00:00,2024-02-22 11:00:00
-141,Data Factory Utility Automations,Opry Entertainment Group-645-520000018-PSHist#01,,Ready,--,,--,2023-05-24 11:15:00
-142,Data Factory Utility Automations,Opry Entertainment Group-645-520000018-PSHist#02,,Ready,--,Complete,2023-05-24 11:19:00,2023-05-24 11:19:00
-143,Data Factory Utility Automations,Opry Entertainment Group-645-520000018-PSMain,,Scheduled,2024-02-22 13:15:00,Complete,2024-02-21 13:25:00,2024-02-21 13:25:00
-144,Testing,opry Journey Test,"Sync Opry Welcome Dates to Master
-Opry Show Upsell
-Opry Tour Upsell
-Events Sold Out Opry
-Opry Welcome Journey Expired
-Opry Welcome Journey - Manual Uploads and Uncategorized
-Opry Welcome Journey - WiFi
-Opry Welcome Journey - Retail Ecomm Only
-Opry Welcome Journey - Retail POS Only
-Opry Purchase Journey Expired
-Opry Pre Journey Expired
-Opry Post Expired
-Opry Post Expired DE
-Opry Pre Arrival Journey Remove (Script)
-Opry Pre Arrival Matrix Remove (Script)
-Opry Purchase Journey Remove Users (Script)
-Opry Purchase Matrix Remove (Script)
-Opry Post Journey Remove (Script)
-Opry Post Matrix Remove (Script)
-Opry Post Matrix removal
-Opry Pre-Arrival Journey
-Opry Purchase Journey
-Opry Post Show Journey
-Opry Pre-Arrival Matrix
-Opry Purchase Journey Matrix
-Opry Post Show Matrix
-Pre Arrival Matrix - RYBS
-Pre Arrival Matrix - RYMM
-Product Matrix Update - RYMM
-Opry Purchase Matrix - RYBS
-Opry Post Matrix - RYMM
-Opry Post Matrix - RYBS
-Opry Purchase URL
-Opry Purchase Matrix URL
-Opry Arrival URL
-Opry Arrival Matrix URL
-Opry Post URL
-Opry Post Matrix URL
-Purchase Sold Out
-Purchase Matrix Sold Out
-Arrival Sold Out
-Arrival Matrix Sold Out
-Purchase Matrix Missing URL Clean-Up
-Arrival Matrix Missing URL Clean-Up
-Opry Arrival Audit
-Opry Post Audit
-Opry Purchase Audit",Ready,--,,--,2023-06-22 04:52:00
-145,Journeys/Opry,Opry Journeys,"Sync Opry Welcome Dates to Master
+116,AudienceView,Opry & Ryman Tours (No PII),opry_ryman_tours_no_pii,Scheduled,,,,
+117,Journeys/Opry,Opry 10 Day Prior Email,Opry 10 Day Prior Email,Scheduled,2024-02-23 11:00:00,Error,2024-02-22 11:00:00,2024-02-22 11:00:00
+118,Data Factory Utility Automations,Opry Entertainment Group-645-520000018-PSHist#01,,Ready,--,,--,2023-05-24 11:15:00
+119,Data Factory Utility Automations,Opry Entertainment Group-645-520000018-PSHist#02,,Ready,--,Complete,2023-05-24 11:19:00,2023-05-24 11:19:00
+120,Data Factory Utility Automations,Opry Entertainment Group-645-520000018-PSMain,,Scheduled,2024-02-22 13:15:00,Complete,2024-02-21 13:25:00,2024-02-21 13:25:00
+121,Journeys/Opry,Opry Journeys,"Sync Opry Welcome Dates to Master
 Opry Show Upsell
 Opry Tour Upsell
 Events Sold Out Opry
@@ -944,20 +773,20 @@ Updating 3 Attributes from All contacts Step 1
 Opry Arrival Audit
 Opry Post Audit
 Opry Purchase Audit",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:42:00,2024-02-22 10:42:00
-146,Journeys/Opry,Opry Matrix 1 Day,"Opry Arrival Journey 1 day
+122,Journeys/Opry,Opry Matrix 1 Day,"Opry Arrival Journey 1 day
 Opry Arrival Matrix 1 day
 Updating Attributes 1 day from All contacts Step 1",Scheduled,2024-02-22 11:45:00,Complete,2024-02-22 10:46:00,2024-02-22 10:46:00
-147,Journeys/Opry,Opry Matrix 10 days,"Opry Arrival Journey 10 days
+123,Journeys/Opry,Opry Matrix 10 days,"Opry Arrival Journey 10 days
 Opry Arrival Matrix 10 days
 Updating Attributes 10 days from All contacts Step 1",Scheduled,2024-02-22 11:45:00,Complete,2024-02-22 10:46:00,2024-02-22 10:46:00
-148,Journeys/Opry,Opry Matrix 7 Days,"Opry Arrival Journey 7 days
+124,Journeys/Opry,Opry Matrix 7 Days,"Opry Arrival Journey 7 days
 Opry Arrival Matrix 7 days
 Updating Attributes 7 days from All contacts Step 1",Paused Schedule,--,,--,2023-07-26 08:42:00
-149,Journeys/Opry,Opry Repeat Journey Daily Run,"Remove from Repeat
+125,Journeys/Opry,Opry Repeat Journey Daily Run,"Remove from Repeat
 Remove from Repeat Staging
 Remove from Repeat Application
 Repeat Visitor journey Remove purchasers",Scheduled,2024-02-23 00:30:00,Complete,2024-02-22 00:34:00,2024-02-22 00:34:00
-150,Journeys/Opry,Opry Repeat Journey Monthly Run,"Opry Show Repeat Visit
+126,Journeys/Opry,Opry Repeat Journey Monthly Run,"Opry Show Repeat Visit
 Opry Tour Repeat Visit
 Opry Show Repeat Visit - without tour
 Opry Tour Repeat Visit - without show
@@ -970,119 +799,18 @@ Find Repeats not on AllSubs
 Repeats to All Subs (Extract)
 Repeats to All Subs (Transfer)
 Repeat Visit to All Subs (Import)",Scheduled,2024-03-05 01:30:00,Complete,2024-02-13 10:23:00,2024-02-13 10:23:00
-151,Testing/Perficient test,Opry Test,"Sync Opry Welcome Dates to Master
-Opry Show Upsell
-Opry Tour Upsell
-Events Sold Out Opry
-Opry Welcome Journey Expired
-Opry Welcome Journey - Manual Uploads and Uncategorized
-Opry Welcome Journey - Web Forms and Sweeps
-Opry Welcome Journey - WiFi
-Opry Welcome Journey - Retail Ecomm Only
-Opry Welcome Journey - Retail POS Only
-Updating 3 Attributes from All contacts Step 1 to welcome
-Opry Purchase Journey Expired
-Opry Pre Journey Expired
-Opry Post Expired
-Opry Post Expired DE
-Opry Pre Arrival Journey Remove (Script)
-Opry Pre Arrival Matrix Remove (Script)
-Opry Purchase Journey Remove Users (Script)
-Opry Purchase Matrix Remove (Script)
-Opry Post Journey Remove (Script)
-Opry Post Matrix Remove (Script)
-Opry Post Matrix removal
-Opry Pre-Arrival Journey
-Opry Purchase Journey
-Opry Post Show Journey
-Opry Pre-Arrival Matrix
-Opry Purchase Journey Matrix
-Opry Post Show Matrix
-Pre Arrival Matrix - RYBS
-Pre Arrival Matrix - RYMM
-Product Matrix Update - RYMM
-Opry Purchase Matrix - RYBS
-Opry Post Matrix - RYMM
-Opry Post Matrix - RYBS
-Opry Purchase URL
-Opry Purchase Matrix URL
-Opry Arrival URL
-Opry Arrival Matrix URL
-Opry Post URL
-Opry Post Matrix URL
-Purchase Sold Out
-Purchase Matrix Sold Out
-Arrival Sold Out
-Arrival Matrix Sold Out
-Purchase Matrix Missing URL Clean-Up
-Arrival Matrix Missing URL Clean-Up
-Updating 3 Attributes from All contacts Step 1
-Opry Arrival Audit
-Opry Post Audit
-Opry Purchase Audit",Ready,--,Complete,2023-06-27 09:21:00,2023-06-27 09:21:00
-152,,Opry_Photo_Package_AllContacts_Update,"Opry_Photo_Package (Import)
+127,,Opry_Photo_Package_AllContacts_Update,"Opry_Photo_Package (Import)
 Opry_Photo_Package_AllContacts_Update",Active File Drop,--,Complete,2024-02-15 08:36:00,2024-02-15 08:36:00
-153,Testing/RYMANSFMC-351,Opry_SMS_Test,"Sync Opry Welcome Dates to Master
-Opry Show Upsell
-Opry Tour Upsell
-Events Sold Out Opry
-Opry Welcome Journey Expired
-Opry Welcome Journey - Manual Uploads and Uncategorized
-Opry Welcome Journey - Web Forms and Sweeps
-Opry Welcome Journey - WiFi
-Opry Welcome Journey - Retail Ecomm Only
-Opry Welcome Journey - Retail POS Only
-Updating 3 Attributes from All contacts Step 1 to welcome
-Opry Purchase Journey Expired
-Opry Pre Journey Expired
-Opry Post Expired
-Opry Post Expired DE
-Opry Pre Arrival Journey Remove (Script)
-Opry Pre Arrival Matrix Remove (Script)
-Opry Purchase Journey Remove Users (Script)
-Opry Purchase Matrix Remove (Script)
-Opry Post Journey Remove (Script)
-Opry Post Matrix Remove (Script)
-Opry Post Matrix removal
-Opry Pre-Arrival Journey
-Opry Purchase Journey
-Opry Post Show Journey
-Opry Pre-Arrival Matrix
-Opry Purchase Journey Matrix
-Opry Post Show Matrix
-Pre Arrival Matrix - RYBS
-Pre Arrival Matrix - RYMM
-Product Matrix Update - RYMM
-Opry Purchase Matrix - RYBS
-Opry Post Matrix - RYMM
-Opry Post Matrix - RYBS
-Opry Purchase URL
-Opry Purchase Matrix URL
-Opry Arrival URL
-Opry Arrival Matrix URL
-Opry Post URL
-Opry Post Matrix URL
-Purchase Sold Out
-Purchase Matrix Sold Out
-Arrival Sold Out
-Arrival Matrix Sold Out
-Purchase Matrix Missing URL Clean-Up
-Arrival Matrix Missing URL Clean-Up
-Opry Arrival Audit
-Opry Post Audit
-Opry Purchase Audit",Ready,--,,--,2023-06-01 08:23:00
-154,Journeys/Opry,Opry-90 day-event-ticket-alert,Opry-90 day-event-ticket-alert,Scheduled,2024-02-23 09:00:00,Complete,2024-02-22 09:00:00,2024-02-22 09:00:00
-155,Testing,Perficient Automation Test Container,Update Customer Shared,Ready,--,,--,2020-10-15 13:40:00
-156,One Time Requests,Photobooth Backfill,"Photbooth Backfill (Import)
+128,Journeys/Opry,Opry-90 day-event-ticket-alert,Opry-90 day-event-ticket-alert,Scheduled,2024-02-23 09:00:00,Complete,2024-02-22 09:00:00,2024-02-22 09:00:00
+129,One Time Requests,Photobooth Backfill,"Photbooth Backfill (Import)
 Photobooth_Backfill_to_Staging",Ready,--,Complete,2024-01-10 12:33:00,2024-01-10 12:33:00
-157,Photobooth,Photobooth Processing,"Photobooth Import (Import)
+130,Photobooth,Photobooth Processing,"Photobooth Import (Import)
 Photobooth Staging
 Photobooth Update Allcontacts
 Photobooth Archive
 Photobooth staging to forms and sweeps",Active File Drop,--,Complete,2024-02-08 14:41:00,2024-02-08 14:41:00
-158,Testing/Perficient test,Post Purchase Journey ACL test,Post Purchase Step 1,Ready,--,Complete,2023-05-15 06:13:00,2023-05-15 06:13:00
-159,Brokers,Potential Brokers,identify_potential_brokers,Scheduled,2024-02-25 00:00:00,Complete,2024-02-18 00:00:00,2024-02-18 00:00:00
-160,Domain Generation/Purchaser,Purchaser Consolidation,"ticket_purchaser_first_and_last_dates
+131,Brokers,Potential Brokers,identify_potential_brokers,Scheduled,2024-02-25 00:00:00,Complete,2024-02-18 00:00:00,2024-02-18 00:00:00
+132,Domain Generation/Purchaser,Purchaser Consolidation,"ticket_purchaser_first_and_last_dates
 retail_purchasers_first_and_last_purchase_dates
 combine_all_retail_purchases
 combine_all_ticket_purchases
@@ -1090,56 +818,28 @@ combine_first_and_last_purchasers
 combine_all_purchasers
 Populate_retail_purchasers_shared
 Populate_ticket_purchasers_shared",Scheduled,--,Complete,2024-02-08 12:51:00,2024-02-08 12:51:00
-161,Ready Pay,Ready Pay Optins,"Ready Pay Import (Import)
+133,Ready Pay,Ready Pay Optins,"Ready Pay Import (Import)
 Ready_Pay_Optins
 Ready Pay Update to AllContacts_Step1",Active File Drop,--,Complete,2023-06-12 09:38:00,2023-06-12 09:38:00
-162,Datorama,Repeat Purchaser,"Opry Show Repeaters
+134,Datorama,Repeat Purchaser,"Opry Show Repeaters
 Opry_Tour_Repeaters
 Ryman_Show_Repeaters
 Ryman_Tour_Repeaters
 Repeaters_to_Dato(Extract)
 Repeaters_to_dato (Transfer)",Scheduled,2024-02-23 04:00:00,Complete,2024-02-22 04:09:00,2024-02-22 04:09:00
-163,AXS,Rerun AXS Customer Transaction from AXS Admission Detail Set Status,"AXS Admission Detail Set Status
-AXS Order Contact Total - Ongoing - Insert
-AXS Order Contact Total - Ongoing - Update
-AudienceView Customer Type - Ongoing
-AudienceView Order Contact Total - Ongoing
-Two Show Nights
-Add Early Show to Tickets
-Datorama - Non DG-OG
-Datorama - AudienceView DG-OG
-Datorama - AudienceView (Extract)
-Datorama - AudienceView (Transfer)",Ready,--,Complete,2023-05-22 14:25:00,2023-05-22 14:25:00
-164,Marketing,Restore Yesterdays Manual Forms and Sweeps,Restore Yesterdays Manual Forms and Sweeps,Ready,--,Complete,2024-01-03 13:06:00,2024-01-03 13:09:00
-165,Rex Direct,Rex Direct,"REX Direct Import (Import)
+135,Marketing,Restore Yesterdays Manual Forms and Sweeps,Restore Yesterdays Manual Forms and Sweeps,Ready,--,Complete,2024-01-03 13:06:00,2024-01-03 13:09:00
+136,Rex Direct,Rex Direct,"REX Direct Import (Import)
 Rex Direct Staging
 Rex Direct Standard Input
 Rex Direct Share",Active File Drop,--,Complete,2024-02-22 04:07:00,2024-02-22 04:07:00
-166,One Time Requests,Rex Direct Purchaser Pull,Rex_Direct_Purchaser_Pull,Ready,--,Complete,2024-01-05 09:05:00,2024-01-05 09:05:00
-167,Rex Direct,Rex Reporting,"Rex reporting (Extract)
+137,One Time Requests,Rex Direct Purchaser Pull,Rex_Direct_Purchaser_Pull,Ready,--,Complete,2024-01-05 09:05:00,2024-01-05 09:05:00
+138,Rex Direct,Rex Purchasers,Rex_Direct_Purchaser_Pull,Scheduled,,Complete,2024-04-15 14:35:00,2024-04-15 14:35:00
+139,Rex Direct,Rex Reporting,"Rex reporting (Extract)
 Rex reporting (Transfer)",Scheduled,2024-02-22 13:00:00,Complete,2024-02-21 13:00:00,2024-02-21 13:00:00
-168,One Time Requests,Run Activities Manually,,Ready,--,Complete,2024-02-21 09:12:00,2024-02-21 09:48:00
-169,,Ryman Lounge Count Queries ,"Ryman Lounge Count Per Day
+140,One Time Requests,Run Activities Manually,,Ready,--,Complete,2024-02-21 09:12:00,2024-02-21 09:48:00
+141,,Ryman Lounge Count Queries ,"Ryman Lounge Count Per Day
 Ryman_Day_0_Lounge_Count",Scheduled,2024-02-23 07:00:00,Complete,2024-02-22 07:02:00,2024-02-22 07:02:00
-170,Testing/Perficient test,Ryman Newsletter show - test,"Clear Ryman Show Reco
-Ryman_Reco_Already_Bought
-Ryman Newsletter Show Recommendation 1
-Ryman Newsletter Show Recommendation 2
-Ryman Newsletter Show Recommendation 3
-Ryman Newsletter Show Recommendation - High Level 1
-Ryman Newsletter Show Recommendation - High Level 2
-Ryman Newsletter Show Recommendation - High Level 3
-Ryman Newsletter Show Recommendation - High Level 2.2
-Ryman Newsletter Show Recommendation - High Level 3.2
-Ryman Newsletter Show Recommendation - High Level 2.3
-Ryman Newsletter Show Recommendation - High Level 3.3
-Ryman Newsletter Show Recommendation - High Level 3.4
-Ryman Newsletter Show Recommendation - High Level 2.4
-Ryman Newsletter Show Recommendation - No Genre Match
-Ryman Newsletter Show Recommendation 1 - Fall Back
-Ryman Newsletter Show Recommendation 2 - Fall Back
-Ryman Newsletter Show Recommendation 3 - Fall Back",Ready,--,,--,2023-08-10 04:47:00
-171,Marketing/Recommendations,Ryman Newsletter Show Recommendation,"Clear Ryman Show Reco
+142,Marketing/Recommendations,Ryman Newsletter Show Recommendation,"Clear Ryman Show Reco
 Ryman_Reco_Already_Bought
 Ryman Newsletter Show Recommendation 1
 Ryman Newsletter Show Recommendation 2
@@ -1157,7 +857,7 @@ Ryman Newsletter Show Recommendation - No Genre Match
 Ryman Newsletter Show Recommendation 1 - Fall Back
 Ryman Newsletter Show Recommendation 2 - Fall Back
 Ryman Newsletter Show Recommendation 3 - Fall Back",Scheduled,2024-02-23 05:30:00,Complete,2024-02-22 05:43:00,2024-02-22 05:43:00
-172,Marketing/Recommendations,Ryman Newsletter V2,"Newsletter Ryman v2
+143,Marketing/Recommendations,Ryman Newsletter V2,"Newsletter Ryman v2
 Ryman_Reco_Already_Bought
 Ryman Newsletter Show Recommendation 1
 Ryman Newsletter Show Recommendation 2
@@ -1175,31 +875,7 @@ Ryman Newsletter Show Recommendation - No Genre Match V2
 Ryman Newsletter Show Recommendation 1 - Fall Back V2
 Ryman Newsletter Show Recommendation 2 - Fall Back V2
 Ryman Newsletter Show Recommendation 3 - Fall Back V2",Paused Schedule,--,Complete,2024-02-02 05:44:00,2024-02-02 11:04:00
-173,Testing/Perficient test,Ryman post,"Remove From Ryman Post Journey
-Ryman Post Journey Removal Staging
-Ryman Post Journey Removal Application
-Ryman Post Matrix Removal Staging
-Ryman Post Journey Matrix Removal Application
-Ryman Post Journey
-Ryman Post Matrix
-Ryman Post Matrix - GOOS
-Ryman Post Matrix - OHBS
-Ryman Sold Out
-Ryman Post Matrix Flag PLP
-Ryman Post Matrix Email Attributes
-Ryman Post Show Rec 1
-Ryman Post Show Rec 2
-Ryman Post Show Rec 3
-Ryman Post Show Rec High Level 1
-Ryman Post Show Rec High Level 2
-Ryman Post Show Rec High Level 3
-Ryman Post Show Rec Fallback 1
-Ryman Post Show Rec Fallback 2
-Ryman Post Show Rec Fallback 3
-Ryman Post Audit
-Ryman Post Matrix - Update Rec Order
-Updating 3 Attributes from All contacts Step 1",Ready,--,Complete,2023-06-27 09:16:00,2023-06-27 09:16:00
-174,Journeys/Ryman,Ryman Post Journey,"Remove From Ryman Post Journey
+144,Journeys/Ryman,Ryman Post Journey,"Remove From Ryman Post Journey
 Ryman Post Journey Removal Staging
 Ryman Post Journey Removal Application
 Ryman Post Matrix Removal Staging
@@ -1223,53 +899,16 @@ Ryman Post Show Rec Fallback 3
 Ryman Post Audit
 Ryman Post Matrix - Update Rec Order
 Updating 3 Attributes from All contacts Step 2",Scheduled,2024-02-23 08:30:00,Complete,2024-02-22 08:41:00,2024-02-22 08:41:00
-175,Journeys/Ryman,Ryman Pre Arrival 1 day,"Ryman Pre Arrival 1 day
+145,Journeys/Ryman,Ryman Pre Arrival 1 day,"Ryman Pre Arrival 1 day
 Ryman Arrival Matrix 1 day
 Updating 1 Day Arrival Rymanweb SMS Optin Attribute",Paused Schedule,--,Complete,2023-10-04 05:07:00,2023-10-04 13:49:00
-176,Journeys/Ryman,Ryman Pre Arrival 10 days,"Ryman Pre Arrival 10 day
+146,Journeys/Ryman,Ryman Pre Arrival 10 days,"Ryman Pre Arrival 10 day
 Ryman Arrival Matrix 10 day
 Updating 10 Day Arrival Rymanweb SMS Optin Attribute",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:06:00,2024-02-22 06:06:00
-177,Journeys/Ryman,Ryman Pre Arrival 7 days,"Ryman Pre Arrival 7 day
+147,Journeys/Ryman,Ryman Pre Arrival 7 days,"Ryman Pre Arrival 7 day
 Ryman Arrival Matrix 7 day
 Updating 7 Day Arrival Rymanweb SMS Optin Attribute",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:06:00,2024-02-22 06:06:00
-178,Testing/Perficient test,ryman pre arrival test,"Clear Ryman Arrival Journey DE 1 Day
-Clear Ryman Arrival Journey DE 7 Day
-Ryman Arrival Journey
-Ryman Arrival Journey 7 Day
-Ryman Arrival Matrix
-Ryman Arrival Matrix 7 Day
-Ryman Arrival Matrix - GOOS
-Ryman Arrival Matrix - GOOS 7 Day
-Ryman Arrival Matrix - OHBS
-Ryman Arrival Matrix - OHBS 7 Day
-Ryman Sold Out
-Ryman Arrival Matrix Flag PLP
-Ryman Arrival Matrix Flag PLP 7 Day
-Ryman Arrival Matrix Email Attributes
-Ryman Arrival Matrix Email Attributes 7 Day
-Ryman Arrival Show Recommendation 1
-Ryman Arrival Show Recommendation 1 7 Day
-Ryman Arrival Show Recommendation 2
-Ryman Arrival Show Recommendation 2 7 Day
-Ryman Arrival Show Recommendation 3
-Ryman Arrival Show Recommendation High Level 1 7 Day
-Ryman Arrival Show Recommendation High Level 2
-Ryman Arrival Show Recommendation High Level 2 7 Day
-Ryman Arrival Show Recommendation High Level 3
-Ryman Arrival Show Recommendation High Level 3 Day 7
-Ryman Arrival Show Recommendation Fall Back 1
-Ryman Arrival Show Recommendation Fall Back 1 7 day
-Ryman Arrival Show Recommendation Fall Back 2
-Ryman Arrival Show Recommendation Fall Back 2 7 Day
-Ryman Arrival Show Recommendation Fall Back 3
-Ryman Arrival Show Recommendation Fall Back 3 7 day
-Attribute Audit Arrival
-Attribute Audit Arrival 7 Day
-Ryman Arrival Matrix - Update Rec Order
-Ryman Arrival Matrix - Update Rec Order 7 Day
-Updating 1 Day Arrival Rymanweb SMS Optin Attribute
-Updating 7 Days Arrival Rymanweb SMS Optin Attribute",Ready,--,,--,2023-06-29 01:27:00
-179,Journeys/Ryman,Ryman Pre-Arrival Journey,"Clear Ryman Arrival Journey DE 1 Day
+148,Journeys/Ryman,Ryman Pre-Arrival Journey,"Clear Ryman Arrival Journey DE 1 Day
 Clear Ryman Arrival Journey DE 7 Day
 Ryman Arrival Journey
 Ryman Arrival Journey 7 Day
@@ -1306,7 +945,7 @@ Ryman Arrival Matrix - Update Rec Order
 Ryman Arrival Matrix - Update Rec Order 7 Day
 Updating 1 Day Arrival Rymanweb SMS Optin Attribute
 Updating 7 Days Arrival Rymanweb SMS Optin Attribute",Scheduled,2024-02-23 09:00:00,Complete,2024-02-22 09:18:00,2024-02-22 09:18:00
-180,Journeys/Ryman,Ryman Purchase and Welcome Journey,"Sync Ryman to Master
+149,Journeys/Ryman,Ryman Purchase and Welcome Journey,"Sync Ryman to Master
 Ryman Show Upsell
 Ryman Sold Out Events
 Ryman Tour Upsell
@@ -1338,73 +977,18 @@ Show Purchase Recommendation Fall Back 3
 Attribute Audit Purchase
 Ryman Purchase Matrix - Update Rec Order
 RymanSMS",Running,2024-02-22 12:00:00,,--,2024-02-22 11:00:00
-181,Ad Studio,Ryman Show No PLP,Ryman Purchase No PLP,Scheduled,2024-02-23 09:00:00,Complete,2024-02-22 09:01:00,2024-02-22 09:01:00
-182,Testing/Perficient test,RYMAN WELCOME TEST,"Sync Ryman to Master
-Ryman Show Upsell
-Ryman Sold Out Events
-Ryman Tour Upsell
-Ryman Welcome Journey Expired
-Remove Welcome Journey Expired (Script)
-Ryman Welcome Journey - Web Forms and Sweeps
-Ryman Welcome Journey - WiFi
-Ryman Welcome Journey - Retail POS Only
-Updating Ryman SMS Optin Status field
-Ryman Purchase Journey Expired
-Ryman Remove Purchase Journey (Script)
-Ryman Remove Purchase Matrix (Script)
-Ryman Purchase Journey
-Ryman Purchase Journey Matrix
-Ryman Purchase Matrix - GOOS
-Ryman Purchase Matrix - OHBS
-Ryman Sold Out
-Ryman Purchase Journey Matrix Flag PLP
-Ryman Purchase Journey Matrix Email Attributes
-Ryman Purchase Show Recommendation 1
-Ryman Purchase Show Recommendation 2
-Ryman Purchase Show Recommendation 3
-Show Purchase Recommendation High Level 1
-Show Purchase Recommendation High Level 2
-Show Purchase Recommendation High Level 3
-Show Purchase Recommendation Fall Back 1
-Show Purchase Recommendation Fall Back 2
-Show Purchase Recommendation Fall Back 3
-Attribute Audit Purchase
-Ryman Purchase Matrix - Update Rec Order
-RymanSMS",Ready,--,Complete,2023-06-27 09:10:00,2023-06-27 09:10:00
-183,,Ryman_Photo_Package_AllContacts_Update,"Ryman_Photo_Package (Import)
+150,Ad Studio,Ryman Show No PLP,Ryman Purchase No PLP,Scheduled,2024-02-23 09:00:00,Complete,2024-02-22 09:01:00,2024-02-22 09:01:00
+151,,Ryman_Photo_Package_AllContacts_Update,"Ryman_Photo_Package (Import)
 Ryman_Photo_Package_AllContacts_Update",Active File Drop,--,Complete,2024-02-15 08:36:00,2024-02-15 08:36:00
-184,Testing/Perficient test,rymn_post_Journey_test,"Remove From Ryman Post Journey
-Ryman Post Journey Removal Staging
-Ryman Post Journey Removal Application
-Ryman Post Matrix Removal Staging
-Ryman Post Journey Matrix Removal Application
-Ryman Post Journey
-Ryman Post Matrix
-Ryman Post Matrix - GOOS
-Ryman Post Matrix - OHBS
-Ryman Sold Out
-Ryman Post Matrix Flag PLP
-Ryman Post Matrix Email Attributes
-Ryman Post Show Rec 1
-Ryman Post Show Rec 2
-Ryman Post Show Rec 3
-Ryman Post Show Rec High Level 1
-Ryman Post Show Rec High Level 2
-Ryman Post Show Rec High Level 3
-Ryman Post Show Rec Fallback 1
-Ryman Post Show Rec Fallback 2
-Ryman Post Show Rec Fallback 3
-Ryman Post Audit
-Ryman Post Matrix - Update Rec Order",Ready,--,,--,2023-06-29 05:05:00
-185,OESP,September OESP,"TNRegion_Opry_September_LY
+152,OESP,September OESP,"TNRegion_Opry_September_LY
 National_Opry_September_LY
 National_ACLRyman_September_LY
 TNRegion_ACLRyman_September_LY
 Nashville_Opry_September_LY
 Nashville_ACLRyman_September_LY",Paused Schedule,--,,--,2023-04-25 14:08:00
-186,Marketing/List Generation,Shared DE List Generation...,"Opry Show No Purchase Last 120 Days
+153,Marketing/List Generation,Shared DE List Generation...,"Opry Show No Purchase Last 120 Days
 Opry Show No Purchase last 90 Days",Scheduled,2024-02-23 01:00:00,Complete,2024-02-22 01:01:00,2024-02-22 01:01:00
-187,Sharing,Sharing,"Update Customer Shared
+154,Sharing,Sharing,"Update Customer Shared
 TicketMaster_Sharing
 NetSuite_Sharing
 Axciom Data Sharing
@@ -1424,59 +1008,18 @@ AudienceView_Customer_Type_Sharing
 Seed Share
 AudienceView_Ticket_Admission_Detail_Share
 AudienceView_Cancelled_Orders_Share",Running,2024-02-22 14:00:00,,--,2024-02-22 11:00:00
-188,Sharing/Shopify,Shopify Opt-ins,Shopify to Shopify Opt-Ins,Scheduled,2024-02-23 01:30:00,Complete,2024-02-22 01:30:00,2024-02-22 01:30:00
-189,Testing/RYMANSFMC-351,Siva_AXS Artist,"AXS Artist Import (Import)
-AXS Historical Artist",Building,--,,--,2023-05-18 03:54:00
-190,Testing/RYMANSFMC-351,Siva_Test_01,"Sync Ryman to Master
-Ryman Show Upsell
-Ryman Sold Out Events
-Ryman Tour Upsell
-Ryman Welcome Journey Expired
-Remove Welcome Journey Expired (Script)
-Ryman Welcome Journey - Web Forms and Sweeps
-Ryman Welcome Journey - WiFi
-Ryman Welcome Journey - Retail POS Only
-Updating Ryman SMS Optin Status field
-Ryman Purchase Journey Expired
-Ryman Remove Purchase Journey (Script)
-Ryman Remove Purchase Matrix (Script)
-Ryman Purchase Journey
-Ryman Purchase Journey Matrix
-Ryman Purchase Matrix - GOOS
-Ryman Purchase Matrix - OHBS
-Ryman Sold Out
-Ryman Purchase Journey Matrix Flag PLP
-Ryman Purchase Journey Matrix Email Attributes
-Ryman Purchase Show Recommendation 1
-Ryman Purchase Show Recommendation 2
-Ryman Purchase Show Recommendation 3
-Show Purchase Recommendation High Level 1
-Show Purchase Recommendation High Level 2
-Show Purchase Recommendation High Level 3
-Show Purchase Recommendation Fall Back 1
-Show Purchase Recommendation Fall Back 2
-Show Purchase Recommendation Fall Back 3
-Attribute Audit Purchase
-Ryman Purchase Matrix - Update Rec Order
-RymanSMS",Ready,--,,--,2023-05-17 22:52:00
-191,Testing/RYMANSFMC-351,Siva_TicketMaster to Ticket Detail,"Ticketmaster Tickets to Ticket Detail
-TM Staging to Admission Detail
-Ticketmaster Email to contact history
-TM Contact Staging to Contact to date",Ready,--,,--,2023-05-18 03:24:00
-192,Testing/RYMANSFMC-351,Siva_Ticketmaster_Import,"TicketMaster Import (Import)
-TicketMaster
-TicketMaster Update Customer Master",Building,--,,--,2023-05-18 02:48:00
-193,SMS,SMS_Delete_Duplicate_Contacts,"SMS_Delete_Duplicate_Contacts (Script)
+155,Sharing/Shopify,Shopify Opt-ins,Shopify to Shopify Opt-Ins,Scheduled,2024-02-23 01:30:00,Complete,2024-02-22 01:30:00,2024-02-22 01:30:00
+156,SMS,SMS_Delete_Duplicate_Contacts,"SMS_Delete_Duplicate_Contacts (Script)
 SMS_Duplicate_Contacts_2of2 (Script)",Ready,--,Complete,2024-02-22 00:50:00,2024-02-22 00:50:00
-194,,Spotify Automation,Spotify Data Import (Import),Active File Drop,--,,--,2024-01-22 16:44:00
-195,All Contacts Cleanup,State and Coutry Auto Append,"City_Lookup
+157,,Spotify Automation,Spotify Data Import (Import),Active File Drop,--,,--,2024-01-22 16:44:00
+158,All Contacts Cleanup,State and Coutry Auto Append,"City_Lookup
 State_Lookup
 Country_Lookup",Scheduled,2024-02-22 15:30:00,Complete,2024-02-15 15:33:00,2024-02-15 15:33:00
-196,MC_Activity,Status Sync,"Status Sync to All Subscribers
+159,MC_Activity,Status Sync,"Status Sync to All Subscribers
 Unsubscribes to All Subscribers (Extract)
 Unsubscribes to All Subscribers (Transfer)
 Unsubscribes to All Subscribers (Import)",Scheduled,2024-02-23 03:30:00,Complete,2024-02-22 03:34:00,2024-02-22 03:34:00
-197,,Sweeps_Analysis,"axs_ecomm_data_pull
+160,,Sweeps_Analysis,"axs_ecomm_data_pull
 netsuite_pos_ecomm_data_pull
 av_ecomm_data_pull
 shopify_ecomm_data_pull
@@ -1484,307 +1027,7 @@ shopify_pos_ecomm_data_pull
 magento_ecomm_data_pull
 Sweep_Entrant_Purchase_Lifecycle
 Ecomm_Purchaser_Profile_Overwrite",Scheduled,2024-02-25 00:00:00,Complete,2024-02-18 00:06:00,2024-02-18 00:06:00
-198,,TEST - Sharing,"Update Customer Shared
-TicketMaster_Sharing
-NetSuite_Sharing
-Axciom Data Sharing
-Forms and Sweeps Reporting Share
-AV Artist Lineup Share
-Forms and Sweeps Share
-Magento Share
-Mandolin_Trans_Share
-AudienceView_Order_Contact_Sharing
-AudienceView_Order_Charges_Sharing
-AudienceView_Order_Admission_Charges_Sharing
-AudienceView_Order_Admission_Sharing
-AudienceView_Misc_Items_Sales_Sharing
-AudienceView_Misc_Item_Charges_Sharing
-AudienceView_Events_Sharing
-AudienceView_Customer_Type_Sharing
-Seed Share
-AudienceView_Ticket_Admission_Detail_Share
-AudienceView_Cancelled_Orders_Share
-AXS Artist Lineup Share",Ready,--,,--,2023-04-04 09:22:00
-199,Testing/Perficient test,test AXS,"dataroma
-step2",Ready,--,Complete,2023-06-12 10:54:00,2023-06-12 10:54:00
-200,Testing/Perficient test,TEST AXS Customer Transaction,"test_import (Import)
-TEST_AXS Historical Customer Transactions
-TEST_NewContactsToAppend
-TEST_AXS_Order_Contact_Append_Customer_Master
-TEST_AXS_Order_Contact_Update_Customer_Master
-TEST_AXS Pre Admission Detail
-TEST_AXS Admission Detail
-TEST_AXS Admission Detail Set Status
-TEST_AXS Order Contact Total - Ongoing - Insert
-TEST_AXS Order Contact Total - Ongoing - Update
-TEST_AudienceView Customer Type - Ongoing
-TEST_Two Show Nights
-TEST_Add Early Show to Tickets
-TEST_Order_Event_Prefix
-TEST_Datorama - Non DG-OG
-TEST_Datorama - AudienceView DG-OG",Ready,--,Complete,2023-06-12 18:23:00,2023-06-13 15:43:00
-201,,test axs dataroma,test dataroma,Ready,--,Complete,2023-07-14 01:28:00,2023-07-14 01:28:00
-202,Testing/Perficient test,Test post visit,"Remove From Ryman Post Journey
-Ryman Post Journey Removal Staging
-Ryman Post Journey Removal Application
-Ryman Post Matrix Removal Staging
-Ryman Post Journey Matrix Removal Application
-Ryman Post Journey
-Ryman Post Matrix
-Ryman Post Matrix - GOOS
-Ryman Post Matrix - OHBS
-Ryman Sold Out
-Ryman Post Matrix Flag PLP
-Ryman Post Matrix Email Attributes
-Ryman Post Show Rec 1
-Ryman Post Show Rec 2
-Ryman Post Show Rec 3
-Ryman Post Show Rec High Level 1
-Ryman Post Show Rec High Level 2
-Ryman Post Show Rec High Level 3
-Ryman Post Show Rec Fallback 1
-Ryman Post Show Rec Fallback 2
-Ryman Post Show Rec Fallback 3
-Ryman Post Audit
-Ryman Post Matrix - Update Rec Order",Ready,--,,--,2023-05-23 03:10:00
-203,Testing/RYMANSFMC-351,Test Ryman,"Clear Ryman Arrival Journey DE 1 Day
-Clear Ryman Arrival Journey DE 7 Day
-Ryman Arrival Journey
-Ryman Arrival Journey 7 Day
-Ryman Arrival Matrix
-Ryman Arrival Matrix 7 Day
-Ryman Arrival Matrix - GOOS
-Ryman Arrival Matrix - GOOS 7 Day
-Ryman Arrival Matrix - OHBS
-Ryman Arrival Matrix - OHBS 7 Day
-Ryman Sold Out
-Ryman Arrival Matrix Flag PLP
-Ryman Arrival Matrix Flag PLP 7 Day
-Ryman Arrival Matrix Email Attributes
-Ryman Arrival Matrix Email Attributes 7 Day
-Ryman Arrival Show Recommendation 1
-Ryman Arrival Show Recommendation 1 7 Day
-Ryman Arrival Show Recommendation 2
-Ryman Arrival Show Recommendation 2 7 Day
-Ryman Arrival Show Recommendation 3
-Ryman Arrival Show Recommendation High Level 1 7 Day
-Ryman Arrival Show Recommendation High Level 2
-Ryman Arrival Show Recommendation High Level 2 7 Day
-Ryman Arrival Show Recommendation High Level 3
-Ryman Arrival Show Recommendation High Level 3 Day 7
-Ryman Arrival Show Recommendation Fall Back 1
-Ryman Arrival Show Recommendation Fall Back 1 7 day
-Ryman Arrival Show Recommendation Fall Back 2
-Ryman Arrival Show Recommendation Fall Back 2 7 Day
-Ryman Arrival Show Recommendation Fall Back 3
-Ryman Arrival Show Recommendation Fall Back 3 7 day
-Attribute Audit Arrival
-Attribute Audit Arrival 7 Day
-Ryman Arrival Matrix - Update Rec Order
-Ryman Arrival Matrix - Update Rec Order 7 Day
-Updating 1 Day Arrival Rymanweb SMS Optin Attribute
-Updating 7 Days Arrival Rymanweb SMS Optin Attribute",Ready,--,,--,2023-07-26 04:49:00
-204,Testing,test_acl_attributes,"TicketMaster Import ACL (Import)
-TicketMaster ACL Update Customer Master - New to Database
-TicketMaster ACL Update Customer Master - Existing
-TicketMaster ACL",Building,--,,--,2023-06-01 04:26:00
-205,Testing,Test_ACL_Tickets,ACL_TicketMaster_Manual_Run_Existing,Ready,--,,--,2023-01-18 18:29:00
-206,Testing,Test_AllContacts_Step1,"Backup_AllContacts_Step1
-Test_AllContacts_Append
-Test_AXS_Order_Contact_Append_Customer_Master_V2
-Test_AXS_Order_Contact_Update_Customer_Master",Ready,--,Complete,2023-05-08 15:54:00,2023-05-08 15:54:00
-207,Testing,test_AXS_,"AXS Customer File Import (Import)
-AXS Historical Customer Transactions
-NewContactsToAppend
-AXS_Order_Contact_Append_Customer_Master
-AXS_Order_Contact_Update_Customer_Master
-AXS Pre Admission Detail
-AXS Admission Detail
-AXS Admission Detail Set Status
-AXS Order Contact Total - Ongoing - Insert
-AXS Order Contact Total - Ongoing - Update
-AudienceView Customer Type - Ongoing
-Two Show Nights
-Add Early Show to Tickets
-Order_Event_Prefix
-Datorama - Non DG-OG
-Datorama - AudienceView DG-OG
-Datorama - AudienceView (Extract)
-Datorama - AudienceView (Transfer)",Building,--,,--,2023-07-17 04:49:00
-208,Testing,test_AXS_1,"AXS Customer File Import (Import)
-AXS Historical Customer Transactions
-NewContactsToAppend
-AXS_Order_Contact_Append_Customer_Master
-AXS_Order_Contact_Update_Customer_Master
-AXS Pre Admission Detail
-AXS Admission Detail
-AXS Admission Detail Set Status
-AXS Order Contact Total - Ongoing - Insert
-AXS Order Contact Total - Ongoing - Update
-AudienceView Customer Type - Ongoing
-Two Show Nights
-Add Early Show to Tickets
-Order_Event_Prefix
-Datorama - Non DG-OG
-Datorama - AudienceView DG-OG
-Datorama - AudienceView (Extract)
-Datorama - AudienceView (Transfer)",Building,--,,--,2023-07-17 04:50:00
-209,Testing/Perficient test,test_AXS_check,test_AXS_CHECK,Ready,--,Complete,2023-05-17 07:46:00,2023-05-17 09:09:00
-210,Testing/Perficient test,Test_datorama,"Datorama - Non DG-OG
-Datorama - AudienceView DG-OG
-Datorama - AudienceView (Extract)
-Datorama - AudienceView (Transfer)
-Forwards and Resale
-Datorama - Forwards and Resale (Extract)
-Datorama - Forwards and Resale (Transfer)",Ready,--,,--,2023-07-06 05:37:00
-211,Testing/Perficient test,test_de,"test_Dataextension
-",Ready,--,Complete,2023-05-25 12:27:00,2023-05-25 12:27:00
-212,Testing/Perficient test,test_kbyg,"KGYG Step12
-Show Recommendation",Ready,--,,--,2023-05-18 01:30:00
-213,Testing/Perficient test,test_opry10days,"Opry Arrival Journey 10 days
-Opry Arrival Matrix 10 days
-Updating Attributes 10 days from All contacts Step 1",Ready,--,,--,2023-07-26 08:12:00
-214,Testing/Perficient test,test_postpurchase_ryman,"Sync Ryman to Master
-Ryman Show Upsell
-Ryman Sold Out Events
-Ryman Tour Upsell
-Ryman Welcome Journey Expired
-Remove Welcome Journey Expired (Script)
-Ryman Welcome Journey - Web Forms and Sweeps
-Ryman Welcome Journey - WiFi
-Ryman Welcome Journey - Retail POS Only
-Updating Ryman SMS Optin Status field
-Ryman Purchase Journey Expired
-Ryman Remove Purchase Journey (Script)
-Ryman Remove Purchase Matrix (Script)
-Ryman Purchase Journey
-Ryman Purchase Journey Matrix
-Ryman Purchase Matrix - GOOS
-Ryman Purchase Matrix - OHBS
-Ryman Sold Out
-Ryman Purchase Journey Matrix Flag PLP
-Ryman Purchase Journey Matrix Email Attributes
-Ryman Purchase Show Recommendation 1
-Ryman Purchase Show Recommendation 2
-Ryman Purchase Show Recommendation 3
-Show Purchase Recommendation High Level 1
-Show Purchase Recommendation High Level 2
-Show Purchase Recommendation High Level 3
-Show Purchase Recommendation Fall Back 1
-Show Purchase Recommendation Fall Back 2
-Show Purchase Recommendation Fall Back 3
-Attribute Audit Purchase
-Ryman Purchase Matrix - Update Rec Order
-RymanSMS",Ready,--,,--,2023-05-18 23:57:00
-215,Testing/Perficient test,test_prearrival_ryman,"Clear Ryman Arrival Journey DE 1 Day
-Clear Ryman Arrival Journey DE 7 Day
-Ryman Arrival Journey
-Ryman Arrival Journey 7 Day
-Ryman Arrival Matrix
-Ryman Arrival Matrix 7 Day
-Ryman Arrival Matrix - GOOS
-Ryman Arrival Matrix - GOOS 7 Day
-Ryman Arrival Matrix - OHBS
-Ryman Arrival Matrix - OHBS 7 Day
-Ryman Sold Out
-Ryman Arrival Matrix Flag PLP
-Ryman Arrival Matrix Flag PLP 7 Day
-Ryman Arrival Matrix Email Attributes
-Ryman Arrival Matrix Email Attributes 7 Day
-Ryman Arrival Show Recommendation 1
-Ryman Arrival Show Recommendation 1 7 Day
-Ryman Arrival Show Recommendation 2
-Ryman Arrival Show Recommendation 2 7 Day
-Ryman Arrival Show Recommendation 3
-Ryman Arrival Show Recommendation High Level 1 7 Day
-Ryman Arrival Show Recommendation High Level 2
-Ryman Arrival Show Recommendation High Level 2 7 Day
-Ryman Arrival Show Recommendation High Level 3
-Ryman Arrival Show Recommendation High Level 3 Day 7
-Ryman Arrival Show Recommendation Fall Back 1
-Ryman Arrival Show Recommendation Fall Back 1 7 day
-Ryman Arrival Show Recommendation Fall Back 2
-Ryman Arrival Show Recommendation Fall Back 2 7 Day
-Ryman Arrival Show Recommendation Fall Back 3
-Ryman Arrival Show Recommendation Fall Back 3 7 day
-Attribute Audit Arrival
-Attribute Audit Arrival 7 Day
-Ryman Arrival Matrix - Update Rec Order
-Ryman Arrival Matrix - Update Rec Order 7 Day
-Updating 1 Day Arrival Rymanweb SMS Optin Attribute
-Updating 7 Days Arrival Rymanweb SMS Optin Attribute",Ready,--,,--,2023-06-29 01:30:00
-216,Testing/Perficient test,test_ryman_recommendation_check,"recommendation_step1
-prearrrival_step2
-step3_Prearrival",Ready,--,Complete,2023-05-19 05:47:00,2023-05-19 05:47:00
-217,,Test_Sweeps_Entrant_Purchase_LifeCycle_Staging,Sweeps_Entrant_Purchase_Life_Cycle_Staging_Upload_Delete,Ready,--,Error,2023-12-12 10:55:00,2023-12-12 10:55:00
-218,Testing/Perficient test,TEST_UPSELL_ACL,test_upsell,Ready,--,Complete,2023-05-29 10:50:00,2023-05-29 10:50:00
-219,Testing/Perficient test,test_welcome_ryman,"Sync Ryman to Master
-Ryman Show Upsell
-Ryman Sold Out Events
-Ryman Tour Upsell
-Ryman Welcome Journey Expired
-Remove Welcome Journey Expired (Script)
-Ryman Welcome Journey - Web Forms and Sweeps
-Ryman Welcome Journey - WiFi
-Ryman Welcome Journey - Retail POS Only
-Updating Ryman SMS Optin Status field
-Ryman Purchase Journey Expired
-Ryman Remove Purchase Journey (Script)
-Ryman Remove Purchase Matrix (Script)
-Ryman Purchase Journey
-Ryman Purchase Journey Matrix
-Ryman Purchase Matrix - GOOS
-Ryman Purchase Matrix - OHBS
-Ryman Sold Out
-Ryman Purchase Journey Matrix Flag PLP
-Ryman Purchase Journey Matrix Email Attributes
-Ryman Purchase Show Recommendation 1
-Ryman Purchase Show Recommendation 2
-Ryman Purchase Show Recommendation 3
-Show Purchase Recommendation High Level 1
-Show Purchase Recommendation High Level 2
-Show Purchase Recommendation High Level 3
-Show Purchase Recommendation Fall Back 1
-Show Purchase Recommendation Fall Back 2
-Show Purchase Recommendation Fall Back 3
-Attribute Audit Purchase
-Ryman Purchase Matrix - Update Rec Order
-RymanSMS",Ready,--,,--,2023-05-26 02:54:00
-220,Testing,test-AXS,"AXS Customer File Import (Import)
-AXS Historical Customer Transactions
-NewContactsToAppend
-AXS_Order_Contact_Append_Customer_Master
-AXS_Order_Contact_Update_Customer_Master
-AXS Pre Admission Detail
-AXS Admission Detail
-AXS Admission Detail Set Status
-AXS Order Contact Total - Ongoing - Insert
-AXS Order Contact Total - Ongoing - Update
-AudienceView Customer Type - Ongoing
-Two Show Nights
-Add Early Show to Tickets
-Order_Event_Prefix
-Datorama - Non DG-OG
-Datorama - AudienceView DG-OG
-Datorama - AudienceView (Extract)
-Datorama - AudienceView (Transfer)",Ready,--,,--,2023-06-27 22:32:00
-221,Testing/Perficient test,testAXSfeed,"AXS Customer File Import (Imprort)
-AXS Historical Customer Transactions
-NewContactsToAppend
-AXS_Order_Contact_Append_Customer_Master
-AXS_Order_Contact_Update_Customer_Master
-AXS Admission Detail
-AXS Admission Detail Set Status
-AXS Order Contact Total - Ongoing - Insert
-AXS Order Contact Total - Ongoing - Update
-AudienceView Customer Type - Ongoing
-Two Show Nights
-Add Early Show to Tickets
-Datorama - Non DG-OG
-Datorama - AudienceView DG-OG
-Datorama - AudienceView (Extract)
-Datorama - AudienceView (Transfer)",Building,--,,--,2023-05-17 07:33:00
-222,Testing,Testing,"Update User Record
+161,Testing,Testing,"Update User Record
 update forms and sweeps
 Combine Aspire Data
 update allcontacts with standard layout
@@ -1817,39 +1060,39 @@ EXPRESS_DATA_APPEND_OPRYMISSNOBADADD789K_fullshell (Import)
 EXPRESS_DATA_APPEND_OPRYMISSNOBADADD789K_Variables (Import)
 Opry Click data (Import)
 Opry No Click Data (Import)",Ready,--,,--,2022-12-23 10:55:00
-223,Ticket Alert,Ticket Alert Insights,"backup_ticket_alert_form
+162,Ticket Alert,Ticket Alert Insights,"backup_ticket_alert_form
 fix_ticket_alert_validation_error
 calculate_times_alert_date_is_used_history
 ticket_alert_submitter_info
 Ticket_Alert_Subscriber_All_Info
 calculate_times_alert_date_is_used_reporting",Paused Schedule,--,Complete,2024-01-31 10:54:00,2024-02-01 08:56:00
-224,Marketing,Ticket Error Checking,Check For No Match,Scheduled,2024-02-22 12:00:00,Complete,2024-02-21 12:00:00,2024-02-21 12:00:00
-225,TicketMaster,TicketMaster ACL Import,"TicketMaster Import ACL (Import)
+163,Marketing,Ticket Error Checking,Check For No Match,Scheduled,2024-02-22 12:00:00,Complete,2024-02-21 12:00:00,2024-02-21 12:00:00
+164,TicketMaster,TicketMaster ACL Import,"TicketMaster Import ACL (Import)
 TicketMaster ACL Update Customer Master - New to Database
 TicketMaster ACL Update Customer Master - Existing
 TicketMaster ACL",Active File Drop,--,Complete,2023-04-19 19:26:00,2023-04-19 19:26:00
-226,TicketMaster,TicketMaster ACL Import_Manual,"TicketMaster Import ACL (Import)
+165,Legacy Systems,TicketMaster ACL Import_Manual,"TicketMaster Import ACL (Import)
 TicketMaster ACL Update Customer Master - New to Database
 TicketMaster ACL Update Customer Master - Existing
 TicketMaster ACL",Ready,--,Complete,2023-02-02 15:40:00,2023-02-02 15:40:00
-227,TicketMaster,Ticketmaster ACL to Ticket detail,"TM_ACL_Purchases
+166,Legacy Systems,Ticketmaster ACL to Ticket detail,"TM_ACL_Purchases
 TM_ACL_Resale_Purchases
 TM_ACL_Cancel
 Ticketmaster Tickets ACL Transfers
 Ticketmaster Tickets ACL to Ticket Detail
 Ticketmaster ACL Email to contact history",Paused Schedule,--,Complete,2023-10-31 06:12:00,2023-10-31 08:55:00
-228,TicketMaster,TicketMaster Import,"TicketMaster Import (Import)
+167,TicketMaster,TicketMaster Import,"TicketMaster Import (Import)
 TicketMaster
 TicketMaster Update Customer Master",Active File Drop,--,Complete,2024-02-21 22:20:00,2024-02-21 22:20:00
-229,TicketMaster,TicketMaster to Ticket Detail,"Ticketmaster Tickets to Ticket Detail
+168,TicketMaster,TicketMaster to Ticket Detail,"Ticketmaster Tickets to Ticket Detail
 TM Staging to Admission Detail
 Ticketmaster Email to contact history
 TM Contact Staging to Contact to date",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:07:00,2024-02-22 06:07:00
-230,,Update Contact Locale,find_contact_locale,Scheduled,2024-02-23 07:00:00,Complete,2024-02-22 07:03:00,2024-02-22 07:03:00
-231,One Time Requests,Update Ole Red Subscribers,Update_Ole_Red_Subscribers (Import),Paused Schedule,--,Complete,2024-01-08 08:48:00,2024-01-08 09:07:00
-232,AXS,Update Tickets With Missing Event Code,Update Tickets with Missing Event Code,Ready,--,Complete,2023-08-07 20:28:00,2023-08-07 20:28:00
-233,Journeys/ACL,Updated ACL Attributes,ACL_Journey_Attriubutes,Scheduled,2024-02-22 22:00:00,Complete,2024-02-21 22:01:00,2024-02-21 22:01:00
-234,Datorama,Upsell Analysis AXS,"Opry_Show_Upsell_and_Package
+169,,Update Contact Locale,find_contact_locale,Scheduled,2024-02-23 07:00:00,Complete,2024-02-22 07:03:00,2024-02-22 07:03:00
+170,One Time Requests,Update Ole Red Subscribers,Update_Ole_Red_Subscribers (Import),Paused Schedule,--,Complete,2024-01-08 08:48:00,2024-01-08 09:07:00
+171,AXS,Update Tickets With Missing Event Code,Update Tickets with Missing Event Code,Ready,--,Complete,2023-08-07 20:28:00,2023-08-07 20:28:00
+172,Journeys/ACL,Updated ACL Attributes,ACL_Journey_Attriubutes,Scheduled,2024-02-22 22:00:00,Complete,2024-02-21 22:01:00,2024-02-21 22:01:00
+173,Datorama,Upsell Analysis AXS,"Opry_Show_Upsell_and_Package
 Opry_Show_Upsell_and_Package_order_level
 Opry_Tour_Upsell_and_Package
 Opry_Tour_Upsell_and_Package_order_level
@@ -1882,41 +1125,4 @@ Ryman Upsell to Dato (Extract)
 Datorama - Opry Show Upsell (Transfer)
 Datorama - Opry Tour Upsell (Transfer)
 Ryman Show Upsell to Dato (Transfer)",Scheduled,2024-02-23 01:00:00,Complete,2024-02-22 01:18:00,2024-02-22 01:18:00
-235,Testing/Perficient test,UPSELL_RYMAN,"Opry_Show_Upsell_and_Package
-Opry_Show_Upsell_and_Package_order_level
-Opry_Tour_Upsell_and_Package
-Opry_Tour_Upsell_and_Package_order_level
-Ryman Show Upsell and Package
-Ryman Show Upsell and Package Order Level
-Opry_Show_Upsell_and_Package_Tour_Purchases
-Opry_Show_Upsell_and_Package_Tour_Purchases_order_level
-Opry_Tour_Upsell_and_Package_Show_Purchases
-Opry_Tour_Upsell_and_Package_Show_Purchases_order_level
-opry_show_upsell_add_in_flow_tour
-opry_show_upsell_add_post_flow_tour_step_1
-opry_tour_upsell_add_post_flow_show_step_1
-opry_show_upsell_add_post_flow_tour_step_2
-opry_tour_upsell_add_post_flow_show_step_2
-Opry_Upsell_and_Package_Ecomm
-Opry_Upsell_and_Package_Retail
-opry_show_upsell_and_ecomm
-Opry_Tour_Upsell_and_Ecomm
-Opry_Show_Upsell_and_Package_add_retail
-Opry_Tour_Upsell_and_Package_add_retail
-Opry_Show_Upsell_Final
-Opry_Tour_Upsell_Final
-Ryman Show Upsell Final
-Opry Show Upsell Final
-Opry Tour Upsell Final
-Ryman Show Upsell_Final
-Opry Show Upsell to Dato (Extract)
-Opry Tour Upsell to Dato (Extract)
-Ryman Upsell to Dato (Extract)
-Datorama - Opry Show Upsell (Transfer)
-Datorama - Opry Tour Upsell (Transfer)
-Ryman Show Upsell to Dato (Transfer)",Ready,--,,--,2023-05-19 04:19:00
-236,Testing/Perficient test,UPSELL_TEST,"ACL_Upsell
-ACL_Event_SoldOut",Ready,--,,--,2023-05-19 04:17:00
-237,One Time Requests,Manual Forms and Sweeps Backfill,"backfill_manual_f&s_from_allContacts
-Photobooth staging to forms and sweeps",Ready,,,,
-238,,Users_With_Unopened_Emails_Last_60_Days,Outlook_and_Hotmail_Users_Unopened_Emails_60_Days,Paused Schedule,--,Complete,2024-01-12 00:03:00,2024-01-12 14:35:00
+174,,Users_With_Unopened_Emails_Last_60_Days,Outlook_and_Hotmail_Users_Unopened_Emails_60_Days,Paused Schedule,--,Complete,2024-01-12 00:03:00,2024-01-12 14:35:00
