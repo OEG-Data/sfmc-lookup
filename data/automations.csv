@@ -83,6 +83,9 @@ ACL_Genre_Rec2.3
 ACL_Genre_Rec3.3
 ACL_Genre_Rec2.4
 ACL_Genre_Rec3.4
+ACL_Expressed_Genre_Rec1
+ACL_Expressed_Genre_Rec2
+ACL_Expressed_Genre_Rec3
 ACL Recommendation No Match
 ACL Recommendation Fall Back 1
 ACL Recommendation Fall Back 2
@@ -472,7 +475,8 @@ Tag_Multishow_SubGenre
 List_SubGenres
 SubGenre_Affinity_All_Purchasers
 Purchaser_Genre_Affinity_Reorder
-add_expressed_genre_to_affinity_all_purchasers",Scheduled,2024-02-23 04:30:00,Complete,2024-02-22 04:53:00,2024-02-22 04:53:00
+add_expressed_genre_step_1
+add_expressed_genre",Scheduled,2024-02-23 04:30:00,Complete,2024-02-22 04:53:00,2024-02-22 04:53:00
 78,Marketing,Get Details of 3TEN and ACL Customers without Brokers,3Ten_ACL_Customer_Details_Fetch_No_Brokers_Update,Paused Schedule,--,Complete,2023-11-02 13:56:00,2023-11-06 16:41:00
 79,Marketing,Identify Country Duos,Country Duo Order Numbers,Scheduled,2024-02-23 04:30:00,Complete,2024-02-22 04:30:00,2024-02-22 04:30:00
 80,All Contacts Cleanup,Invalid_Country_Code,Invalid_Country_Code,Ready,--,Complete,2023-01-23 20:26:00,2023-01-23 20:38:00
@@ -559,9 +563,12 @@ Open
 Click
 Status
 Most recent Unsubscribe
-Send 2_0 To Master
-Open 2_0 To Master
-Click 2_0 to Master
+Send 2_0 to Master Bottom 50%
+Send 2_0 to Master Top 50%
+Open 2_0 To Master Bottom 50%
+Open 2_0 To Master Top 50%
+Click 2_0 to Master Bottom 50%
+Click 2_0 to Master Top 50%
 Status 2_0 to Master
 Unsubscribe Sync to Customer Master
 Fix Status",Scheduled,2024-02-23 04:00:00,Error,2024-02-22 04:22:00,2024-02-22 04:22:00
@@ -853,6 +860,9 @@ Ryman Newsletter Show Recommendation - High Level 2.3
 Ryman Newsletter Show Recommendation - High Level 3.3
 Ryman Newsletter Show Recommendation - High Level 3.4
 Ryman Newsletter Show Recommendation - High Level 2.4
+Ryman Newsletter Show Recommendation Expressed 1
+Ryman Newsletter Show Recommendation Expressed 2
+Ryman Newsletter Show Recommendation Expressed 3
 Ryman Newsletter Show Recommendation - No Genre Match
 Ryman Newsletter Show Recommendation 1 - Fall Back
 Ryman Newsletter Show Recommendation 2 - Fall Back
@@ -988,8 +998,7 @@ Nashville_Opry_September_LY
 Nashville_ACLRyman_September_LY",Paused Schedule,--,,--,2023-04-25 14:08:00
 153,Marketing/List Generation,Shared DE List Generation...,"Opry Show No Purchase Last 120 Days
 Opry Show No Purchase last 90 Days",Scheduled,2024-02-23 01:00:00,Complete,2024-02-22 01:01:00,2024-02-22 01:01:00
-154,Sharing,Sharing,"Update Customer Shared
-TicketMaster_Sharing
+154,Sharing,Sharing,"TicketMaster_Sharing
 NetSuite_Sharing
 Axciom Data Sharing
 Forms and Sweeps Reporting Share
@@ -1126,3 +1135,62 @@ Datorama - Opry Show Upsell (Transfer)
 Datorama - Opry Tour Upsell (Transfer)
 Ryman Show Upsell to Dato (Transfer)",Scheduled,2024-02-23 01:00:00,Complete,2024-02-22 01:18:00,2024-02-22 01:18:00
 174,,Users_With_Unopened_Emails_Last_60_Days,Outlook_and_Hotmail_Users_Unopened_Emails_60_Days,Paused Schedule,--,Complete,2024-01-12 00:03:00,2024-01-12 14:35:00
+175,Backups/Daily,Customers_Daily,backup_AllContacts_Step1_Daily,Scheduled,,,,
+176,Backups/Daily,Tickets_Daily,"Backup_AudienceView_Order_Contact_2016_to_date_Daily
+backup_AudienceView_Ticket_Admission_Detail_Daily
+backup_AXS_Customer_Transaction_Daily",Scheduled,,,,
+177,Backups/Daily,LeadGen_Daily,"backup_photobooth_archive_daily
+backup_Forms_And_Sweeps_Daily
+backup_Forms_and_Sweeps_Manual_Upload_Daily
+backup_MyPlaceConnect_Daily",Scheduled,,,,
+178,Backups/Daily,Retail_Daily,"backup_ShopifyCustomersDE-opryshop_Daily
+backup_ShopifyCustomersDE-opryshop-pos_Daily
+backup_ShopifyOrderLineItemsDE-opryshop_Daily
+backup_ShopifyOrderLineItemsDE-opryshop-pos_Daily
+backup_ShopifyOrdersDE-opryshop_Daily
+backup_ShopifyOrdersDE-opryshop-pos_Daily
+backup_ShopifyProductDE-opryshop_Daily
+backup_ShopifyProductDE-opryshop-pos_Daily
+backup_ShopifyProductVariantsDE-opryshop_Daily
+backup_ShopifyProductVariantsDE-opryshop-pos_Daily
+backup_NetSuite_POS_AllRecords_Daily",Scheduled,,,,
+179,Backups/Weekly,Customers_Weekly,backup_AllContacts_Step1_Daily,Scheduled,,,,
+180,Backups/Weekly,Tickets_Weekly,"Backup_AudienceView_Order_Contact_2016_to_date_Weekly
+backup_AudienceView_Ticket_Admission_Detail_Weekly
+backup_AXS_Customer_Transaction_Weekly",Scheduled,,,,
+181,Backups/Weekly,LeadGen_Weekly,"backup_photobooth_archive_weekly
+backup_Forms_And_Sweeps_Weekly
+backup_Forms_and_Sweeps_Manual_Upload_Weekly
+backup_MyPlaceConnect_Weekly",Scheduled,,,,
+182,Backups/Weekly,Retail_Weekly,"backup_ShopifyCustomersDE-opryshop_Weekly
+backup_ShopifyCustomersDE-opryshop-pos_Weekly
+backup_ShopifyOrderLineItemsDE-opryshop_Weekly
+backup_ShopifyOrderLineItemsDE-opryshop-pos_Weekly
+backup_ShopifyOrdersDE-opryshop_Weekly
+backup_ShopifyOrdersDE-opryshop-pos_Weekly
+backup_ShopifyProductDE-opryshop_Weekly
+backup_ShopifyProductDE-opryshop-pos_Weekly
+backup_ShopifyProductVariantsDE-opryshop_Weekly
+backup_ShopifyProductVariantsDE-opryshop-pos_Weekly
+backup_NetSuite_POS_AllRecords_Weekly",Scheduled,,,,
+183,Backups/Monthly,Customers_Monthly,backup_AllContacts_Step1_Monthly,Scheduled,,,,
+184,Backups/Monthly,Tickets_Monthly,"Backup_AudienceView_Order_Contact_2016_to_date_Monthly
+backup_AudienceView_Ticket_Admission_Detail_Monthly
+backup_AXS_Customer_Transaction_Monthly",Scheduled,,,,
+185,Backups/Monthly,LeadGen_Monthly,"backup_photobooth_archive_monthly
+backup_Forms_And_Sweeps_Monthly
+backup_Forms_and_Sweeps_Manual_Upload_Monthly
+backup_MyPlaceConnect_Monthly",Scheduled,,,,
+186,Backups/Monthly,Retail_Monthly,"backup_ShopifyCustomersDE-opryshop_Monthly
+backup_ShopifyCustomersDE-opryshop-pos_Monthly
+backup_ShopifyOrderLineItemsDE-opryshop_Monthly
+backup_ShopifyOrderLineItemsDE-opryshop-pos_Monthly
+backup_ShopifyOrdersDE-opryshop_Monthly
+backup_ShopifyOrdersDE-opryshop-pos_Monthly
+backup_ShopifyProductDE-opryshop_Monthly
+backup_ShopifyProductDE-opryshop-pos_Monthly
+backup_ShopifyProductVariantsDE-opryshop_Monthly
+backup_ShopifyProductVariantsDE-opryshop-pos_Monthly
+backup_NetSuite_POS_AllRecords_Monthly",Scheduled,,,,
+187,Journeys,Retail Best Sellers Journey,retail_purchasers_best_sellers,Scheduled,,,,
+188,,BU Purchaser Counts,bu_purchaser_count_month_and_year,Scheduled,,,,
