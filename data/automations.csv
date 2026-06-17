@@ -1,8 +1,19 @@
-,Path,Automation Name,Activities,Status,Next Run,Last Run Status,Last Run,Last Modified
-0,Data factory Utitly Automations,520000018-PSExtended-24,,Scheduled,2024-02-23 00:15:00,Complete,2024-02-22 00:15:00,2024-02-22 00:15:00
-1,,ACL Contacts Validity Cleanse,Import ACL Contact Validation,Inactive File Drop,--,Complete,2024-01-16 16:58:00,2024-01-16 16:58:00
-2,Journeys/ACL,ACL Newsletter,"ACL Subscriber Share
-ACL Show Recommendation Newsletter
+,Path,Automation Name,Activities,Status,Next Run,Last Run Status,Last Run,Last Modified,Description,Run Frequency,Fixes Implemented Or Needed
+0,Data factory Utitly Automations,520000018-PSExtended-24,,Scheduled,2024-02-23 00:15:00,Complete,2024-02-22 00:15:00,2024-02-22 00:15:00,,,
+1,Journeys/ACL,ACL Arrival Journey,"ACL Arrival Journey
+ACL Show Recommendation 1 - Arrival
+ACL Show recommendation 2 - Arrival
+ACL Show Recommendation 3 - Arrival
+ACL Show Recommendation High Level 1 - Arrival
+ACL Show Recommendation High Level 2 - Arrival
+ACL Show Recommendation High Level 3 - Arrival
+ACL show recommendation Fallback 1 - Arrival
+ACL show recommendation Fallback 2 - Arrival
+ACL show recommendation Fallback 3 - Arrival
+ACL Arrival Audit",Scheduled,,,,,Pulls all contacts who have tickets purchased for a show today. Then looks at the genre of the show and pulls any show further than 7 days out to be added as a recommendation. If no shows are found matching that genre then any 3 shows more than a week out are added. ,Daily,The reccomendations do not seem to be looking at implied or any other genre affinity other than the show they purchased the ticket for. 
+2,,ACL Contacts Validity Cleanse,Import ACL Contact Validation,Inactive File Drop,--,Complete,2024-01-16 16:58:00,2024-01-16 16:58:00,"Not run since Jan 16, 2024 and turned off  Can be Deleted",,
+3,Journeys/ACL,ACL Newsletter,"ACL Subscriber Share
+ACL Live Newsletter
 ACL Already Bought
 ACL Newsletter Show Recommendation 1
 ACL Newsletter Show Recommendation 2
@@ -19,8 +30,10 @@ ACL Newsletter Show High Level Recommendation 3.4
 No Genre ACL
 ACL Newsletter show recommendation Fallback 1
 ACL Newsletter Show Fallback Recommendation 2
-ACL Newsletter Show Fallback Recommendation 3",Ready,--,Complete,2023-08-24 07:22:00,2023-08-25 01:58:00
-3,Journeys/ACL,ACL Post Purchase Journey,"ACL Post Purchase
+ACL Newsletter Show Fallback Recommendation 3",Ready,--,Complete,2023-08-24 07:22:00,2023-08-25 01:58:00,"Pulls all contacts who have an ACL preference and have opened or clicked anemail in the past 549 days (18 months). Next all the future shows they purchased tickets for are added to the ACL_Events_Already_Bought DE. Finally looking at their genre affinity and shows already bought and adds recommended shows for the email that are more than 30 days in the fututre. 
+
+If a contact has no genre affinity then no shows will be reccomended. This will be flagged and the next show after 30 days will be added to the recommendation.",Daily,"With the fallback recommendation queries the data intended on being pulled was not being querie correctly. If no recommendations are added the show_recommendation field is set to FALSE but when looking for records it looks for that field to be TRUE, causing 10s of thousands of contacts to not be send newsletter emails because no recs are added. I have fixed the query so now those contacts will have recs."
+4,Journeys/ACL,ACL Post Purchase Journey,"ACL Post Purchase
 ACL_PostPurchase_Recommendation 1
 ACL_PostPurchase_Recommendation 2
 ACL_PostPurchase_Recommendation 3
@@ -30,8 +43,8 @@ ACL_PostPurchase_ShowRecommendation HighLevel_3
 ACL_Postpurchase_ShowRecommendation_Fallback_1
 ACL_Postpurchase_ShowRecommendation_Fallback_2
 ACL_Postpurchase_ShowRecommendation_Fallback_3
-ACL Post Purchase Audit",Scheduled,2024-02-23 08:30:00,Complete,2024-02-22 08:37:00,2024-02-22 08:37:00
-4,,ACL Post Visit Journey,"ACL Post Arrival
+ACL Post Purchase Audit",Scheduled,2024-02-23 08:30:00,Complete,2024-02-22 08:37:00,2024-02-22 08:37:00,Pulls all contacts who have recently purchased a ACL ticket. Then looks at the genre of the show and pulls any show further than 7 days out to be added as a recommendation. If no shows are found matching that genre then any 3 shows more than a week out are added. ,Daily,
+5,,ACL Post Visit Journey,"ACL Post Arrival
 ACL Show Recommendation 1 - Post Arrival
 ACL Show Recommendation 2 - Post Arrival
 ACL Show Recommendation 3 - Post Arrival
@@ -40,19 +53,19 @@ ACL Show recommendation High Level 2 - Post Arrival
 ACL Show recommendation High Level 3 - Post Arrival
 ACL Show recommendation Fallback 1 - Post Arrival
 ACL show recommendation Fallback 2 -Post Arrival
-ACL Post Visit Audit",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:14:00,2024-02-22 06:14:00
-5,Journeys/ACL,ACL Pre Arrival - 7 days,"Pre Arrival 7 days Prior
-ACL Show Recommendation 1 - 7days Prior
-ACL Show recommendation 2 - 7 days Prior
-ACL Show Recommendation 3 - 7 days Prior
-ACL Show Recommendation High Level 1 - 7 days Prior
-ACL Show Recommendation High Level 2 - 7 days Prior
-ACL show recommendation High level 3 - 7 days Prior
-ACL show recommendation Fallback 1 - 7 days Prior
-ACL show recommendation Fallback 2 - 7days Prior
-ACL show recommendation Fallback 3 - 7 days Prior
-Pre Arrival 7 day Prior Audit",Ready,--,,--,2023-07-27 13:34:00
-6,Journeys/ACL,ACL Pre Arrival Journey,"ACL_PreArrival_DONOTOVERWRITE
+ACL Post Visit Audit",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:14:00,2024-02-22 06:14:00,Pulls all contacts who have recently went to a ACL show. Then looks at the genre of the show and pulls any show further than 7 days out to be added as a recommendation. If no shows are found matching that genre then any 3 shows more than a week out are added. ,Daily,
+6,Journeys/ACL,ACL Pre Arrival - 10 days,"Pre Arrival 10 days Prior
+ACL Show Recommendation 1 - 10 days Prior
+ACL Show recommendation 2 - 10 days Prior
+ACL Show Recommendation 3 - 10 days Prior
+ACL Show Recommendation High Level 1 - 10 days Prior
+ACL Show Recommendation High Level 2 - 10 days Prior
+ACL show recommendation High level 3 - 10 days Prior
+ACL show recommendation Fallback 1 - 10 days Prior
+ACL show recommendation Fallback 2 - 10 days Prior
+ACL show recommendation Fallback 3 - 10 days Prior
+Pre Arrival 10 day Prior Audit",Scheduled,--,,--,2023-07-27 13:34:00,Pulls all contacts who have tickets purchased for a show 10 days from today. Then looks at the genre of the show and pulls any show further than 14 days out to be added as a recommendation. If no shows are found matching that genre then any 3 shows more than a week out are added. ,Daily,
+7,Journeys/ACL,ACL Pre Arrival Journey,"ACL_PreArrival_DONOTOVERWRITE
 Pre Arrival Journey
 ACL Show Recommendation 1
 ACL Show recommendation 2
@@ -63,13 +76,27 @@ ACL Show Recommendation High Level 3
 ACL show recommendation Fallback 1
 ACL show recommendation Fallback 2
 ACL show recommendation Fallback 3
-ACL Arrival Audit",Scheduled,2024-02-23 05:30:00,Complete,2024-02-22 05:37:00,2024-02-22 05:37:00
-7,Journeys/ACL,ACL Upsell and Sold Out,"ACL_Upsell
-ACL_Event_SoldOut",Scheduled,2024-02-23 00:00:00,Complete,2024-02-22 00:03:00,2024-02-22 00:03:00
-8,ACL_PSL,ACL_PSL_Status_Sync_All_Subscribers,"ACL_PSL_Status_Sync_All_Subscribers
+ACL Pre Arrival Audit",Scheduled,2024-02-23 05:30:00,Complete,2024-02-22 05:37:00,2024-02-22 05:37:00,Pulls all contacts who have tickets purchased for a show 1 day from today. Then looks at the genre of the show and pulls any show further than 14 days out to be added as a recommendation. If no shows are found matching that genre then any 3 shows more than a week out are added. ,Daily,
+8,Journeys/ACL,ACL Recommendations V2,"All_ACL_Subscribers
+ACL_Future_Shows_Bought
+ACL_Contacts_For_Recs
+ACL_Expressed_Genre_Recs
+ACL_Implied_Genre_Recs_Pt1
+ACL_Implied_Genre_Recs_Pt2
+ACL_Leftover_Recs_Pt1
+ACL_Leftover_Recs_Pt2
+ACL_Recs_Reorder",Scheduled,,,,,,,
+9,Journeys/ACL,ACL Upsell and Sold Out,"ACL_Upsell
+ACL_Event_SoldOut",Scheduled,2024-02-23 00:00:00,Complete,2024-02-22 00:03:00,2024-02-22 00:03:00,"First Step calculates all upsell material bought by a user for a particular event based on the order number
+Second Step Calculates if a show or premium pass tickets are sold out for an ACL event given the threshold added to the query.",Daily,
+10,,ACL_Photo_Package_All_Contacts_Update,"ACL_Photo_Package Import
+ACL_Photo_Package_AllContacts_Update",Active File Drop,,,,,Detects when a file is loaded to import/retailphotopackage file and updates AllContacts ,File Drop,Step 2 query did not look if the created date was null just an empty value. Added a null check to then add the current date
+11,ACL_PSL,ACL_PSL_Status_Sync_All_Subscribers,"ACL_PSL_Status_Sync_All_Subscribers
 ACL_PSL_Status_Sync_All_Subscribers (Extract)
-Updated White Glove List Shared to AllContacts_Step1",Ready,--,Complete,2024-02-28 02:20:00,2024-02-21 09:20:00
-9,Journeys/ACL,ACL_Recommendations,"Get_ACL_Subscribers_Step1
+Updated White Glove List Shared to AllContacts_Step1
+Remove Unsubscribed White Glove Emails",Ready,--,Complete,2024-02-28 02:20:00,2024-02-21 09:20:00,"Data gets imported to the 2024 White Glove List Use Shared DE separately and used to overwrite the ACL PSL subscribers and exports the DE.
+Lastly all the emails in  2024 White Glove List Use Shared have their ACS_PSL_Preference set to true in AllContacts",Hourly,
+12,Journeys/ACL,ACL_Recommendations,"Get_ACL_Subscribers_Step1
 ACL_Already_Bought_Reco_Step2
 ACL_SubGenre_Rec1
 ACL_SubGenre_Rec2
@@ -89,16 +116,25 @@ ACL_Expressed_Genre_Rec3
 ACL Recommendation No Match
 ACL Recommendation Fall Back 1
 ACL Recommendation Fall Back 2
-ACL Recommendation Fall Back 3",Ready,--,Complete,2023-02-07 17:21:00,2023-02-07 17:40:00
-10,Marketing/Visitation,ACL_Visitation,"AV_ACL_Visits
+ACL Recommendation Fall Back 3",Ready,--,Complete,2023-02-07 17:21:00,2023-02-07 17:40:00,"Gathers all contacts with an ACL preference and are opted in to OEG and finds all the shows those contacts have purchased a ticket for. Then follows the same process as the other recommendation automations above. Looks for shows with matching genres, then overwrites with shows matching the expressed genres they provided. then if no shows are found for those it add the next three shows to the recommendations. ",Daily,"With the fallback recommendation queries the data intended on being pulled was not being querie correctly. If no recommendations are added the show_recommendation field is set to FALSE but when looking for records it looks for that field to be TRUE, causing 10s of thousands of contacts to not be send newsletter emails because no recs are added. I have fixed the query so now those contacts will have recs."
+13,Marketing/Visitation,ACL_Visitation,"AV_ACL_Visits
 TM_ACL_Visits
 Add_TM_Visits
 Add_AV_Visits
 ACL_Most_Recent_Visit_All_Contacts
 TM_ACL_Next_Visits
 AV_Ryman_Next_Visit
-Next_ACL_Visit_All_Contacts",Running,2024-02-22 12:00:00,,--,2024-02-22 11:01:00
-11,Ad Studio,Ad Studio,"Opry Show Next 14-30 Days
+Next_ACL_Visit_All_Contacts",Running,2024-02-22 12:00:00,,--,2024-02-22 11:01:00,"First segment pulls all ticket sales for ACL and 3TEN concerts for all out users and calculates the total visits for all shows before todays date. Then updates AllContacts with the total previous visit count (ACL_visit) and the last date they visited(Most_Recent_ACL_Visit_Date).
+
+The next segment does the same thing but for future shows. Then populates the ",,"Removed TM_ACL_Next_Visits
+
+Previous visits only look at ACCT and 3TEN event codes. Changed to look at the venue names to cover all types of events
+
+
+
+When adding the next_visit_date to AllContacts it was just looking at the TicketMaster data and not AV so no dates were being added."
+14,One Time Requests,Acxiom,,,,,,,Segments our sweeps entrants and ticket purchasers by BU to be ananlyzied for trends by Axciom.,,
+15,Ad Studio,Ad Studio,"Opry Show Next 14-30 Days
 Opry Show Future No PLP
 Opry Show No Purchase last 90 Days
 AV_Purchasers_All_Time
@@ -128,120 +164,128 @@ ORO Visitation
 ORT Visitation
 ORG Visitation
 ORN Visitation
-Any Ole Red Visitation",Scheduled,2024-02-23 10:00:00,Complete,2024-02-22 10:12:00,2024-02-22 10:12:00
-12,Marketing,Add Manual Forms and Sweeps to Customer Master and Datorama,"Add to Forms and Sweeps Manual Upload
-Standard Input Layout Forms and Sweeps Add to Customer Master",Ready,--,Complete,2024-02-09 14:14:00,2024-02-09 14:14:00
-13,Marketing,Add Manual Optins and Opt Outs to All Contacts,Manual_OEG_All_Contacts_Update,Ready,--,Complete,2023-08-03 07:26:00,2023-08-03 07:26:00
-14,Genre,All Expressed Genre,All Expressed Genre,Scheduled,2024-02-26 00:30:00,Complete,2024-02-19 00:30:00,2024-02-19 00:30:00
-15,Marketing/Backups,All Subscribers Parent Hourly Backup,"All Subscribers Parent Backup
+Any Ole Red Visitation",Scheduled,2024-02-23 10:00:00,Complete,2024-02-22 10:12:00,2024-02-22 10:12:00,"Generates multiple BU email preference, show, tour, and visitation segments  ",,Group sales values were not looking at the correct list.
+16,Ad Studio,Ad Studio Category 10 Visitation,copy_cat10_visits_for_adstudio,,,,,,,,
+17,Marketing,Add Manual Forms and Sweeps to Customer Master and Datorama,"Add to Forms and Sweeps Manual Upload
+Standard Input Layout Forms and Sweeps Add to Customer Master",Ready,--,Complete,2024-02-09 14:14:00,2024-02-09 14:14:00,Processes all manual uploaded forms and sweeps to add to Forms_And_Sweeps_Manual_Upload and add/update customers in AllContacts_Step1,,
+18,Marketing,Add Manual Optins and Opt Outs to All Contacts,Manual_OEG_All_Contacts_Update,Ready,--,Complete,2023-08-03 07:26:00,2023-08-03 07:26:00,Contains the same second step as the Add Manual Forms and Sweeps to Customer Master and Datorama automation. This has been deleted,,
+19,Marketing,Add Manual SMS Opt in Subscribers,add_manual_sms_contacts,Scheduled,,,,,This automation has never ran and has been deleted.,,
+20,Utils,Add New BU Preference,"Add Fields to Forms_And_Sweeps (Script)
+Add Fields to AllContacts_Step1 (Script)",On Demand,,,,,,,
+21,Genre,All Expressed Genre,All Expressed Genre,Scheduled,2024-02-26 00:30:00,Complete,2024-02-19 00:30:00,2024-02-19 00:30:00,Combines all users who have selected a genre they are interested in and add the list to All Expressed Genre,,
+22,Backups,All Subscribers Parent Hourly Backup,"All Subscribers Parent Backup
 All Subs Parent (Extract)
-All Subs Parent (Transfer)",Scheduled,2024-02-22 12:00:00,Complete,2024-02-22 11:06:00,2024-02-22 11:06:00
-16,Marketing/Backups,AllContacts_Step1_Backup,"AllContacts_Step1_Backup(Extract)
-AllContacts_Step1_Backup(Transfer)",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:39:00,2024-02-22 10:39:00
-17,OESP,April OESP,"Nashville_Opry_April_LY
+All Subs Parent (Transfer)",Scheduled,2024-02-22 12:00:00,Complete,2024-02-22 11:06:00,2024-02-22 11:06:00,Genereates a backup of _allsubscribers hourly and sends it to our FTP server,,
+23,Backups,AllContacts_Step1_Backup,"AllContacts_Step1_Backup(Extract)
+AllContacts_Step1_Backup(Transfer)",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:39:00,2024-02-22 10:39:00,exports the current AllContacts_Step1 de and stores it in the FTP server,,
+24,Exclusions,Apple Exclusions,"exclusions_apple_7day
+exclusions_apple_14day
+exclusions_apple_30day",Scheduled,,,,,,Daily,
+25,OESP,April OESP,"Nashville_Opry_April_LY
 Nashville_ACLRyman_April_LY
 TNRegion_ACLRyman_April_LY
 TNRegion_Opry_April_LY
 National_Opry_April_LY
-National_ACLRyman_April_LY",Paused Schedule,--,,--,2024-01-16 14:55:00
-18,One Time Requests,Artist Genre combining,"artist genre
-Geo Artist Genre",Ready,--,Complete,2023-07-13 06:41:00,2023-07-13 06:41:00
-19,,Artist_Picklist,Artist_Picklist,Scheduled,2024-02-23 01:00:00,Complete,2024-02-22 01:00:00,2024-02-22 01:00:00
-20,Marketing/Aspire_North,Aspire_North_Location,"AN_Nashville_Austin_Purchase
-AN_Austin_Nashville_Purchase",Scheduled,2024-03-01 02:00:00,Complete,2024-02-01 02:27:00,2024-02-01 02:27:00
-21,Marketing/Aspire_North,Aspire_North_Purchasers,"AN_Opry_Show_Purchasers
+National_ACLRyman_April_LY",Paused Schedule,--,,--,2024-01-16 14:55:00,Talk to Troy about these,,
+26,One Time Requests,Artist Genre combining,"artist genre
+Geo Artist Genre",Ready,--,Complete,2023-07-13 06:41:00,2023-07-13 06:41:00,Has not ran in the parent for over a year. The de being updated is All Afinity Users but is not accessible in the parent. This is managed in the child so thise automation will be removed and queries deleted in the parent,,
+27,Selections,Artist Selection List,artist_name_selection,Scheduled,,,,,Creates the List of artist names to be used in form selection boxes,Daily,
+28,,Artist_Picklist,Artist_Picklist,Scheduled,2024-02-23 01:00:00,Complete,2024-02-22 01:00:00,2024-02-22 01:00:00,Groups all artists from the Mrkt Artist Database DE ,daily,
+29,Marketing/Aspire_North,Aspire_North_Location,"AN_Nashville_Austin_Purchase
+AN_Austin_Nashville_Purchase",Scheduled,2024-03-01 02:00:00,Complete,2024-02-01 02:27:00,2024-02-01 02:27:00,Pulls all ACL and 3TEN purchasers local to nashville and autin and appends Aspire North Variables to it.,monthly,
+30,Marketing/Aspire_North,Aspire_North_Purchasers,"AN_Opry_Show_Purchasers
 AN_Opry_Tour_Purchasers
 AN_Ryman_Guided_Tour_Purchasers
-AN_Ryman_Self_Guided_Tour_Purchasers",Scheduled,2024-03-01 01:00:00,Complete,2024-02-01 01:13:00,2024-02-01 01:13:00
-22,Marketing/Aspire_North,Aspire_North_Subscribers,"AN_Opry_Email_Subscribers
+AN_Ryman_Self_Guided_Tour_Purchasers",Scheduled,2024-03-01 01:00:00,Complete,2024-02-01 01:13:00,2024-02-01 01:13:00,"Creates separate DEs with appended Aspire North Variables for Opry Show, Opry Tour, and Ryman Tours ",monthly,
+31,Marketing/Aspire_North,Aspire_North_Subscribers,"AN_Opry_Email_Subscribers
 AN_Ryman_Email_Subscribers
 AN_OleRed_Email_Subscribers
 AN_ACL_Email_Subscribers
-AN_WSM_Email_Subscribers",Paused Schedule,--,,--,2023-01-25 12:16:00
-23,AudienceView,AudienceView Admission Detail Clean,"AudienceView Admission Detail Clean (Import)
+AN_WSM_Email_Subscribers",Paused Schedule,--,,--,2023-01-25 12:16:00,"Creates separate DEs with appended Aspire North Variables for contacts with an Opry, Ryman, Ole Red, ACL, or WSM preference",monthly,May need to add the other new BU's or delete if not needed
+32,AudienceView,AudienceView Admission Detail Clean,"AudienceView Admission Detail Clean (Import)
 AudienceView Admission Detail Clean
 AudienceView Admission Detail Clean (Extract)
 AudienceView Admission Detail Clean (Transfer)
 AudienceView Admission Detail (Import)
-AudienceView Admission Detail",Active File Drop,--,,--,2021-10-01 03:57:00
-24,AudienceView,AudienceView Canceled Orders Clean,"AudienceView Cancelled Order Clean (Import)
+AudienceView Admission Detail",Active File Drop,--,,--,2021-10-01 03:57:00,Has not ran for at least a year and the latest record in the AudienceView_Ticket_Admission_Sales_DETAIL_Staging is from 2021. CAN DELETE,,
+33,AudienceView,AudienceView Canceled Orders Clean,"AudienceView Cancelled Order Clean (Import)
 AudienceView Cancelled Orders Clean
 AudienceView Cancelled Order Clean (Extract)
 AudienceView Cancelled Order (Import)
-AudienceView Cancelled Orders",Active File Drop,--,,--,2021-10-01 03:37:00
-25,AudienceView,AudienceView Customer Type Clean,"AudienceView Customer Type Clean (Import)
+AudienceView Cancelled Orders",Active File Drop,--,,--,2021-10-01 03:37:00,No longer use Audienceview Can Delete,,
+34,AudienceView,AudienceView Customer Type Clean,"AudienceView Customer Type Clean (Import)
 AudienceView Customer Type Clean
 AudienceView Customer Type Clean (Extract)
 AudienceView Customer Type Clean (Transfer)
 AudienceView Customer Type (Import)
-AudienceView_Customer_Type_Staging_TO_ALL",Active File Drop,--,,--,2021-10-01 03:09:00
-26,AudienceView,AudienceView Events Clean,"AudienceView Events Clean (Import)
+AudienceView_Customer_Type_Staging_TO_ALL",Active File Drop,--,,--,2021-10-01 03:09:00,No longer use Audienceview Can Delete,,
+35,AudienceView,AudienceView Events Clean,"AudienceView Events Clean (Import)
 AudienceView Events Clean
 AudienceView Events Clean (Extract)
 AudienceView Events Clean (Transfer)
 AudienceView Events Clean (Import)
-AudienceView_Events_Staging_TO_ALL",Active File Drop,--,,--,2021-10-01 03:13:00
-27,AudienceView,AudienceView Misc Item Charges Clean,"AudienceView Misc Item Charges Clean (Import)
+AudienceView_Events_Staging_TO_ALL",Active File Drop,--,,--,2021-10-01 03:13:00,No longer use Audienceview Can Delete,,
+36,AudienceView,AudienceView Misc Item Charges Clean,"AudienceView Misc Item Charges Clean (Import)
 AudienceView Misc Item Charges Clean Clean
 AudienceView Misc Item Charges Clean Clean (Extract)
 AudienceView Misc Item Charges Clean Clean (Transfer)
 AudienceView Misc Item Charges (Import)
-AudienceView_Misc_Item_Charges_TO_ALL",Active File Drop,--,,--,2021-10-01 03:17:00
-28,Legacy Systems,AudienceView Misc Items Sales Clean,"AudienceView Misc Item Sales Clean (Import)
+AudienceView_Misc_Item_Charges_TO_ALL",Active File Drop,--,,--,2021-10-01 03:17:00,No longer use Audienceview Can Delete,,
+37,Legacy Systems,AudienceView Misc Items Sales Clean,"AudienceView Misc Item Sales Clean (Import)
 AudienceView Misc Item Sales Clean Clean
 AudienceView Misc Item Sales Clean Clean (Extract)
 AudienceView Misc Item Sales Clean Clean (Transfer)
 AudienceView Misc Item Sales (Import)
-AudienceView_Misc_Item_Sales_TO_ALL",Inactive File Drop,--,,--,2021-03-15 03:22:00
-29,AudienceView,AudienceView Order Adminssions Clean,"AudienceView Order Adminssions Clean (Import)
+AudienceView_Misc_Item_Sales_TO_ALL",Inactive File Drop,--,,--,2021-03-15 03:22:00,No longer use Audienceview Can Delete,,
+38,AudienceView,AudienceView Order Adminssions Clean,"AudienceView Order Adminssions Clean (Import)
 AudienceView Order Adminssions Clean 
 AudienceView Order Adminssions Clean (Extract)
 AudienceView Order Adminssions Clean (Transfer)
 AudienceView Order Adminssions (Import)
 AudienceView_Order_Admission_TO_ALL
-AudienceView_Order_Admission_All_Orders",Active File Drop,--,,--,2021-10-01 03:34:00
-30,Legacy Systems,AudienceView Order Admission Charges Clean,"AudienceView Order Admission Charges Clean (Import)
+AudienceView_Order_Admission_All_Orders",Active File Drop,--,,--,2021-10-01 03:34:00,No longer use Audienceview Can Delete,,
+39,Legacy Systems,AudienceView Order Admission Charges Clean,"AudienceView Order Admission Charges Clean (Import)
 AudienceView Order Admission Charges Clean
 AudienceView Order Admission Charges Clean (Extract)
 AudienceView Order Admission Charges Clean (Transfer)
 AudienceView Order Admission Charges (Import)
-AudienceView_Order_Admission_Charges_TO_ALL",Inactive File Drop,--,,--,2021-03-08 04:27:00
-31,AudienceView,AudienceView Order Charges Clean,"AudienceView Order Charges Clean (Import)
+AudienceView_Order_Admission_Charges_TO_ALL",Inactive File Drop,--,,--,2021-03-08 04:27:00,No longer use Audienceview Can Delete,,
+40,AudienceView,AudienceView Order Charges Clean,"AudienceView Order Charges Clean (Import)
 AudienceView Order Charges Clean
 AudienceView Order Charges Clean (Extract)
 AudienceView Order Charges Clean (Transfer)
 AudienceView Order Charges (Import)
-AudienceView_Order_Charges_TO_ALL",Active File Drop,--,,--,2021-10-01 03:37:00
-32,AudienceView,AudienceView Order Contact Total,"AudienceView Order Contact Total - Ongoing
-AudienceView Order Type Total - Ongoing",Ready,--,,--,2022-12-15 14:26:00
-33,AudienceView,AudienceView Order Contacts Clean,"AudienceView Order Contacts Clean (Import)
+AudienceView_Order_Charges_TO_ALL",Active File Drop,--,,--,2021-10-01 03:37:00,No longer use Audienceview Can Delete,,
+41,AudienceView,AudienceView Order Contact Total,"AudienceView Order Contact Total - Ongoing
+AudienceView Order Type Total - Ongoing",Ready,--,,--,2022-12-15 14:26:00,No longer use Audienceview Can Delete,,
+42,AudienceView,AudienceView Order Contacts Clean,"AudienceView Order Contacts Clean (Import)
 AudienceView Order Contacts Clean
 AudienceView Order Contacts Clean (Extract)
 AudienceView Order Contacts Clean (Transfer)
 AudienceView Order Contacts (Import)
-AudienceView_Order_Contact_Staging_TO_ALL",Active File Drop,--,,--,2021-10-01 03:42:00
-34,AudienceView,AudienceView Update Customer Master,"AudienceView_Order_Contact Insert Customer Master
+AudienceView_Order_Contact_Staging_TO_ALL",Active File Drop,--,,--,2021-10-01 03:42:00,No longer use Audienceview Can Delete,,
+43,AudienceView,AudienceView Update Customer Master,"AudienceView_Order_Contact Insert Customer Master
 AudienceView_Order_Contact Update Customer Master
-AudienceView_Customer_Type Update Customer Master",Ready,--,,--,2022-12-15 14:26:00
-35,OESP,August OESP,"Nashville_Opry_August_LY
+AudienceView_Customer_Type Update Customer Master",Ready,--,,--,2022-12-15 14:26:00,No longer use Audienceview Can Delete,,
+44,OESP,August OESP,"Nashville_Opry_August_LY
 ACLRyman_August_LY
 TNRegion_ACLRyman_August_LY
 TNRegion_Opry_August_LY
 National_Opry_August_LY
-National_ACLRyman_August_LY",Paused Schedule,--,,--,2023-04-25 13:50:00
-36,Marketing/Backups,AV Backup,"AV_Detail_Backup
-AV Contact Backup Daily",Scheduled,2024-02-23 07:30:00,Complete,2024-02-22 07:43:00,2024-02-22 07:43:00
-37,Legacy Systems,AV Historical Customer,"AV_Historical_Order_Contact
+National_ACLRyman_August_LY",Paused Schedule,--,,--,2023-04-25 13:50:00,ASK Troy,,
+45,Legacy Systems,AV Historical Customer,"AV_Historical_Order_Contact
 AV_Historical_Order_Contact_Update
 AV_Historical_Customer_Type_Update
-AV Historical Load to CM",Ready,--,,--,2020-10-09 12:14:00
-38,AXS,AXS Artist,"AXS Artist Import (Import)
-AXS Historical Artist",Active File Drop,--,Complete,2024-02-22 04:57:00,2024-02-22 04:57:00
-39,AXS,AXS Customer Transaction - V2,"AXS Customer File Import (Import)
+AV Historical Load to CM",Ready,--,,--,2020-10-09 12:14:00,"DELETED
+Deleted DE: AV_Historical_AllContacts",,
+46,AXS,AXS Artist,"AXS Artist Import (Import)
+AXS Historical Artist",Active File Drop,--,Complete,2024-02-22 04:57:00,2024-02-22 04:57:00,Reads in file from AXS with list of performers and the Event id to be used for Opry Lineups.,daily file drop,
+47,AXS,AXS Customer Transaction - V2,"AXS Customer File Import (Import)
 AXS Historical Customer Transactions
 NewContactsToAppend
 AXS_Order_Contact_Append_Customer_Master
 AXS_Order_Contact_Update_Customer_Master
+opt_out_axs_guest
 AXS Pre Admission Detail
 AXS Admission Detail
 AXS Admission Detail Set Status
@@ -255,32 +299,39 @@ Datorama - Non DG-OG
 Datorama - AudienceView DG-OG
 Datorama - AudienceView Automatic (Extract)
 Datorama - AudienceView Automatic (Transfer)
-Run Purchaser Consolidation Automation (Script)",Active File Drop,--,Complete,2024-02-22 07:06:00,2024-02-22 07:06:00
-40,Marketing/Backups,Backup of Customer Master Daily,"Create Master Customer Backup - Full Overwrite - Daily
+Run Purchaser Consolidation Automation (Script)",Active File Drop,--,Complete,2024-02-22 07:06:00,2024-02-22 07:06:00,"Currently our most important automation. Reads in all the ticket purchases from AXS from the previous day and handles all the processing.
+Stores raw data in a historical table
+Splits New and Existing contacts to be proccesed into our system
+Attactched out custom values such as event_codes, venue_names, and budles and adds it to our ticket database
+Then processes our ticket data fro Datorama
+
+TODO: GO THROUGH AND DOUBLE CHECK STEPS",daily file drop,
+48,Utils,Backfill Email Engagement,,Paused Scheduled,,,,,,,
+49,Utils,Backfill SMS Optin Messages,"backfill_sms_optin_contacts
+opry_sms_backfill
+ryman_sms_backfill
+ole_red_sms_backfill
+acl_sms_backfill
+cat10_sms_backfill",Paused Scheduled,,,,,,,
+50,Backups,Backup of Customer Master Daily,"Create Master Customer Backup - Full Overwrite - Daily
 OEG_Customer_Master_Backup (Extract)
-OEG_Customer_Master_Backup (Transfer)",Scheduled,2024-02-23 04:00:00,Complete,2024-02-22 04:07:00,2024-02-22 04:07:00
-41,Marketing/Backups,Backup of Customer Master Hourly,Create Master Customer Backup - Full Overwrite - Hourly,Paused Schedule,--,Complete,2023-01-23 18:06:00,2023-01-23 18:50:00
-42,Marketing/Backups,Backup of Customer Master Monthly,Create Master Customer Backup - Full Overwrite - Monthly,Scheduled,2024-03-01 00:02:00,Complete,2024-02-01 00:07:00,2024-02-01 00:07:00
-43,Marketing/Backups,Backup of Customer Master Weekly,Create Master Customer Backup - Full Overwrite - Weekly,Scheduled,2024-02-25 22:00:00,Complete,2024-02-18 22:02:00,2024-02-18 22:02:00
-44,Marketing/Backups,Backup of Forms and Sweeps,"Forms_And_Sweeps_Backup
-Manual_Forms_and_Sweeps_Backup
-Backup_Contact_Us",Scheduled,2024-02-23 00:00:00,Complete,2024-02-22 00:07:00,2024-02-22 00:07:00
-45,Marketing/Backups,Backup of Forms and Sweeps Weekly,"Backup Forms Weekly
-Manual_Forms_and_Sweeps_Backup_Weekly
-Backup_Contact_Us_Weekly",Scheduled,--,Complete,2024-02-01 09:59:00,2024-02-01 09:59:00
-46,Marketing/Backups,Backup of Rex Direct,Backup Rex Direct,Scheduled,2024-02-23 00:00:00,Complete,2024-02-22 00:01:00,2024-02-22 00:01:00
-47,MC_Activity,Bad Domains,Bounces_Bad_Domain,Scheduled,2024-02-28 03:00:00,Complete,2024-02-21 03:00:00,2024-02-21 03:00:00
-48,,BlueCore,"BlueCore Optin OptOut
+OEG_Customer_Master_Backup (Transfer)",Scheduled,2024-02-23 04:00:00,Complete,2024-02-22 04:07:00,2024-02-22 04:07:00,DELETED,,Already exports allContacts DE to FTP
+51,Backups,Backup of Customer Master Hourly,Create Master Customer Backup - Full Overwrite - Hourly,Paused Schedule,--,Complete,2023-01-23 18:06:00,2023-01-23 18:50:00,DELETED,,
+52,Backups,Backup of Rex Direct,Backup Rex Direct,Scheduled,2024-02-23 00:00:00,Complete,2024-02-22 00:01:00,2024-02-22 00:01:00,May be able to remove need to ask what this is about,Daily,
+53,MC_Activity,Bad Domains,Bounces_Bad_Domain,Scheduled,2024-02-28 03:00:00,Complete,2024-02-21 03:00:00,2024-02-21 03:00:00,Looks at the bounced email addresses and stores a lust of the emailaddress and bounce reason,Weekly,We shoul dbe doing something with these. Either deleting the email or exluding this list.
+54,,BlueCore,"BlueCore Optin OptOut
 BlueCore Data Extract (Extract)
-BlueCore OptIn Out File Transfer (Tranfer)",Ready,--,,--,2020-12-31 08:28:00
-49,Brokers,Brokers Email Domain,"Broker Designation
+BlueCore OptIn Out File Transfer (Tranfer)",Ready,--,,--,2020-12-31 08:28:00,DELETED,,
+55,Brokers,Brokers Email Domain,"Broker Designation
 Broker Designation 2
 Broker Designation 3
 Broker Designation 4
 Broker Designation 5
-Broker Designation 6",Scheduled,--,Complete,2024-02-16 17:26:00,2024-02-16 17:26:00
-50,One Time Requests,Category 10 Newsletter Subscribers,Category_10_Subs_Pull,Paused Schedule,--,Complete,2024-02-02 11:49:00,2024-02-02 12:49:00
-51,Journeys/Category 10,Category 10 Welcome Journey,"Category 10 Welcome Journey - Sync to Master
+Broker Designation 6
+find_opry_brokers
+remove_opry_brokers",Scheduled,--,Complete,2024-02-16 17:26:00,2024-02-16 17:26:00,Assigns broker status to various email domains.,Daily,
+56,,BU Purchaser Counts,bu_purchaser_count_month_and_year,Scheduled,,,,,"Calculated the total purchases for each BU preference  for previous month, year, and year to date. Helps keep track of our purchase growth over the year. Need to double check the Purchaser DE to make sure the data is accurate",Monthly,
+57,Journeys/Category 10,Category 10 Welcome Journey,"Category 10 Welcome Journey - Sync to Master
 Category 10 Welcome Journey Expired
 Category 10 Welcome Journey Remove Users (Script)
 Category 10 Welcome Journey - Forms
@@ -288,30 +339,45 @@ Category 10 Welcome Journey - WiFi
 Category 10 Welcome Journey - Manual Uploads and Uncategorized
 Category 10 Photobooth Welcome
 Category 10 Welcome Journey - Retail POS
-Category 10 Welcome Journey - Shows",Running,2024-02-22 12:00:00,,--,2024-02-22 11:01:00
-52,Marketing,Celebration Package Journey,"delete all celebration
+Category 10 Welcome Journey - Shows",Running,2024-02-22 12:00:00,,--,2024-02-22 11:01:00,"Updates the Cat10_WJ start and end fields with the date from the Category 10 Welcome Journey DE and deletes anyone whos time has expired from the journey.
+
+Once the jounery contacts are updated then it looks at all retail and ticket purchases, form submissions, and wifi connections to determine new contacts to Cat 10 and add them to the journey DE.  ",Hourly,
+58,Marketing,Celebration Package Journey,"delete all celebration
 Celebration_Package_Journey
 Celebrate_Future
 celebrate.csv (Extract)
-celebrate.csv (Transfer)",Scheduled,2024-02-23 09:30:00,Complete,2024-02-22 09:34:00,2024-02-22 09:34:00
-53,Journeys/Ryman,Clear Ryman Arrival DEs,"Clear Ryman Arrival Journey DE 1 Day
-Clear Ryman Arrival Journey DE 7 Day",Scheduled,2024-02-22 23:30:00,Complete,2024-02-21 23:31:00,2024-02-21 23:31:00
-54,Domain Generation/Artist,Combine Artist Info,combine_artist_info,Scheduled,,,,
-55,Domain Generation/Lead Gen,Consolidate Lead Gen DE's,"combine_info_walled_data
-combine_lead_gen_data",Scheduled,2024-02-25 04:00:00,Complete,2024-02-21 10:56:00,2024-02-21 11:00:00
-56,Marketing,Contact and Forms Existing Customer Fix,"Contact Existing Customer Fix
-Forms Existing Customer Fix",Scheduled,2024-02-23 07:30:00,Complete,2024-02-22 07:31:00,2024-02-22 07:31:00
-57,Contact Form Notifications,Contact_Us_Opry,"Contact_Us_Opry
+celebrate.csv (Transfer)
+Contact_Us_Celebration
+PARENT_Contact_Us_Celebration_Notification_Email
+Contact_Us_Celebration (Script)",Scheduled,2024-02-23 09:30:00,Complete,2024-02-22 09:34:00,2024-02-22 09:34:00,Loads all Celebration Package purchasers for the day into the Celebration_Package_Journey DE. Then it load all emails who submitted a Celebration Contact Us Form and exports the DE,Daily,
+59,Journeys/Ryman,Clear Ryman Arrival DEs,"Clear Ryman Arrival Journey DE 1 Day
+Clear Ryman Arrival Journey DE 7 Day",Scheduled,2024-02-22 23:30:00,Complete,2024-02-21 23:31:00,2024-02-21 23:31:00,These two steps are already at the beginning of Ryman Pre-Arrival Journey Automation. This automation will be DELETED.,,
+60,Domain Generation/Artist,Combine Artist Info,combine_artist_info,Scheduled,,,,,Combines the Artist information from LastFM and Spotify. Looking at the import files the spotify file has not been loaded since January 2024 and there is no inport activity for LastFM. Need to look into further but will pause this for now.,import,
+61,Domain Generation/Lead Gen,Consolidate Lead Gen DE's,"combine_info_walled_data
+combine_lead_gen_data",Scheduled,2024-02-25 04:00:00,Complete,2024-02-21 10:56:00,2024-02-21 11:00:00,"Combines all Info Walled Lead Gen data from Forms_and_Sweeps_Combined and MyPlaceConnect (Wifi), and Rex Direct. If we do not need this we can remove it.",,
+62,Marketing,Contact and Forms Existing Customer Fix,"Contact Existing Customer Fix
+Forms Existing Customer Fix",Scheduled,2024-02-23 07:30:00,Complete,2024-02-22 07:31:00,2024-02-22 07:31:00,"Updates AllContacts_Step1 with users who filled out an Opry Contact Form and sets the Opry Preference and OEG_Opt_In to true. This aslo does it for all form_and_sweeps submissions from the previous day.
+
+I don’t believe we need this because of the way our forms are setup but need to look into further.",Daily,Added and equal sign to the last date comarison becase it was comparing created dates for Contact_forms/ forms_and_sweeps and AllContacts_Step1
+63,Contact Form Notifications,Contact_Us_ACL,"Contact_Us_ACL
+PARENT_Contact_Us_ACL_Notification_Email
+Contact_Us_ACL (Script)",Scheduled,,,,,Processes all the ACL Contact Form Submission and starts the Contact_Us_ACL automation in the child to send out the email.,Daily,
+64,Contact Form Notifications,Contact_Us_Ascend,"Contacts_Us_Ascend
+PARENT_Contact_Us_Ascend_Notification_Email
+Contact_Us_Ascend (Script)",Scheduled,,,,,,,
+65,Contact Form Notifications,Contact_Us_Category10,"Contact_Us_Category10
+PARENT_Contact_Us_Category10_Notification_Email
+Contact_Us_Category10 (Script)",Scheduled,,,,,Processes all the Cat10 Contact Form Submission and starts the Contact_Us_Category10 automation in the child to send out the email.,Hourly,
+66,Contact Form Notifications,Contact_Us_OleRed,"Contact_Us_OleRed
+PARENT_Contact_Us_OleRed_Notification_Email
+Contact_Us_OleRed (Script)",Scheduled,,,,,Processes all the Ole Red Contact Form Submission and starts the Contact_Us_OleRed automation in the child to send out the email.,Hourly,
+67,Contact Form Notifications,Contact_Us_Opry,"Contact_Us_Opry
 PARENT_Contact_Us_Opry_Notification_Email
-Contact_Us_Opry (Script)",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:35:00,2024-02-22 10:35:00
-58,Contact Form Notifications,Contact_Us_Ryman,"Contact_Us_Ryman
+Contact_Us_Opry (Script)",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:35:00,2024-02-22 10:35:00,Processes all the Opry Contact Form Submission and starts the Contact_Us_Opry automation in the child to send out the email.,Hourly,
+68,Contact Form Notifications,Contact_Us_Ryman,"Contact_Us_Ryman
 PARENT_Contact_Us_Ryman_Notification_Email
-Contact_Us_Ryman (Script)",Scheduled,,,,
-59,PowerBI Reporting,copy ecommerce_purchasers,"ecommerce_purchasers_pbi
-ecommerce_purchasers_pbi (Extract)
-ecommerce_purchasers_pbi (Transfer)",Ready,--,Complete,2024-01-18 09:20:00,2024-01-18 09:20:00
-60,One Time Requests,Create Acxiom DE,Create Acxiom Data Extension (Script),Ready,--,,--,2020-10-02 21:51:00
-61,Datorama,Cross Sell Analysis - AXS,"Opry Show Upsell - Step 1
+Contact_Us_Ryman (Script)",Scheduled,,,,,Processes all the Ryman Contact Form Submission and starts the Contact_Us_Ryman automation in the child to send out the email.,Hourly,
+69,Datorama,Cross Sell Analysis - AXS,"Opry Show Upsell - Step 1
 Opry Tour Cross - Step 2
 Opry show upsell and Tour Cross - Step 3
 Distinct Cross Tours - Step 4
@@ -339,8 +405,8 @@ Add Non-Cross retail- Step 22
 Complete Reset - Step 24
 crosssell to dato
 Cross Sell to Dato (Extract)
-Cross Sell to Dato (Tranfer)",Scheduled,--,Complete,2024-02-22 01:23:00,2024-02-22 10:00:00
-62,Marketing,Customer Spend,"Lifetime Retail Spend
+Cross Sell to Dato (Tranfer)",Scheduled,--,Complete,2024-02-22 01:23:00,2024-02-22 10:00:00,TODO,Daily,
+70,Marketing,Customer Spend,"Lifetime Retail Spend
 Parking_Purchasers_2016_To_Date
 OHBS_Purchasers_2016_To_Date
 POST_Purchasers_2016_To_Date
@@ -377,8 +443,22 @@ Opry_Product_Breakout
 Ryman_Product_breakout_to_dato
 or_visitor_breakout_to_dato
 Product_Breakout_to_Dato (Extract)
-product_breakouts_to_dato (Transfer)",Scheduled,2024-02-23 04:30:00,Complete,2024-02-22 04:52:00,2024-02-22 04:52:00
-63,Marketing,Database Cleanup,"	USA Country Code Cleanse
+product_breakouts_to_dato (Transfer)",Scheduled,2024-02-23 04:30:00,Complete,2024-02-22 04:52:00,2024-02-22 04:52:00,TODO,Daily,Needs to be updated for Shopify
+71,Backups/Daily,Customers_Daily,backup_AllContacts_Step1_Daily,Scheduled,,,,,Backup AllContacts_Step1,Daily,
+72,Backups/Monthly,Customers_Monthly,backup_AllContacts_Step1_Monthly,Scheduled,,,,,Backup AllContacts_Step1,monthly,
+73,Backups/Weekly,Customers_Weekly,backup_AllContacts_Step1_Daily,Scheduled,,,,,Backup AllContacts_Step1,Weekly,
+74,Analysis,Data Profiles,"axciom_opry_overall
+axciom_ryman_overall
+axciom_ACL_3ten_overall
+ole_red_overall
+category_10_overall
+axciom_opry_top_customer
+opry_data_segments
+ryman_data_segments
+acl_3ten_data_segments
+ole_red_data_segments
+ole_red_avg_visits_data_segments",Scheduled,,,,,"Created data profiles for every person who made a purchase (Retail or Ticket), cross bu purchase, and visits for each of the BU's to be sent to Axciom for a data profile report. We will use this yearly to understand our customer base for each BU.",As Needed,
+75,Marketing,Database Cleanup,"	US Country Code Cleanse
 	Country Cleanse
 	Country_Lookup
 State_Lookup
@@ -393,24 +473,25 @@ UpperLower Case Name Fix
 Remove Preferences for Opt-Outs
 Fix Null Preferences
 Fix Missing Unsub Dates
-Pop Up Form Name Fix",Scheduled,2024-02-23 05:30:00,Complete,2024-02-22 05:42:00,2024-02-22 05:42:00
-64,Datorama,Datorama - AudienceView,"Datorama - Non DG-OG
+Pop Up Form Name Fix",Scheduled,2024-02-23 05:30:00,Complete,2024-02-22 05:42:00,2024-02-22 05:42:00,"Automation for making updates to various fields inside of AllContacts_Step1. This includes, emptying rows with bad data, making sure there is consintancy inside of fields. Backfilling any missed preferences based on Source values, cleaning up urls, updating date fields, etc. ",Daily,"Preference changes for ORV and Cat10 were missing, "
+76,Datorama,Datorama - AudienceView,"Datorama - Non DG-OG
 Datorama - AudienceView DG-OG
 Datorama - AudienceView (Extract)
 Datorama - AudienceView (Transfer)
 Forwards and Resale
 Datorama - Forwards and Resale (Extract)
-Datorama - Forwards and Resale (Transfer)",Running,2024-02-22 12:00:00,,--,2024-02-22 11:01:00
-65,Datorama,Datorama - Email Activity,"Datorama - Email Activity (Extract)
-Datorama - Email Activity (Transfer)",Scheduled,2024-02-23 03:00:00,Complete,2024-02-22 03:01:00,2024-02-22 03:01:00
-66,Datorama,Datorama - Forms and Sweepstakes,"Forms and Sweeps Combined
+Datorama - Forwards and Resale (Transfer)",Running,2024-02-22 12:00:00,,--,2024-02-22 11:01:00,,Hourly,
+77,Datorama,Datorama - Email Activity,"Datorama - Email Activity (Extract)
+Datorama - Email Activity (Transfer)",Scheduled,2024-02-23 03:00:00,Complete,2024-02-22 03:01:00,2024-02-22 03:01:00,Exports the OEG_Brands_Email_Activity_Rollup DE,Daily,
+78,Datorama,Datorama - Forms and Sweepstakes,"Forms and Sweeps Combined
 Forms and Sweeps Combined Second Step
+Forms and Sweeps Combined Third Step
 Forms and Sweeps Reporting Share Unique Entries
 Forms and Sweeps Reporting Share All Entries
 Forms and Sweeps Reporting Share
 Forms_And_Sweeps_Reporting (Extract)
-Forms_And_Sweeps_Reporting (Transfer)",Running,2024-02-22 12:00:00,,--,2024-02-22 11:00:00
-67,Datorama,Datorama - Subscriber Reporting,"Datorama Reporting
+Forms_And_Sweeps_Reporting (Transfer)",Running,2024-02-22 12:00:00,,--,2024-02-22 11:00:00,Combines both Forms_And_Sweeps and Forms_And_Sweeps_Manual_Upload DE's into Forms_And_Sweeps_Combined. Then it splits the data into total and unique submissions to be processed and exported to Datorama.,Hourly,
+79,Datorama,Datorama - Subscriber Reporting,"Datorama Reporting
 OEG Consolidated Reporting (Extract)
 OEG Consolidated Reporting (Transfer)
 Datorama - Retail Rep
@@ -427,14 +508,14 @@ Datorama - Subscriber Reporting - Preference by Location (Transfer)
 Datorama - Subscriber Reporting - Unsubscribed (Extract)
 Datorama - Subscriber Reporting - Unsubscribed (Transfer)
 Datorama - Subscriber Reporting - Last Visit (Extract)
-Datorama - Subscriber Reporting - Last Visit (Transfer)",Scheduled,2024-02-23 04:00:00,Complete,2024-02-22 04:25:00,2024-02-22 04:25:00
-68,OESP,December OESP,"Nashville_ACLRyman_December_LY
+Datorama - Subscriber Reporting - Last Visit (Transfer)",Scheduled,2024-02-23 04:00:00,Complete,2024-02-22 04:25:00,2024-02-22 04:25:00,"Processes out Contacts data From AllContacts_Step1 and buckets them by Preference and Status, Preferences and Location, Unsubscribes, and last visits. Then exports for Datorama.",Daily,
+80,OESP,December OESP,"Nashville_ACLRyman_December_LY
 Nashville_Opry_December_LY
 TNRegion_ACLRyman_December_LY
 ACLRyman_December_LY
 TNRegion_Opry_December_LY
-National_Opry_December_LY",Paused Schedule,--,,--,2023-04-25 13:57:00
-69,Delete From All Contacts,Delete Testers,"Delete Testers From Forms and Sweeps (Script)
+National_Opry_December_LY",Paused Schedule,--,,--,2023-04-25 13:57:00,,,
+81,Delete From All Contacts,Delete Testers,"Delete Testers From Forms and Sweeps (Script)
 Delete Testers From All Contacts (Script)
 Delete Testers From Contact Us (Script)
 Delete Testers from OR Welcome (Script)
@@ -442,25 +523,31 @@ Delete from Ryman Welcome (Script)
 Delete from Opry Welcome (Script)
 Delete from Opry Purchase (Script)
 Delete from RPJ (Script)
-Find Users to Delete",Scheduled,2024-02-22 23:00:00,Complete,2024-02-21 23:05:00,2024-02-21 23:05:00
-70,Journeys,Ecomm Buyer Journey,"Ecomm Purchase Journey Remove (Script)
+Find Users to Delete",Scheduled,2024-02-22 23:00:00,Complete,2024-02-21 23:05:00,2024-02-21 23:05:00,removes testing emails from various DE's,Daily,
+82,Journeys,Ecomm Buyer Journey,"Ecomm Purchase Journey Remove (Script)
 ecomm_buyer_journey
-ecomm_buyer_journey_exclusion",Scheduled,,,,
-71,PowerBI Reporting,ecommerce_purchasers,"ecommerce_purchasers_pbi
+ecomm_buyer_journey_exclusion",Scheduled,,,,,Finds all records from the Ecomm Buyer Journey DE that have completed the journey and puts them in an exclusions list. Then removes them from the Ecomm Buyer Journey DE. Finaly all new emails from recent Ecomm purchasers are gathered to be entered to the journey.,Daily,The ecomm_buyer_journey query did not filter out emails that did not accept marketing. 
+83,PowerBI Reporting,ecommerce_purchasers,"ecommerce_purchasers_pbi
 ecommerce_purchasers_pbi (Extract)
-ecommerce_purchasers_pbi (Transfer)",Paused Schedule,--,Complete,2024-01-17 17:36:00,2024-01-18 09:08:00
-72,PowerBI Reporting,Email Clicks Export for PBI,"Email Clicks (Extract)
-Email Clicks (Transfer)",Scheduled,2024-02-23 00:00:00,Complete,2024-02-22 00:02:00,2024-02-22 00:02:00
-73,Exclusions,Email Sends to Monthly,create_email_freq_monthly_de,Scheduled,,,,
-74,,February OESP,"Nashville_Opry_February_LY
+ecommerce_purchasers_pbi (Transfer)",Paused Schedule,--,Complete,2024-01-17 17:36:00,2024-01-18 09:08:00,"Combines all retail purchasers from Shopify, Magento, and Netsuite and exports the data.",Weekly,
+84,PowerBI Reporting,Email Clicks Export for PBI,"Email Clicks (Extract)
+Email Clicks (Transfer)",Scheduled,2024-02-23 00:00:00,Complete,2024-02-22 00:02:00,2024-02-22 00:02:00,,Daily,
+85,Email Engagement,Email Engagement Dropoff,"email_engagement_dropoff_opry
+email_engagement_dropoff_ryman
+email_engagement_dropoff_acl
+email_engagement_dropoff_olered
+email_engagement_dropoff_cat10",,,,,,Calulates the percent of active emails and a day range of when those users were last active. This automation does this for all BU's,As Needed,
+86,,Email Received In Last 30 Days,oeg_emails_received_last_30days,Scheduled,,,,,Pulls the total emails received for all emails that received more than 6 emails in the past 30 days,Daily,
+87,Exclusions,Email Sends to Monthly,create_email_freq_monthly_de,Scheduled,,,,,Gathers all emails who chose to reduce email frequency to monthly.,Daily,
+88,,February OESP,"Nashville_Opry_February_LY
 Nashville_ACLRyman_February_LY
 TNRegion_ACLRyman_February_LY
 TNRegion_Opry_February_LY
 National_Opry_February_LY
-National_ACLRyman_February_LY",Paused Schedule,--,,--,2023-04-25 13:40:00
-75,One Time Requests,Fix First OEG Source Typos,Fix_First_Source_Typos_AllContacts,Ready,--,Complete,2024-01-29 11:36:00,2024-01-29 11:36:00
-76,One Time Requests,Generate Email List for Alert Date,interested_email_list_for_ticket_alerts,Ready,--,Complete,2024-02-01 15:48:00,2024-02-01 15:48:00
-77,Marketing/Recommendations,Genre_Affinity_All_Purchasers,"Order_All_Purchases_Fror_Recommendations
+National_ACLRyman_February_LY",Paused Schedule,--,,--,2023-04-25 13:40:00,,,
+89,One Time Requests,Fix First OEG Source Typos,Fix_First_Source_Typos_AllContacts,Ready,--,Complete,2024-01-29 11:36:00,2024-01-29 11:36:00,Ad Hoc fixing of certain First OEG Source values in AllContacts_Step1,As Needed,
+90,One Time Requests,Generate Email List for Alert Date,interested_email_list_for_ticket_alerts,Ready,--,Complete,2024-02-01 15:48:00,2024-02-01 15:48:00,will generate a list of email who have expressed interest for a specific date. You must change the query and DE name  to match the specific date,As Needed,
+91,Marketing/Recommendations,Genre_Affinity_All_Purchasers,"Order_All_Purchases_Fror_Recommendations
 Latest_Purchase
 Purchase_Event_Genre
 Group_Events_Genre_Contact
@@ -476,55 +563,84 @@ List_SubGenres
 SubGenre_Affinity_All_Purchasers
 Purchaser_Genre_Affinity_Reorder
 add_expressed_genre_step_1
-add_expressed_genre",Scheduled,2024-02-23 04:30:00,Complete,2024-02-22 04:53:00,2024-02-22 04:53:00
-78,Marketing,Get Details of 3TEN and ACL Customers without Brokers,3Ten_ACL_Customer_Details_Fetch_No_Brokers_Update,Paused Schedule,--,Complete,2023-11-02 13:56:00,2023-11-06 16:41:00
-79,Marketing,Identify Country Duos,Country Duo Order Numbers,Scheduled,2024-02-23 04:30:00,Complete,2024-02-22 04:30:00,2024-02-22 04:30:00
-80,All Contacts Cleanup,Invalid_Country_Code,Invalid_Country_Code,Ready,--,Complete,2023-01-23 20:26:00,2023-01-23 20:38:00
-81,All Contacts Cleanup,Invalid_Mobile_Phone,"Invalid_Mobile_Phone_1
+add_expressed_genre",Scheduled,2024-02-23 04:30:00,Complete,2024-02-22 04:53:00,2024-02-22 04:53:00,Looks at the show purchases of a contacts and then gathers the Genre from the artists they purchased shows for. These are the persons implied genres from their purchase activity. After that we pull the users expressed genre. These are genres that the contacts has explicitly selected interest in through forms.,Daily,
+92,Gleam,Gleam Campaign Backfill,gleam_campaign_backfill,,,,,,,As Needed,
+93,Gleam,Gleam Contacts Backfill,,,,,,,Used to backfill contacts from Gleam sweeps who were not added to AllContacts-Step1 because of automation failures.,As Needed,
+94,Gleam,Gleam Subscriber Processing,"process_gleam_list
+gleam_sms_opt_ins
+gleam_entrants_historical
+add_gleam_to_forms_and_sweeps
+add_gleam_to_AllContacts
+gleam_sms_optIn_opry (Script)
+gleam_sms_optIn_ryman (Script)
+gleam_sms_optIn_olered (Script)
+gleam_sms_optIn_acl (Script)
+gleam_sms_optIn_cat10 (Script)
+gleam_sms_optIn_ascend (Script)",Scheduled,,,,,Used to process all of our submissions from Gleam. The data first gets added to the GleamContacts List then all new records are pulled and stored for historical records and added to AllContacts_Step1 and Forms and Sweeps. The automation also pulls any numbers who opted into sms and sends them an opt in message.,Hourly (When sweeps are active),
+95,Marketing,Identify Country Duos,Country Duo Order Numbers,Scheduled,2024-02-23 04:30:00,Complete,2024-02-22 04:30:00,2024-02-22 04:30:00,"Pulls all ticket order numbers that have bunddle names of  Ryman Guided Backstage Tour, Opry House Daytime Backstage Tour or has country duos in it. ",Daily,
+96,All Contacts Cleanup,Invalid_Mobile_Phone,"Invalid_Mobile_Phone_1
 Invalid_Mobile_Phone_2
-Invalid_Mobile_Phone_3",Scheduled,2024-02-22 11:15:00,Complete,2024-02-22 10:17:00,2024-02-22 10:17:00
-82,OESP,January OESP,"Nashville_Opry_January_LY
+Invalid_Mobile_Phone_3",Scheduled,2024-02-22 11:15:00,Complete,2024-02-22 10:17:00,2024-02-22 10:17:00,"Step 1: pull all not null numbers that do not have 11 digits and do match this regex '1[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
+
+Step 2: adds the country code (1) to all numbers with a us country
+
+Step 3: Updates the number in all contacts with the cleaned phone number",Hourly,"Updated first step to remove any special characters that are commonly added to mobile numbers (,),+, and spaces. Then if those numbers are valid I added them to the valid number field. I also filtered out every number that was not from Canada or US as they have a diffierent country code. US and CA have 1 which is what the query is pulling. I will setup a international invalid phone checker in the fututre. 
+
+Updated Step 2 to look at the new Cleaned_Mobile_Phone field added to step one. This matched many more area codes in the Valid_Area_Codes DE
+
+Step 3 added modified date to AllContacts_Step1 update"
+97,OESP,January OESP,"Nashville_Opry_January_LY
 Nashville_ACLRyman_January_LY
 TNRegion_ACLRyman_January_LY
 TNRegion_Opry_January_LY
 National_Opry_January_LY
-National_ACLRyman_January_LY",Paused Schedule,--,Complete,2024-01-16 15:07:00,2024-01-16 15:07:00
-83,OESP,July OESP,"Nashville_Opry_July_LY
+National_ACLRyman_January_LY",Paused Schedule,--,Complete,2024-01-16 15:07:00,2024-01-16 15:07:00,,,
+98,OESP,July OESP,"Nashville_Opry_July_LY
 Nashville_ACLRyman_July_LY
 TNRegion_ACLRyman_July_LY
 TNRegion_Opry_July_LY
 National_Opry_July_LY
-National_ACLRyman_July_LY",Paused Schedule,--,,--,2023-04-25 13:49:00
-84,OESP,June OESP,"Nashville_Opry_June_LY
+National_ACLRyman_July_LY",Paused Schedule,--,,--,2023-04-25 13:49:00,,,
+99,OESP,June OESP,"Nashville_Opry_June_LY
 Nashville_ACLRyman_June_LY
 TNRegion_ACLRyman_June_LY
 TNRegion_Opry_June_LY
 National_Opry_June_LY
-National_ACLRyman_June_LY",Paused Schedule,--,,--,2023-04-25 13:47:00
-85,,LastFM Automation,LastFM Data Import,Inactive File Drop,--,Error,2024-01-09 10:51:00,2024-01-09 10:51:00
-86,,LiveRamp VML,"LiveRamp_WSM Email
+National_ACLRyman_June_LY",Paused Schedule,--,,--,2023-04-25 13:47:00,,,
+100,Backups/Daily,LeadGen_Daily,"backup_photobooth_archive_daily
+backup_Forms_And_Sweeps_Daily
+backup_Forms_and_Sweeps_Manual_Upload_Daily
+backup_MyPlaceConnect_Daily
+Backup_Contact_Us_Forms_Daily",Scheduled,,,,,"Backup Lead Gen sources (photobooth, Contact Us Forms, Forms and Sweeps, and My Place Connect)",Daily,
+101,Backups/Monthly,LeadGen_Monthly,"backup_photobooth_archive_monthly
+backup_Forms_And_Sweeps_Monthly
+backup_Forms_and_Sweeps_Manual_Upload_Monthly
+backup_MyPlaceConnect_Monthly
+Backup_Contact_Us_Forms_Monthly",Scheduled,,,,,"Backup Lead Gen sources (photobooth, Contact Us Forms, Forms and Sweeps, and My Place Connect)",Monthly,
+102,Backups/Weekly,LeadGen_Weekly,"backup_photobooth_archive_weekly
+backup_Forms_And_Sweeps_Weekly
+backup_Forms_and_Sweeps_Manual_Upload_Weekly
+backup_MyPlaceConnect_Weekly
+Backup_Contact_Us_Forms_Weekly",Scheduled,,,,,"Backup Lead Gen sources (photobooth, Contact Us Forms, Forms and Sweeps, and My Place Connect)",Weekly,
+103,,LiveRamp VML,"LiveRamp_WSM Email
 LiveRamp_Ole Red Email
 LiveRamp_Ryman Email
 LiveRamp_Opry Email
 LiveRamp_Ryman Self Tour
 LiveRamp_Ryman Guided Tour
 LiveRamp_Opry Tour Purchasers
-LiveRamp_Opry Show Purchasers",Scheduled,2024-03-04 00:00:00,Complete,2024-02-05 00:05:00,2024-02-05 00:05:00
-87,Marketing,Local to (All Users),Local to All Users,Scheduled,2024-02-25 00:00:00,Complete,2024-02-18 00:01:00,2024-02-18 00:01:00
-88,Marketing,Local To (New Users),Local To New Users,Scheduled,2024-02-23 01:30:00,Complete,2024-02-21 01:30:00,2024-02-21 01:30:00
-89,Magento,Magento Customer Import,"Magento Customer Data for Staging (Import)
+LiveRamp_Opry Show Purchasers",Scheduled,2024-03-04 00:00:00,Complete,2024-02-05 00:05:00,2024-02-05 00:05:00,Pulls all contacts with specific preferences or purchases specific tickets.,Monthly,
+104,Marketing,Local to (All Users),Local to All Users,Scheduled,2024-02-25 00:00:00,Complete,2024-02-18 00:01:00,2024-02-18 00:01:00,Looks at the postal code and state of all contacts to determine what city they are local to.,Weekly,TODO Create a lookup table for these records. 
+105,Marketing,Local To (New Users),Local To New Users,Scheduled,2024-02-23 01:30:00,Complete,2024-02-21 01:30:00,2024-02-21 01:30:00,Looks at the postal code and state of all new contacts to determine what city they are local to.,Daily,TODO Create a lookup table for these records. 
+106,Magento,Magento Customer Import,"Magento Customer Data for Staging (Import)
 Magento Customer Update Customer Master
-Magento Customer TO ALL",Active File Drop,--,,--,2022-09-12 14:20:00
-90,Magento,Magento Transaction,"Magento Transaction Data for Staging (Import)
+Magento Customer TO ALL",Active File Drop,--,,--,2022-09-12 14:20:00,TODO Can Be Deleted,,TODO Can Be Deleted
+107,Magento,Magento Transaction,"Magento Transaction Data for Staging (Import)
 Magento Transaction
-Magento Transaction Update Customer Master",Active File Drop,--,,--,2022-12-14 16:46:00
-91,Legacy Systems,Mandolin Processing,"Process All Mandolin Transactions
-Mandolin Process New
-Mandolin Process New Records to customer master
-Mandolin Process Prior",Ready,--,,--,2021-12-22 15:11:00
-92,One Time Requests,Manual Forms and Sweeps Backfill,"backfill_manual_f&s_from_allContacts
-Photobooth staging to forms and sweeps",Ready,,,,
-93,AXS,Manual Load - AXS Customer Transaction,"Manual AXS Customer File Import (Import)
+Magento Transaction Update Customer Master",Active File Drop,--,,--,2022-12-14 16:46:00,TODO Can Be Deleted,,TODO Can Be Deleted
+108,One Time Requests,Manual Forms and Sweeps Backfill,"backfill_manual_f&s_from_allContacts
+Photobooth staging to forms and sweeps",Ready,,,,,Used to make updates to misnamed forms in Forms_And_Sweeps and Forms_And_Sweeps manual upload DE's. Loads the updated in a temp data extention and then overwrites the Des with the new data.,As Needed,
+109,AXS,Manual Load - AXS Customer Transaction,"Manual AXS Customer File Import (Import)
 AXS Historical Customer Transactions
 NewContactsToAppend
 AXS_Order_Contact_Append_Customer_Master
@@ -541,49 +657,61 @@ Order_Event_Prefix
 Datorama - Non DG-OG
 Datorama - AudienceView DG-OG
 Datorama - AudienceView (Extract)
-Datorama - AudienceView (Transfer)",Ready,--,Complete,2023-12-27 09:45:00,2024-01-09 10:48:00
-94,OESP,March OESP,"Nashville_Opry_March_LY
+Datorama - AudienceView (Transfer)",Ready,--,Complete,2023-12-27 09:45:00,2024-01-09 10:48:00,Matches AXS Customer Transaction Automation. Used in case the automatic automation fails or does not run. ,As Needed,
+110,OESP,March OESP,"Nashville_Opry_March_LY
 Nashville_ACLRyman_March_LY
 TNRegion_ACLRyman_March_LY
 TNRegion_Opry_March_LY
 National_Opry_March_LY
-National_ACLRyman_March_LY",Paused Schedule,--,,--,2023-04-25 13:42:00
-95,,Master Artist Data,"Master_Artist_1
+National_ACLRyman_March_LY",Paused Schedule,--,,--,2023-04-25 13:42:00,,,
+111,,Master Artist Data,"Master_Artist_1
 Master_Artist_2
 Master Artist List (Extract)
-Master Artist List (Transfer)",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:06:00,2024-02-22 06:06:00
-96,OESP,May OESP,"Nashville_Opry_May_LY
+Master Artist List (Transfer)",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:06:00,2024-02-22 06:06:00,Pull all event names from tickets with event codes of RYCT and OHCT as well as all Artists names in the AXS_Artist DE. Then exports that list to our FTP server.,Daily,
+112,OESP,May OESP,"Nashville_Opry_May_LY
 Nashville_ACLRyman_May_LY
 TNRegion_ACLRyman_May_LY
 TNRegion_Opry_May_LY
 National_Opry_May_LY
-National_ACLRyman_May_LY",Paused Schedule,--,,--,2023-04-25 13:45:00
-97,MC_Activity,MC Activity,"Sent
+National_ACLRyman_May_LY",Paused Schedule,--,,--,2023-04-25 13:45:00,,,
+113,MC_Activity,MC Activity,"Sent
 Open
 Click
 Status
+hard_bounces
 Most recent Unsubscribe
-Send 2_0 to Master Bottom 50%
-Send 2_0 to Master Top 50%
-Open 2_0 To Master Bottom 50%
-Open 2_0 To Master Top 50%
-Click 2_0 to Master Bottom 50%
-Click 2_0 to Master Top 50%
+Send 2_0 to Master
+Open 2_0 To Master
+Click 2_0 to Master
 Status 2_0 to Master
 Unsubscribe Sync to Customer Master
-Fix Status",Scheduled,2024-02-23 04:00:00,Error,2024-02-22 04:22:00,2024-02-22 04:22:00
-98,Marketing/Visitation,Most Recent Visit,"Sweeps_ORN
+Fix Status
+Open and Click to Master",Scheduled,2024-02-23 04:00:00,Error,2024-02-22 04:22:00,2024-02-22 04:22:00,"Querys the SFMC Data view for email activity (Sent, Open, Click), email status, and unsubscribe information and store historical records of this data. Then Updates the user record in AllContact_Step1 with the most up to data value. 
+
+This automations populates the LastClickTime, LastOpenTime, and LastSendTime fields in AllContacts_Step1",Daily,I have made many updates to this query in the past. The most recent was changing the email activity and status queries to store historical records instead of the past 6 months (SF only keeps the past 6 months of email activity). 
+114,Alerts,Missing Artist Genre History,missing_artist_genre_history,Scheduled,,,,,Gathers all event/artist names from our ticket data from a list a event codes and find all events that are not in the Artist_Genre_History DE. If any records are found an email is sent out to the necessary parties to add the artist and/or genre to that DE.,Weekly,
+115,Alerts,Missing Artists Lineups,artist_lineup_no_match,Scheduled,,,,,Mimics the query we use to generate our Artist Lineup DE and finds any missing artists for any opry show in the future.,Weekly,
+116,Alerts,Missing Journey Attributes,"acl_journey_attributes_missing_in_axs
+ryman_journey_attributes_missing_in_axs",Scheduled,,,,,Joins the ACL_Journey_Attributes_DONOTOVERWRITE and Ryman_Journey_Show_Attributes_processing_DONOTOVERWRITE with tickets to the corresponding venue on headliner name and event date. If tickets arent found with a matching record in the Jouney Attripute DE's then the proper people are notified.,Weekly,
+117,,More Artists TBA,"pull_Opry_Shows_API (Script)
+more_artists_tba_hand_raisers
+more_artists_tba_event1_lineup
+more_artists_tba_event2_lineup
+more_artists_tba_event3_lineup
+more artist interest missing values
+more artist interest filter",Scheduled,,,,,Gather all emails who filled out the More Artist TBA form and find out if any new harts have been added to that show they showed interest in.,Weekly,
+118,Marketing/Visitation,Most Recent Visit,"Sweeps_ORN
 Sweeps_ORG
 Sweeps_ORT
 Sweeps_ORO
+photobooth_category10
 retail_ryman_visit
 retail_oro_visit
 retail_ort_visit
 retail_org_visit
 retail_orn_visit
 retail_opry_visit
-TM_Opry
-TM_Ryman
+retail_category10_visit
 AV_Ryman
 AV_Opry
 AV_ORN
@@ -602,14 +730,14 @@ AV_ORN_Visit
 AV_ORG_Visit
 AV_ORT_Visits
 AV_ORO_Visits
-TM_Opry_Visit
-TM_Ryman_Visit
+AV_Category10_Visit
 Retail_Opry_Visitation
 Retail_Ryman_Visitation
 retail_orn_visitation
 Retail_org_visitation
 Retail_ORT_Visitation
 Retail_ORO_Visitation
+Retial_Category10_Visitation
 MPC_Opry_Visit
 Ryman_MPC_Visit
 MPC_ORN_Visit
@@ -622,42 +750,52 @@ Sweeps_ORT_Visit
 Sweeps_ORO_Visit
 Most_Recent_Opry_Visit
 Most_recent_Ryman_Visit
+most_recent_category10_visit
 ORN_Visit
 ORG_Visit
 ORT_Visit
 ORO_Visit
+photobooth_category10_nashville
+retail_category10_nashville_visit
+AV_Category10_Nashville
+AV_Category10_Nashville_Visit
+Retail_Category10_Nashville_Visitation
+photobooth_category10_Nashville_visit
+most_recent_category10_nashville_visit
+Sweeps_Cat10
+Sweeps_Cat10_Nashville
+Sweeps_Cat10_Visitation
+Sweeps_Cat10_Nashville_Visitation
 ORN_Visit_Append
 ORG Visit Append
 ORT Visit Append
-ORO Visit Append",Running,2024-02-22 12:00:00,,--,2024-02-22 11:01:00
-99,MyPlace Connect,MyPlaceConnect Opry,"MyPlaceConnect - Grand OLE Opry (Import)
+ORO Visit Append
+Sweeps_ORLV
+retail_orlv_visit
+AV_ORLV
+Retail_ORLV_Visitation
+Sweeps_ORLV_Visitation
+ORLV_Visit
+ORLV Visit Append",Running,2024-02-22 12:00:00,,--,2024-02-22 11:01:00,"Galthers all the visits to the different BU locations by looking at in venue sweeps, retail purchases, photobooth submissions, wifi connections, ticket purchases, and anything that a customer has to do inside our venues. With that information we calcultate the total visits and add the most recent visit date to their contact record.",Hourly,
+119,MyPlace Connect,MyPlaceConnect Opry,"MyPlaceConnect - Grand OLE Opry (Import)
 MyPlaceConnect Update Customer Master Opry
-MyPlaceConnect Update Master Opry",Active File Drop,--,,--,2022-11-09 00:19:00
-100,MyPlace Connect,MyPlaceConnect ORG,"MyPlaceConnect - Ole Red Gatlinburg (Import)
+MyPlaceConnect Update Master Opry",Active File Drop,--,,--,2022-11-09 00:19:00,Processes a file containing the data gathered from contacts connecting to the wifi.,File Drop,
+120,MyPlace Connect,MyPlaceConnect ORG,"MyPlaceConnect - Ole Red Gatlinburg (Import)
 MyPlaceConnect Update Customer Master ORG
-MyPlace Connect Update Master ORG",Active File Drop,--,,--,2022-11-09 00:10:00
-101,MyPlace Connect,MyPlaceConnect ORN,"MyPlaceConnect - Ole Red Nashville (Import)
+MyPlace Connect Update Master ORG",Active File Drop,--,,--,2022-11-09 00:10:00,Processes a file containing the data gathered from contacts connecting to the wifi.,File Drop,
+121,MyPlace Connect,MyPlaceConnect ORN,"MyPlaceConnect - Ole Red Nashville (Import)
 MyPlaceConnect Update Customer Master ORN
-MyPlace Connect Update Master ORN",Active File Drop,--,,--,2022-11-09 00:10:00
-102,MyPlace Connect,MyPlaceConnect ORO,"MyPlaceConnect - Ole Red Orlando (Import)
+MyPlace Connect Update Master ORN",Active File Drop,--,,--,2022-11-09 00:10:00,Processes a file containing the data gathered from contacts connecting to the wifi.,File Drop,
+122,MyPlace Connect,MyPlaceConnect ORO,"MyPlaceConnect - Ole Red Orlando (Import)
 MyPlaceConnect Update Customer Master ORO
-MyPlace Connect Update Master ORO",Active File Drop,--,,--,2022-11-09 00:11:00
-103,MyPlace Connect,MyPlaceConnect ORT,"MyPlaceConnect - Ole Red Tishomingo (Import)
+MyPlace Connect Update Master ORO",Active File Drop,--,,--,2022-11-09 00:11:00,Processes a file containing the data gathered from contacts connecting to the wifi.,File Drop,
+123,MyPlace Connect,MyPlaceConnect ORT,"MyPlaceConnect - Ole Red Tishomingo (Import)
 MyPlaceConnect Update Customer Maseter ORT
-MyPlace Connect Update Master ORT",Active File Drop,--,,--,2022-11-09 00:13:00
-104,MyPlace Connect,MyPlaceConnect Ryman,"MyPlaceConnect - Ryman Auditorium (Import)
+MyPlace Connect Update Master ORT",Active File Drop,--,,--,2022-11-09 00:13:00,Processes a file containing the data gathered from contacts connecting to the wifi.,File Drop,
+124,MyPlace Connect,MyPlaceConnect Ryman,"MyPlaceConnect - Ryman Auditorium (Import)
 MyPlaceConnect Update Customer Master Ryman
-MyPlace Connect Update Master Ryman",Active File Drop,--,,--,2022-11-09 00:16:00
-105,NetSuite,NetSuite,"NetSuite Staging Import (Import)
-NetSuite_POS
-NetSuite Update Customer Master",Active File Drop,--,Complete,2023-10-02 02:32:00,2023-10-02 02:32:00
-106,NetSuite,NetSuite 2016 to date,"Import All records from POS (Import)
-Netsuite Historical
-Netsuite Ongoing",Scheduled,2024-02-23 08:00:00,Complete,2024-02-22 08:06:00,2024-02-22 08:06:00
-107,NetSuite,NetsuitePOS_AllRecords,Update NetSuite_POS_AllRecords,Active File Drop,--,Complete,2024-02-22 03:32:00,2024-02-22 03:32:00
-108,Marketing/Visitation,Next Visit,"TM Ryman Next Visit
-	TM Opry Next Visit
-AV Ryman Next Visit
+MyPlace Connect Update Master Ryman",Active File Drop,--,,--,2022-11-09 00:16:00,Processes a file containing the data gathered from contacts connecting to the wifi.,File Drop,
+125,Marketing/Visitation,Next Visit,"AV Ryman Next Visit
 AV Opry Next Visit
 AV ORN Next Visit
 AV ORG Next Visit
@@ -665,70 +803,58 @@ AV ORT Next Visit
 AV ORO Next Visit
 Clear Next Opry Visit
 Next_Opry_Visit
-Next_Ryman_Visit_Date",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:36:00,2024-02-22 10:36:00
-109,OESP,November OESP,"Nashville_Opry_November_LY
+Next_Ryman_Visit_Date",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:36:00,2024-02-22 10:36:00,Looks at all tickets purchased in the future for a specific venue and finds the next time a contacts will be at the Venue. ,Hourly,"Changed opry queries to look at ""Opry House"" and not just opry.
+
+TODO: Does not have ACL or CAT10 in this automation. May need to add if desired."
+126,OESP,November OESP,"Nashville_Opry_November_LY
 Nashville_ACLRyman_November_LY
 TNRegion_ACLRyman_November_LY
 TNRegion_Opry_November_LY
 National_Opry_November_LY
-National_ACLRyman_November_LY",Paused Schedule,--,,--,2023-04-25 13:56:00
-110,OESP,October OESP,"Nashville_Opry_October_LY
+National_ACLRyman_November_LY",Paused Schedule,--,,--,2023-04-25 13:56:00,,,
+127,Journeys/Riverfront Amphitheater,NRFA Recommendations,"All_Ascend_Subscribers
+Ascend_Future_Shows_Bought
+Ascend_Contacts_For_Recs
+Ascend_Expressed_Genre_Recs
+Ascend_Implied_Genre_Recs_Pt1
+Ascend_Implied_Genre_Recs_Pt2
+Ascend_Leftover_Recs_Pt1
+Ascend_Leftover_Recs_Pt2
+Ascend_Recs_Reorder",Scheduled,,,,,,,
+128,OESP,October OESP,"Nashville_Opry_October_LY
 Nashvillle_ACLRyman_October_LY
 TNRegion_ACLRyman_October_LY
 TNRegion_Opry_October_LY
 National_Opry_October_LY
-National_ACLRyman_October_LY",Paused Schedule,--,,--,2023-04-25 13:54:00
-111,Journeys/Ole Red,Ole Red Welcome Journey,"Ole Red Welcome Journey - Sync to Master
+National_ACLRyman_October_LY",Paused Schedule,--,,--,2023-04-25 13:54:00,,,
+129,One Time Requests,Ole Red Forms and Sweeps Engagement Lifespan,ole_red_forms_and_sweeps_engagement_lifespan,Scheduled,,,,,Used for reporting. Calculates the amount of email contacts engaged after signing or filling out an Ole Red Sweeps.,As Needed,
+130,,Ole Red Nashville Line Dancing,orn_line_dancing_purchasers,Scheduled,,,,,Fines all the emails of people that purchased a line dancing ticket to Ole Red Nashville.,Weekly,
+131,Contact Form Notifications,Ole Red VIP Form Requests,,Scheduled,,,,,Processes all of the Ole Red VIP form submissions and sends the forms to the email that processes them,Hourly,
+132,Journeys/Ole Red,Ole Red Welcome Journey,"Ole Red Welcome Journey - Sync to Master
 Ole Red Welcome Journey Expired
+Ole Red Welcome Journey Remove Users (Script)
 Ole Red Welcome Journey - Manual Uploads and Uncategorized
 Ole Red Welcome Journey - Forms
 Ole Red Welcome Journey - WiFi
 Photobooth Welcome
 Ole Red Welcome Journey - Retail POS
-Ole Red Welcome Journey - Shows",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:38:00,2024-02-22 10:38:00
-112,One Time Requests,One time 3CTC Update,"3CTC7
-3CTC8
-3CTC9
-3CTC10
-3CTC11
-3CTC12
-3CTC13
-3CTC14
-3CTC15
-3CTC16
-3CTC17
-3CTC18
-3CTC19
-3CTC20
-3CTC21
-3CTC22
-3CTC23
-3CTC24
-3CTC25
-3CTC26
-3CTC27
-3CTC28
-3CTC29
-3CTC30
-3CTC31
-3CTC32
-3CTC33
-3CTC34
-3CTC35
-3CTC36",Ready,--,Complete,2023-11-03 16:42:00,2023-11-03 16:42:00
-113,One Time Requests,One Time Manual Forms_and_Sweeps Correction,Forms_and_Sweeps_Manual_Upload_05052023Correction (Import),Ready,--,Complete,2023-05-05 16:16:00,2023-05-05 16:16:00
-114,One Time Requests,One Time Manual Photobooth,"Photobooth Import (Import)
+Ole Red Welcome Journey - Shows",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:38:00,2024-02-22 10:38:00,"Updates the Ole_Red_WJ start and end fields with the date from the Ole Red Welcome Journey DE and deledts anyone whos time has expired from the journey.
+
+Once the jounery contacts are updated then it looks at all retail and ticket purchases, form submissions, and wifi connections to determine new contacts to Any Ole Red Location and add them to the journey DE.  ",Hourly,
+133,One Time Requests,One Time Manual Photobooth,"Photobooth Import (Import)
 Photobooth Staging
 Photobooth Update Allcontacts
 Photobooth Archive
 delete photobooth from fas
-Photobooth staging to forms and sweeps",Ready,--,Complete,2023-09-18 13:43:00,2023-09-18 13:43:00
-115,AudienceView,Opry & Ryman Tours (No PII),opry_ryman_tours_no_pii,Scheduled,,,,
-116,Journeys/Opry,Opry 10 Day Prior Email,Opry 10 Day Prior Email,Scheduled,2024-02-23 11:00:00,Error,2024-02-22 11:00:00,2024-02-22 11:00:00
-117,Data Factory Utility Automations,Opry Entertainment Group-645-520000018-PSHist#01,,Ready,--,,--,2023-05-24 11:15:00
-118,Data Factory Utility Automations,Opry Entertainment Group-645-520000018-PSHist#02,,Ready,--,Complete,2023-05-24 11:19:00,2023-05-24 11:19:00
-119,Data Factory Utility Automations,Opry Entertainment Group-645-520000018-PSMain,,Scheduled,2024-02-22 13:15:00,Complete,2024-02-21 13:25:00,2024-02-21 13:25:00
-120,Journeys/Opry,Opry Journeys,"Sync Opry Welcome Dates to Master
+Photobooth staging to forms and sweeps",Ready,--,Complete,2023-09-18 13:43:00,2023-09-18 13:43:00,Manual Activation version of the Photobooth Processing Automation,As Needed,
+134,AudienceView,Opry & Ryman Tours (No PII),opry_ryman_tours_no_pii,Scheduled,,,,,All Tour ticket information for Opry and Ryman ,Weekly,
+135,Journeys/Opry,Opry 10 Day Prior Email,Opry 10 Day Prior Email,Scheduled,2024-02-23 11:00:00,Error,2024-02-22 11:00:00,2024-02-22 11:00:00,TBD,,
+136,Journeys/Opry,Opry Bounceback,opry_bounce_back,Scheduled,,,,,Pulla every opted in customer who purchased and Opry Show in the past week and apply a promo code to hopefully get them to return.,Weekly,
+137,Journeys/Opry,Opry Bounceback Suppression,opry_bounceback_suppression,Scheduled,,,,,Ask Paul TBD,,
+138,Data Factory Utility Automations,Opry Entertainment Group-645-520000018-PSHist#01,,Ready,--,,--,2023-05-24 11:15:00,,,
+139,Data Factory Utility Automations,Opry Entertainment Group-645-520000018-PSHist#02,,Ready,--,Complete,2023-05-24 11:19:00,2023-05-24 11:19:00,,,
+140,Data Factory Utility Automations,Opry Entertainment Group-645-520000018-PSMain,,Scheduled,2024-02-22 13:15:00,Complete,2024-02-21 13:25:00,2024-02-21 13:25:00,,,
+141,Journeys/Opry,Opry Journeys,"Sync Opry Welcome Dates to Master
 Opry Show Upsell
 Opry Tour Upsell
 Events Sold Out Opry
@@ -777,21 +903,25 @@ Arrival Matrix Missing URL Clean-Up
 Updating 3 Attributes from All contacts Step 1
 Opry Arrival Audit
 Opry Post Audit
-Opry Purchase Audit",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:42:00,2024-02-22 10:42:00
-121,Journeys/Opry,Opry Matrix 1 Day,"Opry Arrival Journey 1 day
+Opry Purchase Audit
+Opry at the Ryman Purchasers",Scheduled,2024-02-22 11:30:00,Complete,2024-02-22 10:42:00,2024-02-22 10:42:00,"Updates the Opry_WJ start and end fields with the date from theOpry Welcome Journey DE and deledts anyone whos time has expired from the journey.
+
+Once the jounery contacts are updated then it looks at all retail and ticket purchases, form submissions, and wifi connections to determine new contacts to Opry and adds them to the journey DE.  ",Hourly,
+142,Journeys/Opry,Opry Matrix 1 Day,"Opry Arrival Journey 1 day
 Opry Arrival Matrix 1 day
-Updating Attributes 1 day from All contacts Step 1",Scheduled,2024-02-22 11:45:00,Complete,2024-02-22 10:46:00,2024-02-22 10:46:00
-122,Journeys/Opry,Opry Matrix 10 days,"Opry Arrival Journey 10 days
+Updating Attributes 1 day from All contacts Step 1",Scheduled,2024-02-22 11:45:00,Complete,2024-02-22 10:46:00,2024-02-22 10:46:00,Pulls every person who purchased a ticket to an Opry show or tour for the next day. And determies what we need to upsell them in the marketing emails. ,Hourly,
+143,Journeys/Opry,Opry Matrix 10 days,"Opry Arrival Journey 10 days
 Opry Arrival Matrix 10 days
-Updating Attributes 10 days from All contacts Step 1",Scheduled,2024-02-22 11:45:00,Complete,2024-02-22 10:46:00,2024-02-22 10:46:00
-123,Journeys/Opry,Opry Matrix 7 Days,"Opry Arrival Journey 7 days
+Updating Attributes 10 days from All contacts Step 1",Scheduled,2024-02-22 11:45:00,Complete,2024-02-22 10:46:00,2024-02-22 10:46:00,Pulls every person who purchased a ticket to an Opry show or tour for 10 days in the future. And determies what we need to upsell them in the marketing emails. ,Hourly,
+144,Journeys/Opry,Opry Matrix 7 Days,"Opry Arrival Journey 7 days
 Opry Arrival Matrix 7 days
-Updating Attributes 7 days from All contacts Step 1",Paused Schedule,--,,--,2023-07-26 08:42:00
-124,Journeys/Opry,Opry Repeat Journey Daily Run,"Remove from Repeat
+Updating Attributes 7 days from All contacts Step 1",Paused Schedule,--,,--,2023-07-26 08:42:00,Pulls every person who purchased a ticket to an Opry show or tour for 7 days in the future. And determies what we need to upsell them in the marketing emails. ,Hourly,
+145,,Opry Purchasers Local to Nashville,opry_nashville_purchasers_last_365,Scheduled,,,,,Pulls Everyone who purchased an Opry show in the past rolling year who we also know is local to Nashville.,Weekly,
+146,Journeys/Opry,Opry Repeat Journey Daily Run,"Remove from Repeat
 Remove from Repeat Staging
 Remove from Repeat Application
-Repeat Visitor journey Remove purchasers",Scheduled,2024-02-23 00:30:00,Complete,2024-02-22 00:34:00,2024-02-22 00:34:00
-125,Journeys/Opry,Opry Repeat Journey Monthly Run,"Opry Show Repeat Visit
+Repeat Visitor journey Remove purchasers",Scheduled,2024-02-23 00:30:00,Complete,2024-02-22 00:34:00,2024-02-22 00:34:00,Finds and removed records to remove from the Repeat Visitor DE,Daily,
+147,Journeys/Opry,Opry Repeat Journey Monthly Run,"Opry Show Repeat Visit
 Opry Tour Repeat Visit
 Opry Show Repeat Visit - without tour
 Opry Tour Repeat Visit - without show
@@ -803,46 +933,135 @@ Populate repeat visitor archive
 Find Repeats not on AllSubs
 Repeats to All Subs (Extract)
 Repeats to All Subs (Transfer)
-Repeat Visit to All Subs (Import)",Scheduled,2024-03-05 01:30:00,Complete,2024-02-13 10:23:00,2024-02-13 10:23:00
-126,,Opry_Photo_Package_AllContacts_Update,"Opry_Photo_Package (Import)
-Opry_Photo_Package_AllContacts_Update",Active File Drop,--,Complete,2024-02-15 08:36:00,2024-02-15 08:36:00
-127,Journeys/Opry,Opry-90 day-event-ticket-alert,Opry-90 day-event-ticket-alert,Scheduled,2024-02-23 09:00:00,Complete,2024-02-22 09:00:00,2024-02-22 09:00:00
-128,One Time Requests,Photobooth Backfill,"Photbooth Backfill (Import)
-Photobooth_Backfill_to_Staging",Ready,--,Complete,2024-01-10 12:33:00,2024-01-10 12:33:00
-129,Photobooth,Photobooth Processing,"Photobooth Import (Import)
+Repeat Visit to All Subs (Import)",Scheduled,2024-03-05 01:30:00,Complete,2024-02-13 10:23:00,2024-02-13 10:23:00,Finds tha latest tour and show purchase from all our BU's. Once they are all found they are combined to determine who is a repeat visitor.,Monthly,
+148,Journeys/Opry,Opry Royal Albert Hall 2025,Opry_royal_albert_hall_2025,,,,,,Pull all emails that filled out the Royal Albert Hall form.,Hourly,
+149,,Opry Show Discount Offer Data Pull,"opry_show_discount_offers
+opry_show_discount_offers_pt2
+opry_show_discount_offers_pt3",Paused Scheduled,,,,,Pulls every purchase made with a specific list of Promo codes and keeps the order number. In another query it pulls the same data but also looks at how many people clicked the link to the promo from the marketing email versus who actually purchased a ticket. Lastly it looks at all customers who purchased using the promo codes and pulls their first purchase to see if that was their first or were they repeat customers. ,As Needed,
+150,Exclusions,Opry Themed License Purchasers,opry_themed_license_purchasers,Scheduled,,,,,Pulls everyone who purchased an opry themed license plate,Daily,
+151,,Opry_Photo_Package_AllContacts_Update,"Opry_Photo_Package (Import)
+Opry_Photo_Package_AllContacts_Update",Active File Drop,--,Complete,2024-02-15 08:36:00,2024-02-15 08:36:00,Processes purchasers of the Opry Photo Package and adds them to AllContacts_Step1,,
+152,Journeys/Opry,Opry-90 day-event-ticket-alert,Opry-90 day-event-ticket-alert,Scheduled,2024-02-23 09:00:00,Complete,2024-02-22 09:00:00,2024-02-22 09:00:00,Pulls all contacts who filled out the Ticket Alert Form for a show that starts 90 days in the furture.,Daily,
+153,One Time Requests,Photobooth Backfill,"Photbooth Backfill (Import)
+Photobooth_Backfill_to_Staging",Ready,--,Complete,2024-01-10 12:33:00,2024-01-10 12:33:00,One time backfill of missed photobooth submissions.,As Needed,
+154,Photobooth,Photobooth Processing,"Photobooth Import (Import)
 Photobooth Staging
 Photobooth Update Allcontacts
 Photobooth Archive
-Photobooth staging to forms and sweeps",Active File Drop,--,Complete,2024-02-08 14:41:00,2024-02-08 14:41:00
-130,Brokers,Potential Brokers,identify_potential_brokers,Scheduled,2024-02-25 00:00:00,Complete,2024-02-18 00:00:00,2024-02-18 00:00:00
-131,Domain Generation/Purchaser,Purchaser Consolidation,"ticket_purchaser_first_and_last_dates
+Photobooth staging to forms and sweeps",Active File Drop,--,Complete,2024-02-08 14:41:00,2024-02-08 14:41:00,Reads in file of photobooth submissions and assigns loaction names for each BU. Stores them in a historical  photobooth DE photobooth_archive and add/updates the contacts record in AllContacts_Step1. Finally it delets all photobooth submissions from Forms_And_Sweeps and readds them with all the acrhived records.,File Drop,
+155,Brokers,Potential Brokers,identify_potential_brokers,Scheduled,2024-02-25 00:00:00,Complete,2024-02-18 00:00:00,2024-02-18 00:00:00,Finds all contacts who have purchased either 8 or more shows or tickets for more than 3 shows in the past 8 days to then be identified as potential brokers.,Weekly,
+156,PowerBI Reporting,PowerBI Export,powerbi_brokers,Scheduled,,,,,"Pulls all our source Des (Contacts, Ticket Sales, Forms, and Retail) and exports all new and modified records from the previous day to be appended to the data in Snowflake for use in power BI dashboards.",Daily,
+157,PowerDigital,PowerDigtal Data,,,,,,,ASK Troy,Daily,
+158,First Party Digital,Process First Party Digital File Drop,"First Party Digital Import
+add_first_party_digital_data_historical
+add_frist_party_lead_gen_to_allcontacts",Active File Drop,,,,,"Reads in the data from a file, stores historical records and add/updates records in AllContacts_Step1",File Drop,
+159,Domain Generation/Purchaser,Purchaser Consolidation,"ticket_purchaser_first_and_last_dates
 retail_purchasers_first_and_last_purchase_dates
 combine_all_retail_purchases
 combine_all_ticket_purchases
 combine_first_and_last_purchasers
-combine_all_purchasers",Activity Trigger,--,Complete,2024-02-08 12:51:00,2024-02-08 12:51:00
-132,Ready Pay,Ready Pay Optins,"Ready Pay Import (Import)
+combine_all_purchasers",Activity Trigger,--,Complete,2024-02-08 12:51:00,2024-02-08 12:51:00,Creates a record of the first and last retail and ticket purchase then combines them in one table. Then combines all ticket and retail purchases for all contacts and stores them in their respective DE's. Lastly creates a table of all retail and ticket purchases for all our contacts.,Daily,
+160,One Time Requests,Purchaser Crossover,,,,,,,,,
+161,Ready Pay,Ready Pay Optins,"Ready Pay Import (Import)
 Ready_Pay_Optins
-Ready Pay Update to AllContacts_Step1",Active File Drop,--,Complete,2023-06-12 09:38:00,2023-06-12 09:38:00
-133,Datorama,Repeat Purchaser,"Opry Show Repeaters
+Ready Pay Update to AllContacts_Step1",Active File Drop,--,Complete,2023-06-12 09:38:00,2023-06-12 09:38:00,"Reads in the data from a file, stores historical records and add/updates records in AllContacts_Step1",File Drop,
+162,Utils,Rename Form,forms_and_sweeps_name_change_backup,Paused Schedule,,,,,Occasionally forms get set as the wrong name which messes up downstream reporting. This will rename those forms safely and mitigate any data loss in the process. PLEASE DOUBLE CHECK BEFORE RUNNING!,As Needed,
+163,Datorama,Repeat Purchaser,"Opry Show Repeaters
 Opry_Tour_Repeaters
 Ryman_Show_Repeaters
 Ryman_Tour_Repeaters
+ACL Live Show Repeater
+ACL Live Tour Repeater
+3TEN Show Repeater
+Ole Red Las Vegas Show Repeater
+Ole Red Nashville Show Repeater
+Ole Red Gatlinburg Show Repeater
+Ole Red Tishomingo Show Repeater
+Ole Red Orlando Show Repeater
+Category 10 Show Repeater
 Repeaters_to_Dato(Extract)
-Repeaters_to_dato (Transfer)",Scheduled,2024-02-23 04:00:00,Complete,2024-02-22 04:09:00,2024-02-22 04:09:00
-134,Marketing,Restore Yesterdays Manual Forms and Sweeps,Restore Yesterdays Manual Forms and Sweeps,Ready,--,Complete,2024-01-03 13:06:00,2024-01-03 13:09:00
-135,Rex Direct,Rex Direct,"REX Direct Import (Import)
+Repeaters_to_dato (Transfer)",Scheduled,2024-02-23 04:00:00,Complete,2024-02-22 04:09:00,2024-02-22 04:09:00,"Looks up Tour and ticket purchases from each BU and calculates total show amount, tickets purchased, order total, and region of the customer. Then combines them all to be sent to Datorama. ",Daily,Did not filter out cancelled orders. Also used AV_All_Time_Canceled_Orders to join cancelled orders vs AudienceView_Cancelled_Orders.
+164,Marketing,Restore Yesterdays Manual Forms and Sweeps,Restore Yesterdays Manual Forms and Sweeps,Ready,--,Complete,2024-01-03 13:06:00,2024-01-03 13:09:00,,,
+165,Journeys,Retail Best Sellers Journey,retail_purchasers_best_sellers,Scheduled,,,,,Pulls all retail purchases made in the past 14 days to be put in the best seller journey.,Daily,
+166,Backups/Daily,Retail_Daily,"backup_ShopifyCustomersDE-opryshop_Daily
+backup_ShopifyCustomersDE-opryshop-pos_Daily
+backup_ShopifyOrderLineItemsDE-opryshop_Daily
+backup_ShopifyOrderLineItemsDE-opryshop-pos_Daily
+backup_ShopifyOrdersDE-opryshop_Daily
+backup_ShopifyOrdersDE-opryshop-pos_Daily
+backup_ShopifyProductDE-opryshop_Daily
+backup_ShopifyProductDE-opryshop-pos_Daily
+backup_ShopifyProductVariantsDE-opryshop_Daily
+backup_ShopifyProductVariantsDE-opryshop-pos_Daily
+backup_NetSuite_POS_AllRecords_Daily",Scheduled,,,,,Backups all Shopify and Netsuite DE's daily,Daily,
+167,Backups/Monthly,Retail_Monthly,"backup_ShopifyCustomersDE-opryshop_Monthly
+backup_ShopifyCustomersDE-opryshop-pos_Monthly
+backup_ShopifyOrderLineItemsDE-opryshop_Monthly
+backup_ShopifyOrderLineItemsDE-opryshop-pos_Monthly
+backup_ShopifyOrdersDE-opryshop_Monthly
+backup_ShopifyOrdersDE-opryshop-pos_Monthly
+backup_ShopifyProductDE-opryshop_Monthly
+backup_ShopifyProductDE-opryshop-pos_Monthly
+backup_ShopifyProductVariantsDE-opryshop_Monthly
+backup_ShopifyProductVariantsDE-opryshop-pos_Monthly
+backup_NetSuite_POS_AllRecords_Monthly",Scheduled,,,,,Backups all Shopify and Netsuite DE's monthly,Monthly,
+168,Backups/Weekly,Retail_Weekly,"backup_ShopifyCustomersDE-opryshop_Weekly
+backup_ShopifyCustomersDE-opryshop-pos_Weekly
+backup_ShopifyOrderLineItemsDE-opryshop_Weekly
+backup_ShopifyOrderLineItemsDE-opryshop-pos_Weekly
+backup_ShopifyOrdersDE-opryshop_Weekly
+backup_ShopifyOrdersDE-opryshop-pos_Weekly
+backup_ShopifyProductDE-opryshop_Weekly
+backup_ShopifyProductDE-opryshop-pos_Weekly
+backup_ShopifyProductVariantsDE-opryshop_Weekly
+backup_ShopifyProductVariantsDE-opryshop-pos_Weekly
+backup_NetSuite_POS_AllRecords_Weekly",Scheduled,,,,,Backups all Shopify and Netsuite DE's weekly,Weekly,
+169,Rex Direct,Rex Direct,"REX Direct Import (Import)
 Rex Direct Staging
 Rex Direct Standard Input
-Rex Direct Share",Active File Drop,--,Complete,2024-02-22 04:07:00,2024-02-22 04:07:00
-136,One Time Requests,Rex Direct Purchaser Pull,Rex_Direct_Purchaser_Pull,Ready,--,Complete,2024-01-05 09:05:00,2024-01-05 09:05:00
-137,Rex Direct,Rex Purchasers,Rex_Direct_Purchaser_Pull,Scheduled,,Complete,2024-04-15 14:35:00,2024-04-15 14:35:00
-138,Rex Direct,Rex Reporting,"Rex reporting (Extract)
-Rex reporting (Transfer)",Scheduled,2024-02-22 13:00:00,Complete,2024-02-21 13:00:00,2024-02-21 13:00:00
-139,One Time Requests,Run Activities Manually,,Ready,--,Complete,2024-02-21 09:12:00,2024-02-21 09:48:00
-140,,Ryman Lounge Count Queries ,"Ryman Lounge Count Per Day
-Ryman_Day_0_Lounge_Count",Scheduled,2024-02-23 07:00:00,Complete,2024-02-22 07:02:00,2024-02-22 07:02:00
-141,Marketing/Recommendations,Ryman Newsletter Show Recommendation,"Clear Ryman Show Reco
+Rex Direct Share",Active File Drop,--,Complete,2024-02-22 04:07:00,2024-02-22 04:07:00,ASK Troy,File Drop,
+170,One Time Requests,Rex Direct Purchaser Pull,Rex_Direct_Purchaser_Pull,Ready,--,Complete,2024-01-05 09:05:00,2024-01-05 09:05:00,One time data pull,,
+171,Rex Direct,Rex Purchasers,Rex_Direct_Purchaser_Pull,Scheduled,,Complete,2024-04-15 14:35:00,2024-04-15 14:35:00,Gathers all contacts whos first purchase was from a Rex Direct source and pulls their latest purchase.,Weekly,
+172,Rex Direct,Rex Reporting,"Rex reporting (Extract)
+Rex reporting (Transfer)",Scheduled,2024-02-22 13:00:00,Complete,2024-02-21 13:00:00,2024-02-21 13:00:00,Exports the Rex_Direct_Reporting DE,Daily,Could not find a query updating this. Need to find where this data is coming from. 
+173,Journeys/Riverfront Amphitheater,Riverfront Amphitheater Post Purchase Journey,"NRFA_Show_Upsell
+NRFA Post Journey Expired
+NRFA Events Sold Out
+NRFA Post Matrix Removal Staging
+NRFA Post Purchase Matrix Removal Application
+NRFA Post Purchase Matrix
+NRFA_Sold_Out_Attributes
+NRFA Post Purchase Matrix Upsell Append
+NRFA Post Purchase Matrix Show Attributes Append
+NRFA Post Purchase Rec 1
+NRFA Post Purchase Rec 2
+NRFA Post Purchase Rec 3
+NRFA Post Purchase Rec High Level 1
+NRFA Post Purchase Rec High Level 2
+NRFA Post Purchase Rec High Level 3
+NRFA Post Purchase Rec Fallback 1
+NRFA Post Purchase Rec Fallback 2
+NRFA Post Purchase Rec Fallback 3
+NRFA Post Purchase Audit
+Ascend Amphitheater Post Matrix - Update Rec Order",Scheduled,,,,,,Daily,
+174,Journeys/Riverfront Amphitheater,Riverfront Amphitheater Welcome Journey,"NRFA Welcome Journey - Sync to Master
+NRFA Welcome Journey Expired
+NRFA Welcome Journey Remove Users (Script)
+NRFA Welcome Journey - Forms
+NRFA Welcome Journey - Manual Uploads and Uncategorized",Scheduled,,,,,Pulls all new contacts to the NF,Daily,
+175,Journeys/Riverfront Amphitheater,Riverfront Amphitheatre Post Visit Journey,NRFA Post Arrival,Scheduled,,,,,,,
+176,Journeys/Riverfront Amphitheater,Riverfront Amphitheatre Pre-Arrival Journey,"NRFA Pre Arrival
+NRFA Pre Arrival Recs
+NRFA Pre Arrival 7 Day
+NRFA Pre Arrival Recs 7 Day
+NRFA Pre Arrival 1 Day Audit
+NRFA Pre Arrival 7 Day Audit",Scheduled,,,,,,,
+177,One Time Requests,Run Activities Manually,,Ready,--,Complete,2024-02-21 09:12:00,2024-02-21 09:48:00,Utility automation to run any ad hoc activity to see when it completes or fails.,As Needed,
+178,,Ryman Lounge Count Queries ,"Ryman Lounge Count Per Day
+Ryman_Day_0_Lounge_Count",Scheduled,2024-02-23 07:00:00,Complete,2024-02-22 07:02:00,2024-02-22 07:02:00,"Step1: Pulls all Ryman Lounge purchases for every available date from Ticketing data. 
+
+Step 2: Pulls the total Lounge purchases ofr the next day from the query above and determines if it is at capacity.",Daily,
+179,Marketing/Recommendations,Ryman Newsletter Show Recommendation,"Clear Ryman Show Reco
 Ryman_Reco_Already_Bought
 Ryman Newsletter Show Recommendation 1
 Ryman Newsletter Show Recommendation 2
@@ -862,8 +1081,28 @@ Ryman Newsletter Show Recommendation Expressed 3
 Ryman Newsletter Show Recommendation - No Genre Match
 Ryman Newsletter Show Recommendation 1 - Fall Back
 Ryman Newsletter Show Recommendation 2 - Fall Back
-Ryman Newsletter Show Recommendation 3 - Fall Back",Scheduled,2024-02-23 05:30:00,Complete,2024-02-22 05:43:00,2024-02-22 05:43:00
-142,Marketing/Recommendations,Ryman Newsletter V2,"Newsletter Ryman v2
+Ryman Newsletter Show Recommendation 3 - Fall Back
+add_recs_to_Ryman_Subscribers",Scheduled,2024-02-23 05:30:00,Complete,2024-02-22 05:43:00,2024-02-22 05:43:00,"This automation generates our Ryman Show reccommendation email by pulling all Ryman subscribers, gathering the shows they already purchased and looking at subgenre, genre, expressed genre in that order to generate 3 show recommendations. It is done in that order because it takes the lowest valued genre first and overwrites as genres hold more weight to that contact. If no genre is know random future shows are added. 
+
+Step 1: Overwrites Ryman_Newsletter_Show_Recommendation DE with all emails from the Ryman_Subscriber_Share DE.
+
+Step 2: Pulls in all shows that the Ryman subscribers have already purchased a ticket for.
+
+Step 3-5: Looks at the subgenre affinity of all emails and provides 3 future not shold out shows that match those genres. 
+
+Step 6-14: Looks at the genre affinity of all emails and provides 3 future not shold out shows that match those genres.
+
+Step 15-17: Looks at the expressed genre affinity of all emails and provides 3 future not shold out shows that match those genres. 
+
+Step 18: Flags all records that no show recommendations have been added.
+
+Step 19-21: Finds all records with out any reccomendation and add any 3 future shows.
+",Daily,"Updated the last 3 steps. For all emails that do not have a genre to recommend a show, those emails are supposed to be pulled in and given a show 30+ days in the future. The way the query was setup it was not pulling those records causing 200k+ emails to not have any show reccommended. Then added a clause to not recoomend the same shows for all the steps.
+
+Updated the final step to change the show_recommendation value to true if a generic show  has been added.
+
+Work with Paul about a better recommendation for no genre emails."
+180,Marketing/Recommendations,Ryman Newsletter V2,"Newsletter Ryman v2
 Ryman_Reco_Already_Bought
 Ryman Newsletter Show Recommendation 1
 Ryman Newsletter Show Recommendation 2
@@ -880,8 +1119,8 @@ Ryman Newsletter Show Recommendation - High Level 2.4 V2
 Ryman Newsletter Show Recommendation - No Genre Match V2
 Ryman Newsletter Show Recommendation 1 - Fall Back V2
 Ryman Newsletter Show Recommendation 2 - Fall Back V2
-Ryman Newsletter Show Recommendation 3 - Fall Back V2",Paused Schedule,--,Complete,2024-02-02 05:44:00,2024-02-02 11:04:00
-143,Journeys/Ryman,Ryman Post Journey,"Remove From Ryman Post Journey
+Ryman Newsletter Show Recommendation 3 - Fall Back V2",Paused Schedule,--,Complete,2024-02-02 05:44:00,2024-02-02 11:04:00,TBD Talk with Paul on what this was for,,
+181,Journeys/Ryman,Ryman Post Journey,"Remove From Ryman Post Journey
 Ryman Post Journey Removal Staging
 Ryman Post Journey Removal Application
 Ryman Post Matrix Removal Staging
@@ -904,17 +1143,14 @@ Ryman Post Show Rec Fallback 2
 Ryman Post Show Rec Fallback 3
 Ryman Post Audit
 Ryman Post Matrix - Update Rec Order
-Updating 3 Attributes from All contacts Step 2",Scheduled,2024-02-23 08:30:00,Complete,2024-02-22 08:41:00,2024-02-22 08:41:00
-144,Journeys/Ryman,Ryman Pre Arrival 1 day,"Ryman Pre Arrival 1 day
-Ryman Arrival Matrix 1 day
-Updating 1 Day Arrival Rymanweb SMS Optin Attribute",Paused Schedule,--,Complete,2023-10-04 05:07:00,2023-10-04 13:49:00
-145,Journeys/Ryman,Ryman Pre Arrival 10 days,"Ryman Pre Arrival 10 day
+Updating 3 Attributes from All contacts Step 2",Scheduled,2024-02-23 08:30:00,Complete,2024-02-22 08:41:00,2024-02-22 08:41:00,Gathers all contacts who have made a Ryman show or tour purchase and any upsells that they purchased. Then attached values for any upsell tickets that are available for the show they purchased a ticket for. Finally future show recommendations are added to their contact for the marketing email.,Daily,
+182,Journeys/Ryman,Ryman Pre Arrival 10 days,"Ryman Pre Arrival 10 day
 Ryman Arrival Matrix 10 day
-Updating 10 Day Arrival Rymanweb SMS Optin Attribute",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:06:00,2024-02-22 06:06:00
-146,Journeys/Ryman,Ryman Pre Arrival 7 days,"Ryman Pre Arrival 7 day
+Updating 10 Day Arrival Rymanweb SMS Optin Attribute",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:06:00,2024-02-22 06:06:00,Pull all Ryman show/tour purchasers who event is 10 days out. ,Daily,
+183,Journeys/Ryman,Ryman Pre Arrival 7 days,"Ryman Pre Arrival 7 day
 Ryman Arrival Matrix 7 day
-Updating 7 Day Arrival Rymanweb SMS Optin Attribute",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:06:00,2024-02-22 06:06:00
-147,Journeys/Ryman,Ryman Pre-Arrival Journey,"Clear Ryman Arrival Journey DE 1 Day
+Updating 7 Day Arrival Rymanweb SMS Optin Attribute",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:06:00,2024-02-22 06:06:00,Pull all Ryman show/tour purchasers who event is 7 days out. ,Daily,May Be able to delete. These queries are ran in the Ryman Pre-Arrival Journey Automation
+184,Journeys/Ryman,Ryman Pre-Arrival Journey,"Clear Ryman Arrival Journey DE 1 Day
 Clear Ryman Arrival Journey DE 7 Day
 Ryman Arrival Journey
 Ryman Arrival Journey 7 Day
@@ -950,8 +1186,12 @@ Attribute Audit Arrival 7 Day
 Ryman Arrival Matrix - Update Rec Order
 Ryman Arrival Matrix - Update Rec Order 7 Day
 Updating 1 Day Arrival Rymanweb SMS Optin Attribute
-Updating 7 Days Arrival Rymanweb SMS Optin Attribute",Scheduled,2024-02-23 09:00:00,Complete,2024-02-22 09:18:00,2024-02-22 09:18:00
-148,Journeys/Ryman,Ryman Purchase and Welcome Journey,"Sync Ryman to Master
+Updating 7 Days Arrival Rymanweb SMS Optin Attribute",Scheduled,2024-02-23 09:00:00,Complete,2024-02-22 09:18:00,2024-02-22 09:18:00,"Pull all Ryman show/tour purchasers who event is 1 and 7 days  days out. 
+
+Checks if the show is a dual Opry Show, is sold out, and has upsells and adds the corresponding boolean flags to the record. 
+
+Finally show recomendations are then added. ",Daily,
+185,Journeys/Ryman,Ryman Purchase and Welcome Journey,"Sync Ryman to Master
 Ryman Show Upsell
 Ryman Sold Out Events
 Ryman Tour Upsell
@@ -982,104 +1222,90 @@ Show Purchase Recommendation Fall Back 2
 Show Purchase Recommendation Fall Back 3
 Attribute Audit Purchase
 Ryman Purchase Matrix - Update Rec Order
-RymanSMS",Running,2024-02-22 12:00:00,,--,2024-02-22 11:00:00
-149,Ad Studio,Ryman Show No PLP,Ryman Purchase No PLP,Scheduled,2024-02-23 09:00:00,Complete,2024-02-22 09:01:00,2024-02-22 09:01:00
-150,,Ryman_Photo_Package_AllContacts_Update,"Ryman_Photo_Package (Import)
-Ryman_Photo_Package_AllContacts_Update",Active File Drop,--,Complete,2024-02-15 08:36:00,2024-02-15 08:36:00
-151,OESP,September OESP,"TNRegion_Opry_September_LY
+RymanSMS",Running,2024-02-22 12:00:00,,--,2024-02-22 11:00:00,Looks at all tickets purchased in the future for a specific venue and finds the next time a contacts will be at the Venue. ,Hourly,
+186,Journeys/Ryman,Ryman Recommendations,"All_Ryman_Subscribers
+Ryman_Future_Shows_Bought
+Ryman_Contacts_For_Recs
+Ryman_Expressed_Genre_Recs
+Ryman_Implied_Genre_Recs_Pt1
+Ryman_Implied_Genre_Recs_Pt2
+Ryman_Leftover_Recs_Pt1
+Ryman_Leftover_Recs_Pt2
+Ryman_Recs_Reorder",Scheduled,,,,,,,
+187,Ad Studio,Ryman Show No PLP,Ryman Purchase No PLP,Scheduled,2024-02-23 09:00:00,Complete,2024-02-22 09:01:00,2024-02-22 09:01:00,Pulls all ryman show purchasers who purchased a show that has available plp. ,Daily,
+188,,Ryman_Photo_Package_AllContacts_Update,"Ryman_Photo_Package (Import)
+Ryman_Photo_Package_AllContacts_Update",Active File Drop,--,Complete,2024-02-15 08:36:00,2024-02-15 08:36:00,Waits for a new Ryman Photobooth file is loaded and adds those records to AllContacts_Step1,File Drop,
+189,OESP,September OESP,"TNRegion_Opry_September_LY
 National_Opry_September_LY
 National_ACLRyman_September_LY
 TNRegion_ACLRyman_September_LY
 Nashville_Opry_September_LY
-Nashville_ACLRyman_September_LY",Paused Schedule,--,,--,2023-04-25 14:08:00
-152,Marketing/List Generation,Shared DE List Generation...,"Opry Show No Purchase Last 120 Days
-Opry Show No Purchase last 90 Days",Scheduled,2024-02-23 01:00:00,Complete,2024-02-22 01:01:00,2024-02-22 01:01:00
-153,Sharing,Sharing,"Forms and Sweeps Reporting Share
-AV Artist Lineup Share
-AXS Artist Lineup Share",Running,2024-02-22 14:00:00,,--,2024-02-22 11:00:00
-154,Sharing/Shopify,Shopify Opt-ins,Shopify to Shopify Opt-Ins,Scheduled,2024-02-23 01:30:00,Complete,2024-02-22 01:30:00,2024-02-22 01:30:00
-155,SMS,SMS_Delete_Duplicate_Contacts,"SMS_Delete_Duplicate_Contacts (Script)
-SMS_Duplicate_Contacts_2of2 (Script)",Ready,--,Complete,2024-02-22 00:50:00,2024-02-22 00:50:00
-156,,Spotify Automation,Spotify Data Import (Import),Active File Drop,--,,--,2024-01-22 16:44:00
-157,All Contacts Cleanup,State and Coutry Auto Append,"City_Lookup
+Nashville_ACLRyman_September_LY",Paused Schedule,--,,--,2023-04-25 14:08:00,TBD Ask Troy,,
+190,Marketing/List Generation,Shared DE List Generation...,"Opry Show No Purchase Last 120 Days
+Opry Show No Purchase last 90 Days",Scheduled,2024-02-23 01:00:00,Complete,2024-02-22 01:01:00,2024-02-22 01:01:00,Pulls all the contacts who have not purchased an Opry show or any show in the past 90 and 120 days. ,Daily,
+191,Sharing,Sharing,"AV Artist Lineup Share
+AXS Artist Lineup Share",Running,2024-02-22 14:00:00,,--,2024-02-22 11:00:00,Generated the Artist Lineups for all Opry Shows.,Hourly,
+192,Shopify,Shopify Customers to AllContacts,"combine_shopify_orders_and_customers
+update_retail_bu
+set_first_retail_source
+opry_shopify_purchasers
+ryman_shopify_purchasers
+ole_red_shopify_purchasers
+acl_shopify_purchasers
+wildhorse_shopify_purchasers
+category10_shopify_purchasers",Scheduled,,,,,Combined all shopify orders with the customer information for people who opted into marketing. The compiles the list of the first BU and all the BU's they made a retail purchase with. Lastly a list of all retail purchases for each BU is segmented for thier respective DE's,Daily,
+193,Shopify,Shopify Opt In Backfill,,On Demand,,,,,,,
+194,Sharing/Shopify,Shopify Opt-ins,Shopify to Shopify Opt-Ins,Scheduled,2024-02-23 01:30:00,Complete,2024-02-22 01:30:00,2024-02-22 01:30:00,Combined all customers who made an online or POS purchase on any of our Shopify sites.,Daily,
+195,,Shopify_Validation,"Shopify_POS_Check
+Shopify_Check",Scheduled,,,,,Verifies we recent all ecomm and POS orders from Shopify for the previous day.,Daily,
+196,SMS,SMS_Delete_Duplicate_Contacts,"SMS_Delete_Duplicate_Contacts (Script)
+SMS_Duplicate_Contacts_2of2 (Script)",Ready,--,Complete,2024-02-22 00:50:00,2024-02-22 00:50:00,Todo May Be able to delete,,
+197,,Spam Reputation,spam_reputation_by_domain,Scheduled,,,,,Gathers the bounce percentage for each domain that we send messages to for analysis.,Weekly,
+198,Contacts Split,Split AllContacts,"contact_profile
+contact_affinity
+contact_visits
+contact_lifetime_value
+contact_email_engagement
+contact_preferences
+contact_welcome_journey
+contact_socials",Scheduled,,,,,CAN DELETE,,
+199,All Contacts Cleanup,State and Country Auto Append,"City_Lookup
 State_Lookup
-Country_Lookup",Scheduled,2024-02-22 15:30:00,Complete,2024-02-15 15:33:00,2024-02-15 15:33:00
-158,MC_Activity,Status Sync,"Status Sync to All Subscribers
+Country_Lookup
+Local_Lookup",Scheduled,2024-02-22 15:30:00,Complete,2024-02-15 15:33:00,2024-02-15 15:33:00,"Compares the city, stste, and Country to the values in the ZipCodeLookup using the postal code and takes the proper value and adds to AllContacts_Step1.",Weekly,
+200,MC_Activity,Status Sync,"Status Sync to All Subscribers
 Unsubscribes to All Subscribers (Extract)
 Unsubscribes to All Subscribers (Transfer)
-Unsubscribes to All Subscribers (Import)",Scheduled,2024-02-23 03:30:00,Complete,2024-02-22 03:34:00,2024-02-22 03:34:00
-159,,Sweeps_Analysis,Sweep_Entrant_Purchase_Lifecycle,Scheduled,2024-02-25 00:00:00,Complete,2024-02-18 00:06:00,2024-02-18 00:06:00
-160,Testing,Testing,"Update User Record
-update forms and sweeps
-Combine Aspire Data
-update allcontacts with standard layout
-Update Ticket Detail
-Delete Testers From All Contacts (Script)
-Delete Test (Script)
-delete test1 (Script)
-Delete fram FaS (Script)
-test kick off (Script)
-Create DE (Script)
-cpj_test
-Create New DE (Script)
-CRM no purch sample for growthential
-retail and ticket sample growthential
-retail purhcase sample for Growthential
-ticket purchase sample for Growthential
-retailandtickets_tickets
-ticketsnoretail_tickets
-retailnotickets_ecomm
-retailandtickets_ecomm
-retailandtickets_pos
-retailnotickets_pos
-TicketMaster ACL Update Customer Master - New to Database
-TicketMaster ACL Update Customer Master - Existing
-EXPRESS_DATA_APPEND_HANDRAISERCLICK33K_fullshell (Import)
-EXPRESS_DATA_APPEND_HANDRAISERNOCLICK85K_fullshell (Import)
-EXPRESS_DATA_APPEND_OPRYFULL1MM_fullshell (Import)
-EXPRESS_DATA_APPEND_OPRYFULL1MM_Variables (Import)
-EXPRESS_DATA_APPEND_OPRYMISSNOBADADD789K_fullshell (Import)
-EXPRESS_DATA_APPEND_OPRYMISSNOBADADD789K_Variables (Import)
-Opry Click data (Import)
-Opry No Click Data (Import)",Ready,--,,--,2022-12-23 10:55:00
-161,Ticket Alert,Ticket Alert Insights,"backup_ticket_alert_form
+Unsubscribes to All Subscribers (Import)",Scheduled,2024-02-23 03:30:00,Complete,2024-02-22 03:34:00,2024-02-22 03:34:00,Compares the status value in AllContacts_Step1 and _Subscribers  and exports the ones that do not match. Then reuploads those subscribers to update the record in _Subscribers list.,Daily,
+201,,Sweeps_Analysis,Sweep_Entrant_Purchase_Lifecycle,Scheduled,2024-02-25 00:00:00,Complete,2024-02-18 00:06:00,2024-02-18 00:06:00,"Gathers everyone who first entered our system through a sweeps and adds their first and last purchase source, date, and location for analysys.",Weekly,
+202,Ticket Alert,Ticket Alert Insights,"backup_ticket_alert_form
 fix_ticket_alert_validation_error
 calculate_times_alert_date_is_used_history
 ticket_alert_submitter_info
 Ticket_Alert_Subscriber_All_Info
-calculate_times_alert_date_is_used_reporting",Paused Schedule,--,Complete,2024-01-31 10:54:00,2024-02-01 08:56:00
-162,Marketing,Ticket Error Checking,Check For No Match,Scheduled,2024-02-22 12:00:00,Complete,2024-02-21 12:00:00,2024-02-21 12:00:00
-163,TicketMaster,TicketMaster ACL Import,"TicketMaster Import ACL (Import)
-TicketMaster ACL Update Customer Master - New to Database
-TicketMaster ACL Update Customer Master - Existing
-TicketMaster ACL",Active File Drop,--,Complete,2023-04-19 19:26:00,2023-04-19 19:26:00
-164,Legacy Systems,TicketMaster ACL Import_Manual,"TicketMaster Import ACL (Import)
-TicketMaster ACL Update Customer Master - New to Database
-TicketMaster ACL Update Customer Master - Existing
-TicketMaster ACL",Ready,--,Complete,2023-02-02 15:40:00,2023-02-02 15:40:00
-165,Legacy Systems,Ticketmaster ACL to Ticket detail,"TM_ACL_Purchases
-TM_ACL_Resale_Purchases
-TM_ACL_Cancel
-Ticketmaster Tickets ACL Transfers
-Ticketmaster Tickets ACL to Ticket Detail
-Ticketmaster ACL Email to contact history",Paused Schedule,--,Complete,2023-10-31 06:12:00,2023-10-31 08:55:00
-166,TicketMaster,TicketMaster Import,"TicketMaster Import (Import)
-TicketMaster
-TicketMaster Update Customer Master",Active File Drop,--,Complete,2024-02-21 22:20:00,2024-02-21 22:20:00
-167,TicketMaster,TicketMaster to Ticket Detail,"Ticketmaster Tickets to Ticket Detail
-TM Staging to Admission Detail
-Ticketmaster Email to contact history
-TM Contact Staging to Contact to date",Scheduled,2024-02-23 06:00:00,Complete,2024-02-22 06:07:00,2024-02-22 06:07:00
-168,,Update Contact Locale,find_contact_locale,Scheduled,2024-02-23 07:00:00,Complete,2024-02-22 07:03:00,2024-02-22 07:03:00
-169,One Time Requests,Update Ole Red Subscribers,Update_Ole_Red_Subscribers (Import),Paused Schedule,--,Complete,2024-01-08 08:48:00,2024-01-08 09:07:00
-170,AXS,Update Tickets With Missing Event Code,Update Tickets with Missing Event Code,Ready,--,Complete,2023-08-07 20:28:00,2023-08-07 20:28:00
-171,Journeys/ACL,Updated ACL Attributes,ACL_Journey_Attriubutes,Scheduled,2024-02-22 22:00:00,Complete,2024-02-21 22:01:00,2024-02-21 22:01:00
-172,Datorama,Upsell Analysis AXS,"Opry_Show_Upsell_and_Package
+calculate_times_alert_date_is_used_reporting",Paused Schedule,--,Complete,2024-01-31 10:54:00,2024-02-01 08:56:00,One Time reporting query. May be used in the future.,As Needed,
+203,Marketing,Ticket Error Checking,Check For No Match,Scheduled,2024-02-22 12:00:00,Complete,2024-02-21 12:00:00,2024-02-21 12:00:00,Checks for tickets in AudienceView_Order_Contact_2016_to_date with an event code of No_Match. If more than 16 records are found an alert email is sent. ,Daily,
+204,Backups/Daily,Tickets_Daily,"Backup_AudienceView_Order_Contact_2016_to_date_Daily
+backup_AudienceView_Ticket_Admission_Detail_Daily
+backup_AXS_Customer_Transaction_Daily",Scheduled,,,,,Backup all out ticketing data daily,Daily,
+205,Backups/Monthly,Tickets_Monthly,"Backup_AudienceView_Order_Contact_2016_to_date_Monthly
+backup_AudienceView_Ticket_Admission_Detail_Monthly
+backup_AXS_Customer_Transaction_Monthly",Scheduled,,,,,Backup all out ticketing data monthly,Monthly,
+206,Backups/Weekly,Tickets_Weekly,"Backup_AudienceView_Order_Contact_2016_to_date_Weekly
+backup_AudienceView_Ticket_Admission_Detail_Weekly
+backup_AXS_Customer_Transaction_Weekly",Scheduled,,,,,Backup all out ticketing data weekly,Weekly,
+207,Marketing,TLC Opry 100 Trivia Submissions,import_opry_100_trivia_submissions,Active File Drop,,,,,,,
+208,Exclusions,Universal Exclusion,exclusion_universal,Scheduled,,,,,Populates the Exclusion_universal DE that stores the global list of everyone we want to exclude from any email sends.,,
+209,,Update Contact Locale,"find_contact_locale
+contact_locale_location",Scheduled,2024-02-23 07:00:00,Complete,2024-02-22 07:03:00,2024-02-22 07:03:00,"Looks at the city, state, and postal code of all contacts and sets the locale to each of the Ole Red Locations. ",Daily,TODO: Need to add Ole Red Las Vegas and update Forwards and Resale query
+210,One Time Requests,Update Ole Red Subscribers,Update_Ole_Red_Subscribers (Import),Paused Schedule,--,Complete,2024-01-08 08:48:00,2024-01-08 09:07:00,One Time update. Can Delete,,
+211,Journeys/ACL,Updated ACL Attributes,ACL_Journey_Attriubutes,Scheduled,2024-02-22 22:00:00,Complete,2024-02-21 22:01:00,2024-02-21 22:01:00,Copies Attributes upload DE and concats date and time. This must occur so that matching can be done in events. Combines with sold out table to flag sold out events. ,Daily,
+212,Datorama,Upsell Analysis AXS,"Opry_Show_Upsell_and_Package
 Opry_Show_Upsell_and_Package_order_level
 Opry_Tour_Upsell_and_Package
 Opry_Tour_Upsell_and_Package_order_level
 Ryman Show Upsell and Package
-Ryman Show Upsell and Package Order Level
+Ryman_Show_Upsell_and_Package_Order_Level
 Opry_Show_Upsell_and_Package_Tour_Purchases
 Opry_Show_Upsell_and_Package_Tour_Purchases_order_level
 Opry_Tour_Upsell_and_Package_Show_Purchases
@@ -1106,64 +1332,31 @@ Opry Tour Upsell to Dato (Extract)
 Ryman Upsell to Dato (Extract)
 Datorama - Opry Show Upsell (Transfer)
 Datorama - Opry Tour Upsell (Transfer)
-Ryman Show Upsell to Dato (Transfer)",Scheduled,2024-02-23 01:00:00,Complete,2024-02-22 01:18:00,2024-02-22 01:18:00
-173,,Users_With_Unopened_Emails_Last_60_Days,Outlook_and_Hotmail_Users_Unopened_Emails_60_Days,Paused Schedule,--,Complete,2024-01-12 00:03:00,2024-01-12 14:35:00
-174,Backups/Daily,Customers_Daily,backup_AllContacts_Step1_Daily,Scheduled,,,,
-175,Backups/Daily,Tickets_Daily,"Backup_AudienceView_Order_Contact_2016_to_date_Daily
-backup_AudienceView_Ticket_Admission_Detail_Daily
-backup_AXS_Customer_Transaction_Daily",Scheduled,,,,
-176,Backups/Daily,LeadGen_Daily,"backup_photobooth_archive_daily
-backup_Forms_And_Sweeps_Daily
-backup_Forms_and_Sweeps_Manual_Upload_Daily
-backup_MyPlaceConnect_Daily",Scheduled,,,,
-177,Backups/Daily,Retail_Daily,"backup_ShopifyCustomersDE-opryshop_Daily
-backup_ShopifyCustomersDE-opryshop-pos_Daily
-backup_ShopifyOrderLineItemsDE-opryshop_Daily
-backup_ShopifyOrderLineItemsDE-opryshop-pos_Daily
-backup_ShopifyOrdersDE-opryshop_Daily
-backup_ShopifyOrdersDE-opryshop-pos_Daily
-backup_ShopifyProductDE-opryshop_Daily
-backup_ShopifyProductDE-opryshop-pos_Daily
-backup_ShopifyProductVariantsDE-opryshop_Daily
-backup_ShopifyProductVariantsDE-opryshop-pos_Daily
-backup_NetSuite_POS_AllRecords_Daily",Scheduled,,,,
-178,Backups/Weekly,Customers_Weekly,backup_AllContacts_Step1_Daily,Scheduled,,,,
-179,Backups/Weekly,Tickets_Weekly,"Backup_AudienceView_Order_Contact_2016_to_date_Weekly
-backup_AudienceView_Ticket_Admission_Detail_Weekly
-backup_AXS_Customer_Transaction_Weekly",Scheduled,,,,
-180,Backups/Weekly,LeadGen_Weekly,"backup_photobooth_archive_weekly
-backup_Forms_And_Sweeps_Weekly
-backup_Forms_and_Sweeps_Manual_Upload_Weekly
-backup_MyPlaceConnect_Weekly",Scheduled,,,,
-181,Backups/Weekly,Retail_Weekly,"backup_ShopifyCustomersDE-opryshop_Weekly
-backup_ShopifyCustomersDE-opryshop-pos_Weekly
-backup_ShopifyOrderLineItemsDE-opryshop_Weekly
-backup_ShopifyOrderLineItemsDE-opryshop-pos_Weekly
-backup_ShopifyOrdersDE-opryshop_Weekly
-backup_ShopifyOrdersDE-opryshop-pos_Weekly
-backup_ShopifyProductDE-opryshop_Weekly
-backup_ShopifyProductDE-opryshop-pos_Weekly
-backup_ShopifyProductVariantsDE-opryshop_Weekly
-backup_ShopifyProductVariantsDE-opryshop-pos_Weekly
-backup_NetSuite_POS_AllRecords_Weekly",Scheduled,,,,
-182,Backups/Monthly,Customers_Monthly,backup_AllContacts_Step1_Monthly,Scheduled,,,,
-183,Backups/Monthly,Tickets_Monthly,"Backup_AudienceView_Order_Contact_2016_to_date_Monthly
-backup_AudienceView_Ticket_Admission_Detail_Monthly
-backup_AXS_Customer_Transaction_Monthly",Scheduled,,,,
-184,Backups/Monthly,LeadGen_Monthly,"backup_photobooth_archive_monthly
-backup_Forms_And_Sweeps_Monthly
-backup_Forms_and_Sweeps_Manual_Upload_Monthly
-backup_MyPlaceConnect_Monthly",Scheduled,,,,
-185,Backups/Monthly,Retail_Monthly,"backup_ShopifyCustomersDE-opryshop_Monthly
-backup_ShopifyCustomersDE-opryshop-pos_Monthly
-backup_ShopifyOrderLineItemsDE-opryshop_Monthly
-backup_ShopifyOrderLineItemsDE-opryshop-pos_Monthly
-backup_ShopifyOrdersDE-opryshop_Monthly
-backup_ShopifyOrdersDE-opryshop-pos_Monthly
-backup_ShopifyProductDE-opryshop_Monthly
-backup_ShopifyProductDE-opryshop-pos_Monthly
-backup_ShopifyProductVariantsDE-opryshop_Monthly
-backup_ShopifyProductVariantsDE-opryshop-pos_Monthly
-backup_NetSuite_POS_AllRecords_Monthly",Scheduled,,,,
-186,Journeys,Retail Best Sellers Journey,retail_purchasers_best_sellers,Scheduled,,,,
-187,,BU Purchaser Counts,bu_purchaser_count_month_and_year,Scheduled,,,,
+Ryman Show Upsell to Dato (Transfer)",Scheduled,2024-02-23 01:00:00,Complete,2024-02-22 01:18:00,2024-02-22 01:18:00,TODO,Daily,
+213,Analysis,Repeat Purchaser Analysis,"opry_daytime_tour_repeat_visitor_update
+opry_women_of_country_tour_repeat_visitor_update
+acl_concert_repeat_visitor_update
+3tct_concert_repeat_visitor_update
+acl_and_3tct_concert_repeat_visitor_update
+ryman_tour_repeat_visitor_update
+ryman_concert_repeat_visitor_update
+opry_repeat_visitor_update_one_time
+opry_country_christmas_repeat_visitor_update",,,,,,,,
+214,Analysis,Ascend Show Discount Offer ,"ascend_show_discount_offers
+ascend_show_discount_offers_pt2
+ascend_show_discount_offers_pt3",,,,,,,,
+215,Analysis,ACL Live Show Discount Offer,"acl_show_discount_offers
+acl_show_discount_offers_pt2
+acl_show_discount_offers_pt3",,,,,,,,
+216,Analysis,3Ten Show Discount Offer,"3ten_show_discount_offers
+3ten_show_discount_offers_pt2
+3ten_show_discount_offers_pt3",,,,,,,,
+217,Analysis,Ryman Show Discount Offer,"ryman_show_discount_offers
+ryman_show_discount_offers_pt2
+ryman_show_discount_offers_pt3",,,,,,,,
+218,Analysis,Opry House Show Discount Offer,"opry_house_show_discount_offers
+opry_house_discount_offers_pt2
+opry_house_discount_offers_pt3",,,,,,,,
+219,Analysis,Greenville Amph Show Discount Offer,"ccnb_show_discount_offers
+ccnb_discount_offers_pt2
+ccnb_discount_offers_pt3",,,,,,,,
